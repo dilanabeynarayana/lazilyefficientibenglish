@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouTube – The Lazily Efficient IB English Teacher</title>
+    <title>Exercises & Examples – The Lazily Efficient IB English Teacher</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,18 +37,11 @@
         .nav-links a { font-weight: 500; font-size: 0.95rem; letter-spacing: 0.02em; }
         .container { max-width: var(--max-width); margin: 0 auto; padding: var(--spacing-xl) var(--spacing-md); }
         .content-section { margin-bottom: var(--spacing-xl); }
+        .section-description { color: var(--text-secondary); font-size: 1.1rem; max-width: 800px; margin-bottom: var(--spacing-lg); }
 
-        .shorts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: var(--spacing-md); margin-top: var(--spacing-lg); }
-        .short-card { background-color: rgba(253,252,249,0.03); border: 1px solid rgba(253,252,249,0.08); border-radius: 4px; overflow: hidden; transition: border-color 0.2s ease; position: relative; }
-        .short-card:hover { border-color: rgba(253,252,249,0.15); }
-        .short-thumb-wrap { position: relative; width: 100%; aspect-ratio: 9/16; overflow: hidden; }
-        .short-thumb { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
-        .short-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 48px; height: 48px; background: rgba(204,0,0,0.85); border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; pointer-events: none; }
-        .short-play::after { content: ""; display: block; width: 0; height: 0; border-left: 16px solid #FDFCF9; border-top: 10px solid transparent; border-bottom: 10px solid transparent; margin-left: 3px; }
-        .short-card:hover .short-play { opacity: 1; }
-        .short-info { padding: var(--spacing-sm); }
-        .short-title { font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.25rem; color: var(--text-primary); }
-        .short-meta { font-size: 0.8rem; color: var(--text-secondary); }
+        .doc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-md); margin-top: var(--spacing-lg); }
+        .doc-card { background: rgba(253,252,249,0.03); border: 1px solid rgba(253,252,249,0.08); border-radius: 4px; overflow: hidden; padding: var(--spacing-sm); }
+        iframe.doc-embed { width: 100%; height: 400px; border: none; }
 
         .btn { display: inline-block; padding: 0.75rem 1.5rem; font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 500; text-align: center; cursor: pointer; border: none; border-radius: 4px; transition: background-color 0.2s ease; letter-spacing: 0.02em; margin-top: var(--spacing-md); }
         .btn-primary { background-color: var(--accent); color: #FFFFFF; border-bottom: none; }
@@ -57,8 +50,8 @@
         .footer-content { max-width: var(--max-width); margin: 0 auto; text-align: center; color: var(--text-secondary); font-size: 0.9rem; }
 
         /* depth layers */
-        .short-card { box-shadow: 0 2px 6px rgba(0,0,0,0.3); transition: transform 0.2s ease, box-shadow 0.2s ease; }
-        .short-card:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+        .doc-card { box-shadow: 0 2px 6px rgba(0,0,0,0.3); transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .doc-card:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
         .btn { box-shadow: 0 2px 6px rgba(0,0,0,0.3); }
         .btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
         .btn-primary { background: linear-gradient(135deg, #CC0000 0%, #A00000 100%); border: 1px solid rgba(255,255,255,0.15); }
@@ -67,11 +60,11 @@
         h1, h2 { text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
 
         @media (max-width: 768px) {
-            h1 { font-size: 2rem; } h2 { font-size: 1.5rem; } h3 { font-size: 1.25rem; }
+            h1 { font-size: 2rem; } h2 { font-size: 1.5rem; }
             .nav-container { flex-direction: column; gap: var(--spacing-sm); padding: var(--spacing-sm); }
             .nav-links { gap: var(--spacing-sm); flex-wrap: wrap; justify-content: center; }
             .container { padding: var(--spacing-md) var(--spacing-sm); }
-            .shorts-grid { grid-template-columns: 1fr; }
+            .doc-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -93,40 +86,23 @@
     <main>
         <div class="container">
             <section class="content-section">
-                <h1>YouTube Channel</h1>
-                <p class="short-meta">Watch the full walkthroughs and system explainers.</p>
-                <a href="https://youtube.com/@thelazyefficientibenglishtea" class="btn btn-primary" target="_blank">Subscribe on YouTube</a>
+                <h1>Exercises & Examples</h1>
+                <p class="section-description">Worked examples, practice tasks, and interactive exercises for you and your students.</p>
             </section>
             <section class="content-section">
-                <h2>Latest Shorts</h2>
-                <div class="shorts-grid">
-                    <a href="https://youtube.com/shorts/x48pgQU7wvk" target="_blank" class="short-card">
-                        <div class="short-thumb-wrap">
-                            <img class="short-thumb" src="https://i.ytimg.com/vi/x48pgQU7wvk/hqdefault.jpg" alt="3 Things All IB L&L Responses MUST Do">
-                            <div class="short-play"></div>
-                        </div>
-                        <div class="short-info">
-                            <p class="short-title">3 Things All IB L&L Responses MUST Do</p>
-                        </div>
-                    </a>
-                    <a href="https://youtube.com/shorts/4216-DK0B40" target="_blank" class="short-card">
-                        <div class="short-thumb-wrap">
-                            <img class="short-thumb" src="https://i.ytimg.com/vi/4216-DK0B40/hqdefault.jpg" alt="Top 10 Tips from an IB L&L Team Leader Examiner">
-                            <div class="short-play"></div>
-                        </div>
-                        <div class="short-info">
-                            <p class="short-title">Top 10 Tips from an IB L&L Team Leader Examiner</p>
-                        </div>
-                    </a>
-                    <a href="https://youtube.com/shorts/tZcJIrVKPu8" target="_blank" class="short-card">
-                        <div class="short-thumb-wrap">
-                            <img class="short-thumb" src="https://i.ytimg.com/vi/tZcJIrVKPu8/hqdefault.jpg" alt="3-Step Technique for Effective Analysis">
-                            <div class="short-play"></div>
-                        </div>
-                        <div class="short-info">
-                            <p class="short-title">3-Step Technique for Effective Analysis</p>
-                        </div>
-                    </a>
+                <h2>Google Docs Activities</h2>
+                <div class="doc-grid">
+                    <div class="doc-card">
+                        <iframe class="doc-embed" src="https://docs.google.com/document/d/1BarlZE86CrxdjDPdhC9oe5xRNVgOH39sM4mheY3tvU/pub?embedded=true" allowfullscreen></iframe>
+                        <p style="text-align:center;margin-top:0.5rem;">Stages of IDEAs Exercise</p>
+                    </div>
+                    <div class="doc-card">
+                        <iframe class="doc-embed" src="https://docs.google.com/document/d/1M2kT-VcNh4Hy8_zuVD-tIQ7NgNwGzUoSgr8-Vcteeqc/pub?embedded=true" allowfullscreen></iframe>
+                        <p style="text-align:center;margin-top:0.5rem;">Ways to Phrase Deconstructions – Practice</p>
+                    </div>
+                    <div class="doc-card">
+                        <p class="section-description" style="text-align:center;">More exercises coming soon. Subscribe to the YouTube channel for walkthroughs.</p>
+                    </div>
                 </div>
             </section>
         </div>
