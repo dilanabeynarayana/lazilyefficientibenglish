@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Department Resources – The Lazily Efficient IB English Teacher</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
@@ -19,6 +20,7 @@
             --spacing-lg: 3rem;
             --spacing-xl: 4rem;
             --max-width: 1200px;
+            --thumb-height: 280px;
         }
         body { background-color: var(--bg-primary); color: var(--text-primary); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.6; }
         h1, h2, h3 { font-family: 'Montserrat', sans-serif; font-weight: 600; line-height: 1.3; margin-bottom: var(--spacing-sm); }
@@ -38,7 +40,7 @@
         .content-section { margin-bottom: var(--spacing-xl); }
         .section-title { margin-bottom: var(--spacing-lg); }
         .section-description { color: var(--text-secondary); font-size: 1.1rem; max-width: 800px; margin-bottom: var(--spacing-lg); }
-        .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-md); margin-top: var(--spacing-lg); }
+        .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--spacing-lg); margin-top: var(--spacing-lg); }
         .card { background-color: rgba(253,252,249,0.03); border: 1px solid rgba(253,252,249,0.08); padding: var(--spacing-md); border-radius: 4px; transition: border-color 0.2s ease; }
         .card:hover { border-color: rgba(253,252,249,0.15); }
         .card-title { font-family: 'Montserrat', sans-serif; font-size: 1.25rem; font-weight: 600; margin-bottom: var(--spacing-sm); }
@@ -48,8 +50,32 @@
         .btn-primary:hover { background-color: #A00000; border-bottom: none; }
         footer { border-top: 1px solid rgba(253,252,249,0.1); padding: var(--spacing-lg) var(--spacing-md); margin-top: var(--spacing-xl); }
         .footer-content { max-width: var(--max-width); margin: 0 auto; text-align: center; color: var(--text-secondary); font-size: 0.9rem; }
-        .card-preview { width: 100%; height: auto; max-height: 180px; object-fit: contain; border-radius: 4px; margin-bottom: var(--spacing-sm); background: rgba(255,255,255,0.02); transition: transform 0.3s ease; }
-        .card:hover .card-preview { transform: scale(1.05); }
+
+        /* ---- mouse‑follow zoom (same as skills) ---- */
+        .thumb-zoom {
+            position: relative;
+            width: 100%;
+            height: var(--thumb-height);
+            overflow: hidden;
+            cursor: zoom-in;
+            background: rgba(0,0,0,0.15);
+            border-radius: 4px;
+            margin-bottom: var(--spacing-sm);
+        }
+        .thumb-zoom img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transform-origin: 0 0;
+            transition: transform 0.1s ease;
+        }
+        .thumb-zoom:hover img {
+            transform: scale(2.2);
+        }
+
         .video-wrapper { position: relative; width: 100%; padding-top: 56.25%; margin-bottom: var(--spacing-sm); }
         .card-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 4px; }
         @media (max-width: 768px) {
@@ -58,6 +84,7 @@
             .nav-links { gap: var(--spacing-sm); flex-wrap: wrap; justify-content: center; }
             .container { padding: var(--spacing-md) var(--spacing-sm); }
             .cards-grid { grid-template-columns: 1fr; }
+            :root { --thumb-height: 220px; }
         }
     </style>
 </head>
@@ -93,9 +120,10 @@
         const allResources = [
           {"title":"Stages of IDEAs for Conceptual Teaching","description":"Plan units around concepts, not texts","link":"#","category":"department","ready":false,"previewImage":"","youtubeId":null},
           {"title":"8 Gates of Curriculum Design","description":"Audit department units for coherence","link":"https://drive.google.com/file/d/1yj7C4bFZHLVtdXGNv8u8nqrrIeJ6FWSs/view?usp=sharing","category":"department","ready":true,"previewImage":"images/8-gates.png","youtubeId":null},
-          {"title":"Official SWIS L&L MYP to DP Analytical Continuum","description":"Map skills from Year 1 to DP2","link":"#","category":"department","ready":false,"previewImage":"","youtubeId":null},
+          {"title":"L&L MYP to DP Analytical Continuum","description":"Map skills from Year 1 to DP2","link":"#","category":"department","ready":false,"previewImage":"","youtubeId":null},
           {"title":"Literary and Non-Literary Curriculum Map","description":"Balance text types across years and languages","link":"#","category":"department","ready":false,"previewImage":"","youtubeId":null}
         ];
+
         const container = document.getElementById('resources-container');
         const deptResources = allResources.filter(r => r.category === 'department');
         if (deptResources.length === 0) {
@@ -104,7 +132,10 @@
             let html = '<div class="cards-grid">';
             deptResources.forEach(resource => {
                 let videoHtml = resource.youtubeId ? `<div class="video-wrapper"><iframe class="card-video" src="https://www.youtube.com/embed/${resource.youtubeId}" allowfullscreen></iframe></div>` : '';
-                let imageHtml = resource.previewImage ? `<img src="${resource.previewImage}" alt="${resource.title}" class="card-preview">` : '';
+                let imageHtml = resource.previewImage ?
+                    `<div class="thumb-zoom" data-img="${resource.previewImage}">
+                        <img src="${resource.previewImage}" alt="${resource.title}">
+                    </div>` : '';
                 let buttonHtml;
                 if (resource.ready && resource.link !== '#') {
                     buttonHtml = `<a href="${resource.link}" class="btn btn-primary" target="_blank">Download</a>`;
@@ -116,6 +147,20 @@
             html += '</div>';
             container.innerHTML = html;
         }
+
+        // mouse‑follow zoom
+        document.addEventListener('mousemove', function(e) {
+            if (e.target.closest('.thumb-zoom')) {
+                const zoom = e.target.closest('.thumb-zoom');
+                const img = zoom.querySelector('img');
+                const rect = zoom.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const xPercent = (x / rect.width) * 100;
+                const yPercent = (y / rect.height) * 100;
+                img.style.transformOrigin = `${xPercent}% ${yPercent}%`;
+            }
+        });
     </script>
 </body>
 </html>
