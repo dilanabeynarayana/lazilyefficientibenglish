@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills Resources – The Lazily Efficient IB English Teacher</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-primary: #1E2E3E;
+            --text-primary: #FDFCF9;
+            --text-secondary: #B6BCC4;
+            --accent: #CC0000;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 3rem;
+            --spacing-xl: 4rem;
+            --max-width: 1200px;
+            --thumb-height: 280px;
+        }
+        body { background-color: var(--bg-primary); color: var(--text-primary); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.6; }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; font-weight: 600; line-height: 1.3; margin-bottom: var(--spacing-sm); }
+        h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: var(--spacing-md); }
+        h2 { font-size: 2rem; margin-bottom: var(--spacing-md); }
+        h3 { font-size: 1.5rem; }
+        p { margin-bottom: var(--spacing-sm); }
+        a { color: var(--text-primary); text-decoration: none; border-bottom: 2px solid transparent; transition: border-color 0.2s ease; }
+        a:hover { border-bottom-color: var(--accent); }
+        nav { background-color: var(--bg-primary); border-bottom: 1px solid rgba(253,252,249,0.1); position: sticky; top: 0; z-index: 100; }
+        .nav-container { max-width: var(--max-width); margin: 0 auto; padding: var(--spacing-sm) var(--spacing-md); display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { font-family: 'Montserrat', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--text-primary); border-bottom: none; }
+        .nav-logo:hover { border-bottom: none; color: var(--accent); }
+        .nav-links { display: flex; gap: var(--spacing-md); list-style: none; }
+        .nav-links a { font-weight: 500; font-size: 0.95rem; letter-spacing: 0.02em; }
+        .container { max-width: var(--max-width); margin: 0 auto; padding: var(--spacing-xl) var(--spacing-md); }
+        .content-section { margin-bottom: var(--spacing-xl); }
+        .section-title { margin-bottom: var(--spacing-lg); }
+        .section-description { color: var(--text-secondary); font-size: 1.1rem; max-width: 800px; margin-bottom: var(--spacing-lg); }
+        .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--spacing-lg); margin-top: var(--spacing-lg); }
+        .card { background-color: rgba(253,252,249,0.03); border: 1px solid rgba(253,252,249,0.08); padding: var(--spacing-md); border-radius: 4px; transition: border-color 0.2s ease; }
+        .card:hover { border-color: rgba(253,252,249,0.15); }
+        .card-title { font-family: 'Montserrat', sans-serif; font-size: 1.25rem; font-weight: 600; margin-bottom: var(--spacing-sm); }
+        .card-description { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: var(--spacing-md); }
+        .btn { display: inline-block; padding: 0.75rem 1.5rem; font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 500; text-align: center; cursor: pointer; border: none; border-radius: 4px; transition: background-color 0.2s ease; letter-spacing: 0.02em; }
+        .btn-primary { background-color: var(--accent); color: #FFFFFF; border-bottom: none; }
+        .btn-primary:hover { background-color: #A00000; border-bottom: none; }
+        footer { border-top: 1px solid rgba(253,252,249,0.1); padding: var(--spacing-lg) var(--spacing-md); margin-top: var(--spacing-xl); }
+        .footer-content { max-width: var(--max-width); margin: 0 auto; text-align: center; color: var(--text-secondary); font-size: 0.9rem; }
+
+        /* ---- mouse‑follow zoom ---- */
+        .thumb-zoom {
+            position: relative;
+            width: 100%;
+            height: var(--thumb-height);
+            overflow: hidden;
+            cursor: zoom-in;
+            background: rgba(0,0,0,0.15);
+            border-radius: 4px;
+            margin-bottom: var(--spacing-sm);
+        }
+        .thumb-zoom img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transform-origin: 0 0;
+            transition: transform 0.1s ease;
+        }
+        .thumb-zoom:hover img {
+            transform: scale(2.2);   /* zoom level – adjust to taste */
+        }
+        /* hide overflow when zoomed so it doesn’t spill out */
+        .thumb-zoom:hover {
+            overflow: hidden;
+        }
+
+        .video-wrapper { position: relative; width: 100%; padding-top: 56.25%; margin-bottom: var(--spacing-sm); }
+        .card-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 4px; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; } h2 { font-size: 1.5rem; } h3 { font-size: 1.25rem; }
+            .nav-container { flex-direction: column; gap: var(--spacing-sm); padding: var(--spacing-sm); }
+            .nav-links { gap: var(--spacing-sm); flex-wrap: wrap; justify-content: center; }
+            .container { padding: var(--spacing-md) var(--spacing-sm); }
+            .cards-grid { grid-template-columns: 1fr; }
+            :root { --thumb-height: 220px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Lazily Efficient IB English</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="department.html">Department</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="assessment.html">Assessment</a></li>
+                <li><a href="youtube.html">YouTube</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div class="container">
+            <section class="content-section">
+                <h1>Skills Resources</h1>
+                <p class="section-description">Annotation frameworks, analysis techniques, and thesis-building tools for students.</p>
+            </section>
+            <section class="content-section" id="resources-container"></section>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 The Lazily Efficient IB English Teacher. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        const allResources = [
+          {"title":"Stages of IDEAs for Elaborations","description":"Break down ideas into arguable stages","link":"https://drive.google.com/file/d/1QE0fjjorIwnDlGw3n025u6KWjdm6Estd/view?usp=drive_link","category":"skills","ready":true,"previewImage":"images/stages-elaborations.png","youtubeId":null},
+          {"title":"DDM: Deconstruct, Dichotomise, Merge","description":"Build a real thesis from any Paper 2 question","link":"https://drive.google.com/file/d/1w_B2pne46jpsH7f8pjiPfYefdz9-0su1/view?usp=drive_link","category":"skills","ready":true,"previewImage":"images/ddm-stages.png","youtubeId":null},
+          {"title":"3-Step Technique to Analysis","description":"Move students from labelling to deconstructing connotations","link":"https://drive.google.com/file/d/1Vo7DSzM-J9EtB7hMglKhhutKPJ--5kdX/view?usp=sharing","category":"skills","ready":true,"previewImage":"images/3step.png","youtubeId":null},
+          {"title":"Lazy Efficient Annotation Rubric","description":"DICE/PACT + 3-Step combined","link":"https://drive.google.com/file/d/1_9iUTPKZj1GecUeIWLxgUcKVyIv4s4yk/view?usp=drive_link","category":"skills","ready":true,"previewImage":"images/annotation-rubric.png","youtubeId":null},
+          {"title":"Ways to Phrase Deconstructions","description":"Sentence frames for Criterion B analysis","link":"https://drive.google.com/file/d/1YM01ptHtL4injquMfCRHwEKO4TmNmo6n/view?usp=drive_link","category":"skills","ready":true,"previewImage":"images/ways-to-phrase.png","youtubeId":null},
+          {"title":"DICE/PACT Annotation Guide","description":"Data-mine, infer, confirm, explain","link":"https://drive.google.com/file/d/1iU1YeqaqmwqKjTqD_2b0-PnrcW3FDo6p/view?usp=drive_link","category":"skills","ready":true,"previewImage":"images/dice-pact.png","youtubeId":null},
+          {"title":"The Graveyard of Analysis","description":"Banned phrases wall chart","link":"#","category":"skills","ready":false,"previewImage":"","youtubeId":null}
+        ];
+
+        const container = document.getElementById('resources-container');
+        const skillsResources = allResources.filter(r => r.category === 'skills');
+        if (skillsResources.length === 0) {
+            container.innerHTML = '<p class="section-description">More resources coming soon.</p>';
+        } else {
+            let html = '<div class="cards-grid">';
+            skillsResources.forEach(resource => {
+                let videoHtml = resource.youtubeId ? `<div class="video-wrapper"><iframe class="card-video" src="https://www.youtube.com/embed/${resource.youtubeId}" allowfullscreen></iframe></div>` : '';
+                let imageHtml = resource.previewImage ? 
+                    `<div class="thumb-zoom" data-img="${resource.previewImage}">
+                        <img src="${resource.previewImage}" alt="${resource.title}">
+                    </div>` : '';
+                let buttonHtml;
+                if (resource.ready && resource.link !== '#') {
+                    buttonHtml = `<a href="${resource.link}" class="btn btn-primary" target="_blank">Download</a>`;
+                } else {
+                    buttonHtml = `<span class="btn btn-primary" style="opacity:0.5;cursor:default;">Coming Soon</span>`;
+                }
+                html += `<article class="card">${videoHtml}${imageHtml}<h3 class="card-title">${resource.title}</h3><p class="card-description">${resource.description}</p>${buttonHtml}</article>`;
+            });
+            html += '</div>';
+            container.innerHTML = html;
+        }
+
+        // mouse‑follow zoom logic
+        document.addEventListener('mousemove', function(e) {
+            if (e.target.closest('.thumb-zoom')) {
+                const zoom = e.target.closest('.thumb-zoom');
+                const img = zoom.querySelector('img');
+                const rect = zoom.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const xPercent = (x / rect.width) * 100;
+                const yPercent = (y / rect.height) * 100;
+                img.style.transformOrigin = `${xPercent}% ${yPercent}%`;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Lazily Efficient IB English Teacher</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-primary: #1E2E3E;
+            --text-primary: #FDFCF9;
+            --text-secondary: #B6BCC4;
+            --accent: #CC0000;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 3rem;
+            --spacing-xl: 4rem;
+            --max-width: 1200px;
+        }
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; font-weight: 600; line-height: 1.3; margin-bottom: var(--spacing-sm); }
+        h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: var(--spacing-md); }
+        h2 { font-size: 2rem; margin-bottom: var(--spacing-md); }
+        h3 { font-size: 1.5rem; }
+        p { margin-bottom: var(--spacing-sm); }
+        a { color: var(--text-primary); text-decoration: none; border-bottom: 2px solid transparent; transition: border-color 0.2s ease; }
+        a:hover { border-bottom-color: var(--accent); }
+        nav { background-color: var(--bg-primary); border-bottom: 1px solid rgba(253,252,249,0.1); position: sticky; top: 0; z-index: 100; }
+        .nav-container { max-width: var(--max-width); margin: 0 auto; padding: var(--spacing-sm) var(--spacing-md); display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { font-family: 'Montserrat', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--text-primary); border-bottom: none; }
+        .nav-logo:hover { border-bottom: none; color: var(--accent); }
+        .nav-links { display: flex; gap: var(--spacing-md); list-style: none; }
+        .nav-links a { font-weight: 500; font-size: 0.95rem; letter-spacing: 0.02em; }
+        .container { max-width: var(--max-width); margin: 0 auto; padding: var(--spacing-xl) var(--spacing-md); }
+        .content-section { margin-bottom: var(--spacing-xl); }
+        .section-title { margin-bottom: var(--spacing-lg); }
+        .section-description { color: var(--text-secondary); font-size: 1.1rem; max-width: 800px; margin-bottom: var(--spacing-lg); }
+        .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-md); margin-top: var(--spacing-lg); }
+        .card { background-color: rgba(253,252,249,0.03); border: 1px solid rgba(253,252,249,0.08); padding: var(--spacing-md); border-radius: 4px; transition: border-color 0.2s ease; }
+        .card:hover { border-color: rgba(253,252,249,0.15); }
+        .card-title { font-family: 'Montserrat', sans-serif; font-size: 1.25rem; font-weight: 600; margin-bottom: var(--spacing-sm); }
+        .card-description { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: var(--spacing-md); }
+        .btn { display: inline-block; padding: 0.75rem 1.5rem; font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 500; text-align: center; cursor: pointer; border: none; border-radius: 4px; transition: background-color 0.2s ease; letter-spacing: 0.02em; }
+        .btn-primary { background-color: var(--accent); color: #FFFFFF; border-bottom: none; }
+        .btn-primary:hover { background-color: #A00000; border-bottom: none; }
+        footer { border-top: 1px solid rgba(253,252,249,0.1); padding: var(--spacing-lg) var(--spacing-md); margin-top: var(--spacing-xl); }
+        .footer-content { max-width: var(--max-width); margin: 0 auto; text-align: center; color: var(--text-secondary); font-size: 0.9rem; }
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; } h2 { font-size: 1.5rem; } h3 { font-size: 1.25rem; }
+            .nav-container { flex-direction: column; gap: var(--spacing-sm); padding: var(--spacing-sm); }
+            .nav-links { gap: var(--spacing-sm); flex-wrap: wrap; justify-content: center; }
+            .container { padding: var(--spacing-md) var(--spacing-sm); }
+            .cards-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Lazily Efficient IB English</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="department.html">Department</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="assessment.html">Assessment</a></li>
+                <li><a href="youtube.html">YouTube</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <section class="content-section">
+                <h1>The Lazily Efficient IB English Teacher</h1>
+                <p class="section-description">Biggest impact. Fewest moving parts.</p>
+            </section>
+
+            <section class="content-section">
+                <p class="section-description">I'm Dilan Abeynarayana. I've been teaching since 2009, in the IB since 2013, and examining since 2016. I'm currently a Team Leader for Paper 1 and the HL Essay. I teach IB English teachers how to build systems that save them time: not by cutting corners, but by front‑loading rigorous design so daily teaching runs itself.</p>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">Explore Resources</h2>
+                <div class="cards-grid">
+                    <article class="card">
+                        <h3 class="card-title">Department</h3>
+                        <p class="card-description">Unit & curriculum planning tools.</p>
+                        <a href="department.html" class="btn btn-primary">Explore Department Resources</a>
+                    </article>
+                    <article class="card">
+                        <h3 class="card-title">Skills</h3>
+                        <p class="card-description">Annotation, elaboration, deconstruction.</p>
+                        <a href="skills.html" class="btn btn-primary">Explore Skills Resources</a>
+                    </article>
+                    <article class="card">
+                        <h3 class="card-title">Assessment</h3>
+                        <p class="card-description">Paper 1, Paper 2, IO, HL Essay, EE.</p>
+                        <a href="assessment.html" class="btn btn-primary">Explore Assessment Resources</a>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 The Lazily Efficient IB English Teacher. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
