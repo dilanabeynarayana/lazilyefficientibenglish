@@ -1,128 +1,164 @@
-+   1 [
-+   2   {
-+   3     "title": "Stages of IDEAs for Conceptual Teaching",
-+   4     "description": "Plan units around concepts, not texts",
-+   5     "link": "#",
-+   6     "category": "department",
-+   7     "ready": false
-+   8   },
-+   9   {
-+  10     "title": "8 Gates of Curriculum Design",
-+  11     "description": "Audit department units for coherence",
-+  12     "link": "https://drive.google.com/file/d/1yj7C4bFZHLVtdXGNv8u8nqrrIeJ6FWSs/view?usp=sharing=s640",
-+  13     "category": "department",
-+  14     "ready": true
-+  15   },
-+  16   {
-+  17     "title": "Official SWIS L&L MYP to DP Analytical Continuum",
-+  18     "description": "Map skills from Year 1 to DP2",
-+  19     "link": "#",
-+  20     "category": "department",
-+  21     "ready": false
-+  22   },
-+  23   {
-+  24     "title": "Literary and Non-Literary Curriculum Map",
-+  25     "description": "Balance text types across years and languages",
-+  26     "link": "#",
-+  27     "category": "department",
-+  28     "ready": false
-+  29   },
-+  30   {
-+  31     "title": "Stages of IDEAs for Elaborations",
-+  32     "description": "Break down ideas into arguable stages",
-+  33     "link": "https://drive.google.com/file/d/1QE0fjjorIwnDlGw3n025u6KWjdm6Estd/view?usp=drive_link=s640",
-+  34     "category": "skills",
-+  35     "ready": true
-+  36   },
-+  37   {
-+  38     "title": "DDM: Deconstruct, Dichotomise, Merge",
-+  39     "description": "Build a real thesis from any Paper 2 question",
-+  40     "link": "https://drive.google.com/file/d/1w_B2pne46jpsH7f8pjiPfYefdz9-0su1/view?usp=drive_link=s640",
-+  41     "category": "skills",
-+  42     "ready": true
-+  43   },
-+  44   {
-+  45     "title": "3-Step Technique to Analysis",
-+  46     "description": "Move students from labelling to deconstructing connotations",
-+  47     "link": "https://drive.google.com/file/d/1Vo7DSzM-J9EtB7hMglKhhutKPJ--5kdX/view?usp=sharing=s640",
-+  48     "category": "skills",
-+  49     "ready": true
-+  50   },
-+  51   {
-+  52     "title": "Lazy Efficient Annotation Rubric",
-+  53     "description": "DICE/PACT + 3-Step combined",
-+  54     "link": "https://drive.google.com/file/d/1_9iUTPKZj1GecUeIWLxgUcKVyIv4s4yk/view?usp=drive_link=s640",
-+  55     "category": "skills",
-+  56     "ready": true
-+  57   },
-+  58   {
-+  59     "title": "Ways to Phrase Deconstructions",
-+  60     "description": "Sentence frames for Criterion B analysis",
-+  61     "link": "https://drive.google.com/file/d/1YM01ptHtL4injquMfCRHwEKO4TmNmo6n/view?usp=drive_link=s640",
-+  62     "category": "skills",
-+  63     "ready": true
-+  64   },
-+  65   {
-+  66     "title": "DICE/PACT Annotation Guide",
-+  67     "description": "Data-mine, infer, confirm, explain",
-+  68     "link": "https://drive.google.com/file/d/1iU1YeqaqmwqKjTqD_2b0-PnrcW3FDo6p/view?usp=drive_link=s640",
-+  69     "category": "skills",
-+  70     "ready": true
-+  71   },
-+  72   {
-+  73     "title": "The Graveyard of Analysis",
-+  74     "description": "Banned phrases wall chart",
-+  75     "link": "#",
-+  76     "category": "skills",
-+  77     "ready": false
-+  78   },
-+  79   {
-+  80     "title": "Paper 1: TEEAL Essay Structure",
-+  81     "description": "One-page visual scaffold",
-+  82     "link": "#",
-+  83     "category": "assessment",
-+  84     "ready": false
-+  85   },
-+  86   {
-+  87     "title": "Paper 2: Comparative TEEAL Writing Guide",
-+  88     "description": "Style 1,2,3",
-+  89     "link": "#",
-+  90     "category": "assessment",
-+  91     "ready": false
-+  92   },
-+  93   {
-+  94     "title": "Paper 2: Cookie Pairings & Yin Yang Planner",
-+  95     "description": "Direct AC comparison",
-+  96     "link": "#",
-+  97     "category": "assessment",
-+  98     "ready": false
-+  99   },
-+ 100   {
-+ 101     "title": "IO: Structure & Islands Method",
-+ 102     "description": "Whole-work evidence",
-+ 103     "link": "#",
-+ 104     "category": "assessment",
-+ 105     "ready": false
-+ 106   },
-+ 107   {
-+ 108     "title": "IO: Global Issue Formulation Checklist",
-+ 109     "description": "Narrow, defensible",
-+ 110     "link": "#",
-+ 111     "category": "assessment",
-+ 112     "ready": false
-+ 113   },
-+ 114   {
-+ 115     "title": "HL Essay: Plane Method for Whole-Text Analysis",
-+ 116     "description": "Track Broader ACs",
-+ 117     "link": "#",
-+ 118     "category": "assessment",
-+ 119     "ready": false
-+ 120   },
-+ 121   {
-+ 122     "title": "HL Essay: Thesis Formulation with DDM",
-+ 123     "description": "From line of inquiry to argument",
-+ 124     "link": "#",
-+ 125     "category": "assessment",
-+ 126     "ready": false
-+ 127   }
-+ 128 ]
+[
+  {
+    "title": "Stages of IDEAs for Conceptual Teaching",
+    "description": "Plan units around concepts, not texts",
+    "link": "#",
+    "category": "department",
+    "ready": false,
+    "previewImage": "",
+    "youtubeId": null
+  },
+  {
+    "title": "8 Gates of Curriculum Design",
+    "description": "Audit department units for coherence",
+    "link": "https://drive.google.com/file/d/18cziIEiOPIrdim0L_j9qEXUkMFDzVk7c/view?usp=drive_link",
+    "category": "department",
+    "ready": true,
+    "previewImage": "images/8-gates.png",
+    "youtubeId": null
+  },
+  {
+    "title": "L&L MYP to DP Analytical Continuum",
+    "description": "Map skills from Year 1 to DP2",
+    "link": "https://drive.google.com/file/d/1makxiaH44pEsIAHpkBPYFCrBj0js5oMt/view?usp=drive_link",
+    "category": "department",
+    "ready": true,
+    "previewImage": "",
+    "youtubeId": null
+  },
+  {
+    "title": "Literary and Non-Literary Curriculum Map",
+    "description": "Balance text types across years and languages",
+    "link": "#",
+    "category": "department",
+    "ready": false,
+    "previewImage": "",
+    "youtubeId": null
+  },
+  {
+    "title": "Stages of IDEAs for Elaborations",
+    "description": "Break down ideas into arguable stages",
+    "link": "https://drive.google.com/file/d/1m6GntEDnUTyYM9kVmlk9WKU9_WFrKUKK/view?usp=drive_link",
+    "category": "skills",
+    "ready": true,
+    "previewImage": "images/stages-elaborations.png",
+    "youtubeId": null
+  },
+  {
+    "title": "DDM: Deconstruct, Dichotomise, Merge",
+    "description": "Build a real thesis from any Paper 2 question",
+    "link": "https://drive.google.com/file/d/1uZnE9OBmkgB4bxgqis9_CvzZVsRhtt7t/view?usp=drive_link",
+    "category": "skills",
+    "ready": true,
+    "previewImage": "images/ddm-stages.png",
+    "youtubeId": null
+  },
+  {
+    "title": "3-Step Technique to Analysis",
+    "description": "Move students from labelling to deconstructing connotations",
+    "link": "https://drive.google.com/file/d/1GeKGIXgzyfdhiJI6p6Cq56lk2Y3JWxCZ/view?usp=drive_link",
+    "category": "skills",
+    "ready": true,
+    "previewImage": "images/3step.png",
+    "youtubeId": null
+  },
+  {
+    "title": "Lazy Efficient Annotation Rubric",
+    "description": "DICE/PACT + 3-Step combined",
+    "link": "https://drive.google.com/file/d/13vrcE7muX5_fAtt3bMf7jNk_0cy3xIqT/view?usp=drive_link",
+    "category": "skills",
+    "ready": true,
+    "previewImage": "images/annotation-rubric.png",
+    "youtubeId": null
+  },
+  {
+    "title": "Ways to Phrase Deconstructions",
+    "description": "Sentence frames for Criterion B analysis",
+    "link": "https://drive.google.com/file/d/1yQmmMjGMfUzgnXUlUySdOIkquTxGeU2P/view?usp=drive_link",
+    "category": "skills",
+    "ready": true,
+    "previewImage": "images/ways-to-phrase.png",
+    "youtubeId": null
+  },
+  {
+    "title": "DICE/PACT Annotation Guide",
+    "description": "Data-mine, infer, confirm, explain",
+    "link": "https://drive.google.com/file/d/1-lst07QjRILY3wfYDajeoPX6-gvtLvKe/view?usp=drive_link",
+    "category": "skills",
+    "ready": true,
+    "previewImage": "images/dice-pact.png",
+    "youtubeId": null
+  },
+  {
+    "title": "The Graveyard of Analysis",
+    "description": "Banned phrases wall chart",
+    "link": "#",
+    "category": "skills",
+    "ready": false,
+    "previewImage": "",
+    "youtubeId": null
+  },
+  {
+    "title": "Paper 1: TEEAL Essay Structure",
+    "description": "One-page visual scaffold",
+    "link": "#",
+    "category": "assessment",
+    "ready": false,
+    "previewImage": "",
+    "youtubeId": null
+  },
+  {
+    "title": "Paper 2: Comparative TEEAL Writing Guide",
+    "description": "Style 1,2,3",
+    "link": "#",
+    "category": "assessment",
+    "ready": false,
+    "previewImage": "",
+    "youtubeId": null
+  },
+  {
+    "title": "Paper 2: Cookie Pairings & Yin Yang Planner",
+    "description": "Direct AC comparison",
+    "link": "#",
+    "category": "assessment",
+    "ready": false,
+    "previewImage": "",
+    "youtubeId": null
+  },
+  {
+    "title": "IO: Structure & Islands Method",
+    "description": "Whole-work evidence",
+    "link": "#",
+    "category": "assessment",
+    "ready": false,
+    "previewImage": "",
+    "youtubeId": null
+  },
+  {
+    "title": "IO: Global Issue Formulation Checklist",
+    "description": "Narrow, defensible",
+    "link": "#",
+    "category": "assessment",
+    "ready": false,
+    "previewImage": "",
+    "youtubeId": null
+  },
+  {
+    "title": "HL Essay: Plane Method for Whole-Text Analysis",
+    "description": "Track Broader ACs",
+    "link": "#",
+    "category": "assessment",
+    "ready": false,
+    "previewImage": "",
+    "youtubeId": null
+  },
+  {
+    "title": "HL Essay: Thesis Formulation with DDM",
+    "description": "From line of inquiry to argument",
+    "link": "#",
+    "category": "assessment",
+    "ready": false,
+    "previewImage": "",
+    "youtubeId": null
+  }
+]
