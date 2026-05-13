@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Lazily Efficient IB English Teacher</title>
+    <meta name="description" content="The Lazily Efficient IB English Teacher – Free IB English resources for curriculum planning, annotation, deconstruction, and essay writing.">
+    <meta property="og:title" content="The Lazily Efficient IB English Teacher">
+    <meta property="og:description" content="Free IB English resources – curriculum planning, annotation rubrics, deconstruction frames, essay scaffolds. All connected in one system.">
+    <meta property="og:url" content="https://lazilyefficientibenglish.com/">
+    <meta property="og:type" content="website">
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,7 +68,6 @@
         .btn-primary:hover { background: #A00000; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
         .btn-large { padding: 1rem 2.5rem; font-size: 1.1rem; }
 
-        /* Back to top */
         #back-to-top { position: fixed; bottom: 2rem; right: 2rem; width: 44px; height: 44px; border-radius: 50%; background: var(--accent); color: #FFFFFF; border: none; font-size: 1.5rem; cursor: pointer; opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 99; box-shadow: 0 2px 8px rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; }
         #back-to-top.show { opacity: 1; visibility: visible; }
         #back-to-top:hover { background: #A00000; transform: translateY(-2px); }
@@ -73,9 +77,12 @@
         .footer-col h4 { font-family: 'Montserrat', sans-serif; font-size: 0.9rem; margin-bottom: var(--spacing-sm); color: var(--accent); }
         .footer-col a { display: block; color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.3rem; border-bottom: none; }
         .footer-col a:hover { color: var(--text-primary); }
-        .footer-social { display: flex; gap: var(--spacing-sm); }
-        .footer-social a { font-size: 1.2rem; border-bottom: none; }
         .footer-bottom { max-width: var(--max-width); margin: 0 auto; text-align: center; color: var(--text-secondary); font-size: 0.85rem; padding-top: var(--spacing-md); border-top: 1px solid rgba(253,252,249,0.08); }
+
+        .signup-box { background: rgba(253,252,249,0.03); border: 1px solid rgba(253,252,249,0.08); padding: var(--spacing-md); border-radius: 4px; text-align: center; max-width: 400px; margin: var(--spacing-lg) auto; }
+        .signup-box input { width: 100%; padding: 0.6rem; background: rgba(253,252,249,0.05); border: 1px solid rgba(253,252,249,0.15); border-radius: 4px; color: var(--text-primary); font-family: 'Inter', sans-serif; margin-bottom: var(--spacing-sm); }
+        .signup-box input:focus { outline: none; border-color: var(--accent); }
+
         h1, h2 { text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
 
         @media (max-width: 768px) {
@@ -87,19 +94,19 @@
             .circle-node { position: relative; left: auto; top: auto; }
             .circle-diagram svg { display: none; }
         }
+
+        @media print { body { background: #fff; color: #000; } nav, footer, .btn, #back-to-top, .search-bar, .filter-bar, .signup-box { display: none; } .card { border: 1px solid #ccc; box-shadow: none; break-inside: avoid; } }
     </style>
 </head>
 <body>
     <nav>
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <img src="images/logo.png" alt="Lazily Efficient IB English" class="nav-logo-img">
-                Lazily Efficient IB English
-            </a>
+            <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Lazily Efficient IB English" class="nav-logo-img">Lazily Efficient IB English</a>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="department.html">Department</a></li>
                 <li><a href="skills.html">Skills</a></li>
+                <li><a href="resources.html">All Resources</a></li>
                 <li><a href="assessment.html">Assessment</a></li>
                 <li><a href="exercises.html">Exercises</a></li>
                 <li><a href="youtube.html">YouTube</a></li>
@@ -156,15 +163,16 @@
 
     <footer>
         <div class="footer-grid">
-            <div class="footer-col">
-                <h4>Resources</h4>
-                <a href="department.html">Department</a><a href="skills.html">Skills</a><a href="assessment.html">Assessment</a><a href="exercises.html">Exercises</a>
-            </div>
-            <div class="footer-col">
-                <h4>Connect</h4>
-                <a href="https://youtube.com/@thelazyefficientibenglishtea" target="_blank">YouTube</a>
-                <a href="https://www.linkedin.com/in/dilan-abeynarayana-84aa10a1/" target="_blank">LinkedIn</a>
-            </div>
+            <div class="footer-col"><h4>Resources</h4><a href="department.html">Department</a><a href="skills.html">Skills</a><a href="assessment.html">Assessment</a><a href="exercises.html">Exercises</a></div>
+            <div class="footer-col"><h4>Connect</h4><a href="https://youtube.com/@thelazyefficientibenglishtea" target="_blank">YouTube</a><a href="https://www.linkedin.com/in/dilan-abeynarayana-84aa10a1/" target="_blank">LinkedIn</a></div>
+        </div>
+        <div class="signup-box">
+            <h4 style="color:var(--accent);margin-bottom:var(--spacing-sm);">Stay updated</h4>
+            <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:var(--spacing-sm);">New resources, straight to your inbox.</p>
+            <form action="https://formspree.io/f/your-form-id" method="POST">
+                <input type="email" name="email" placeholder="Your email" required>
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
         </div>
         <div class="footer-bottom"><p>&copy; 2026 The Lazily Efficient IB English Teacher. All rights reserved.</p></div>
     </footer>
@@ -172,10 +180,9 @@
     <button id="back-to-top" title="Back to top">↑</button>
 
     <script>
-        // Back to top
-        const btn = document.getElementById('back-to-top');
-        window.addEventListener('scroll', () => { btn.classList.toggle('show', window.scrollY > 300); });
-        btn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+        const btt = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => { btt.classList.toggle('show', window.scrollY > 300); });
+        btt.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
     </script>
 </body>
 </html>

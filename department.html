@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Department Resources – The Lazily Efficient IB English Teacher</title>
+    <meta name="description" content="Department-level IB English resources – curriculum audits, the Eight Gates, Analytical Continuum.">
+    <meta property="og:title" content="Department Resources – The Lazily Efficient IB English Teacher">
+    <meta property="og:description" content="Curriculum design, unit audits, and department-level planning tools for IB English.">
+    <meta property="og:url" content="https://lazilyefficientibenglish.com/department.html">
+    <meta property="og:type" content="website">
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,12 +16,8 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --bg-primary: #1E2E3E;
-            --text-primary: #FDFCF9;
-            --text-secondary: #B6BCC4;
-            --accent: #CC0000;
-            --spacing-sm: 1rem; --spacing-md: 2rem; --spacing-lg: 3rem; --spacing-xl: 4rem;
-            --max-width: 1200px;
+            --bg-primary: #1E2E3E; --text-primary: #FDFCF9; --text-secondary: #B6BCC4; --accent: #CC0000;
+            --spacing-sm: 1rem; --spacing-md: 2rem; --spacing-lg: 3rem; --spacing-xl: 4rem; --max-width: 1200px;
             --thumb-height: 280px;
         }
         body { background-color: var(--bg-primary); color: var(--text-primary); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.6; }
@@ -51,7 +52,6 @@
         .thumb-zoom img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; transform-origin: 0 0; transition: transform 0.1s ease; }
         .thumb-zoom:hover img { transform: scale(2.2); }
 
-        /* Lightbox */
         .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 200; align-items: center; justify-content: center; cursor: pointer; }
         .lightbox.show { display: flex; }
         .lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; border-radius: 4px; box-shadow: 0 4px 24px rgba(0,0,0,0.6); }
@@ -66,6 +66,11 @@
         .footer-col a { display: block; color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.3rem; border-bottom: none; }
         .footer-col a:hover { color: var(--text-primary); }
         .footer-bottom { max-width: var(--max-width); margin: 0 auto; text-align: center; color: var(--text-secondary); font-size: 0.85rem; padding-top: var(--spacing-md); border-top: 1px solid rgba(253,252,249,0.08); }
+
+        .signup-box { background: rgba(253,252,249,0.03); border: 1px solid rgba(253,252,249,0.08); padding: var(--spacing-md); border-radius: 4px; text-align: center; max-width: 400px; margin: var(--spacing-lg) auto; }
+        .signup-box input { width: 100%; padding: 0.6rem; background: rgba(253,252,249,0.05); border: 1px solid rgba(253,252,249,0.15); border-radius: 4px; color: var(--text-primary); font-family: 'Inter', sans-serif; margin-bottom: var(--spacing-sm); }
+        .signup-box input:focus { outline: none; border-color: var(--accent); }
+
         h1, h2 { text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
 
         @media (max-width: 768px) {
@@ -76,6 +81,8 @@
             .cards-grid { grid-template-columns: 1fr; }
             :root { --thumb-height: 220px; }
         }
+
+        @media print { body { background: #fff; color: #000; } nav, footer, .btn, #back-to-top, .signup-box { display: none; } .card { border: 1px solid #ccc; box-shadow: none; break-inside: avoid; } }
     </style>
 </head>
 <body>
@@ -86,6 +93,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="department.html" class="active">Department</a></li>
                 <li><a href="skills.html">Skills</a></li>
+                <li><a href="resources.html">All Resources</a></li>
                 <li><a href="assessment.html">Assessment</a></li>
                 <li><a href="exercises.html">Exercises</a></li>
                 <li><a href="youtube.html">YouTube</a></li>
@@ -103,6 +111,14 @@
         <div class="footer-grid">
             <div class="footer-col"><h4>Resources</h4><a href="department.html">Department</a><a href="skills.html">Skills</a><a href="assessment.html">Assessment</a><a href="exercises.html">Exercises</a></div>
             <div class="footer-col"><h4>Connect</h4><a href="https://youtube.com/@thelazyefficientibenglishtea" target="_blank">YouTube</a><a href="https://www.linkedin.com/in/dilan-abeynarayana-84aa10a1/" target="_blank">LinkedIn</a></div>
+        </div>
+        <div class="signup-box">
+            <h4 style="color:var(--accent);margin-bottom:var(--spacing-sm);">Stay updated</h4>
+            <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:var(--spacing-sm);">New resources, straight to your inbox.</p>
+            <form action="https://formspree.io/f/your-form-id" method="POST">
+                <input type="email" name="email" placeholder="Your email" required>
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
         </div>
         <div class="footer-bottom"><p>&copy; 2026 The Lazily Efficient IB English Teacher. All rights reserved.</p></div>
     </footer>
@@ -129,7 +145,6 @@
             html += '</div>'; container.innerHTML = html;
         }
 
-        // Mouse zoom
         document.addEventListener('mousemove', function(e) {
             if (e.target.closest('.thumb-zoom')) {
                 const zoom = e.target.closest('.thumb-zoom');
@@ -139,7 +154,6 @@
             }
         });
 
-        // Lightbox
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
         document.addEventListener('click', function(e) {
@@ -149,10 +163,9 @@
         lightbox.addEventListener('click', () => { lightbox.classList.remove('show'); });
         document.addEventListener('keydown', e => { if (e.key === 'Escape') lightbox.classList.remove('show'); });
 
-        // Back to top
-        const btn = document.getElementById('back-to-top');
-        window.addEventListener('scroll', () => { btn.classList.toggle('show', window.scrollY > 300); });
-        btn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+        const btt = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => { btt.classList.toggle('show', window.scrollY > 300); });
+        btt.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
     </script>
 </body>
 </html>
