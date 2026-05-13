@@ -39,6 +39,24 @@
         .content-section { margin-bottom: var(--spacing-xl); }
         .section-title { margin-bottom: var(--spacing-lg); }
         .section-description { color: var(--text-secondary); font-size: 1.1rem; max-width: 800px; margin-bottom: var(--spacing-lg); }
+
+        /* Feature grid for the three pillars */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+        }
+        .feature-item {
+            background: rgba(253,252,249,0.03);
+            border: 1px solid rgba(253,252,249,0.08);
+            padding: var(--spacing-md);
+            border-radius: 4px;
+        }
+        .feature-item h3 { font-size: 1.2rem; margin-bottom: var(--spacing-sm); }
+        .feature-item h3 span { color: var(--accent); margin-right: 0.5rem; }
+        .feature-item p { color: var(--text-secondary); font-size: 0.95rem; }
+
         .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-md); margin-top: var(--spacing-lg); }
         .card { background-color: rgba(253,252,249,0.03); border: 1px solid rgba(253,252,249,0.08); padding: var(--spacing-md); border-radius: 4px; transition: border-color 0.2s ease; }
         .card:hover { border-color: rgba(253,252,249,0.15); }
@@ -58,6 +76,8 @@
         footer { background: rgba(0,0,0,0.2); border-top: 1px solid rgba(253,252,249,0.1); }
         .card { background: linear-gradient(135deg, rgba(253,252,249,0.04) 0%, rgba(253,252,249,0.01) 100%); }
         .card:hover { transform: translateY(-3px); border-color: rgba(253,252,249,0.25); }
+        .feature-item { box-shadow: 0 2px 6px rgba(0,0,0,0.3); transition: transform 0.2s ease; }
+        .feature-item:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
         h1, h2 { text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
 
         @media (max-width: 768px) {
@@ -87,29 +107,67 @@
 
     <main>
         <div class="container">
+            <!-- HERO: Conceptual anchor -->
             <section class="content-section">
                 <h1>The Lazily Efficient IB English Teacher</h1>
                 <p class="section-description">Biggest impact. Fewest moving parts.</p>
             </section>
+
+            <!-- THE THREE PILLARS: what students must ADD -->
             <section class="content-section">
-                <p class="section-description">I'm Dilan Abeynarayana. I've been teaching since 2009, in the IB since 2013, and examining since 2016. I'm currently a Team Leader for Paper 1 and the HL Essay. I teach IB English teachers how to build systems that save them time—not by cutting corners, but by front‑loading rigorous design so daily teaching runs itself.</p>
+                <h2 class="section-title">Every IB Response Does Three Things</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <h3><span>1.</span> Add Implications</h3>
+                        <p>Students don't just name a theme. They break it into stages: what kind, why it matters, what the writer is claiming. The <strong>Stages of IDEAs</strong> and <strong>DICE/PACT</strong> give them that structure.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3><span>2.</span> Add Connotations</h3>
+                        <p>Not "vivid imagery." Not "creates interest." Students deconstruct specific words, visuals, and elements to show what they connote — and link that to an idea. The <strong>3‑Step Technique</strong> and <strong>Ways to Phrase Deconstructions</strong> make that automatic.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3><span>3.</span> Add an Argument</h3>
+                        <p>A real thesis, not "this essay will explore." <strong>DDM</strong> — Deconstruct, Dichotomise, Merge — turns any question into a precise argument. The Stages of IDEAs then breaks that argument into paragraphs.</p>
+                    </div>
+                </div>
             </section>
+
+            <!-- HOW THE RESOURCES CONNECT -->
             <section class="content-section">
-                <h2 class="section-title">Explore Resources</h2>
+                <h2 class="section-title">These Aren't Just Posters. They're a System.</h2>
+                <p class="section-description">
+                    Every resource on this site is designed to <strong>link to the others</strong>. Nothing is standalone. The Annotation Rubric feeds the TEEAL paragraph. The Stages of IDEAs feed the Elaboration, which feeds the feedback you give. In class, they become shorthand: "What stage is that idea?" "Is that a MUSE‑level deconstruction?" Over time, they spread across year levels and languages — a single, coherent system that students internalise.
+                </p>
+                <p class="section-description">
+                    These are lived documents. They're on the classroom wall, in the feedback cycle, and in the Google Docs students use every day. And if you're leading a department, the <strong>Eight Gates</strong> and the <strong>Analytical Continuum</strong> extend that coherence across your whole team.
+                </p>
+            </section>
+
+            <!-- WHO THIS IS FOR (brief bio) -->
+            <section class="content-section">
+                <h2 class="section-title">Who Built This</h2>
+                <p class="section-description">
+                    I'm Dilan Abeynarayana. Team Leader for Paper 1 and the HL Essay, Subject Lead for a three‑language L&L department, and IB examiner since 2016. I've marked thousands of essays and seen the same problems repeat. This site collects the systems I built to fix them. <a href="about.html">More about me →</a>
+                </p>
+            </section>
+
+            <!-- RESOURCE CARDS -->
+            <section class="content-section">
+                <h2 class="section-title">Start Here</h2>
                 <div class="cards-grid">
                     <article class="card">
                         <h3 class="card-title">Department</h3>
-                        <p class="card-description">Unit & curriculum planning tools.</p>
+                        <p class="card-description">Unit planning, curriculum audits, the Eight Gates, and the Analytical Continuum.</p>
                         <a href="department.html" class="btn btn-primary">Explore Department Resources</a>
                     </article>
                     <article class="card">
                         <h3 class="card-title">Skills</h3>
-                        <p class="card-description">Annotation, elaboration, deconstruction.</p>
+                        <p class="card-description">Annotation, elaboration, deconstruction — every resource for Criterion A and B.</p>
                         <a href="skills.html" class="btn btn-primary">Explore Skills Resources</a>
                     </article>
                     <article class="card">
                         <h3 class="card-title">Assessment</h3>
-                        <p class="card-description">Paper 1, Paper 2, IO, HL Essay, EE.</p>
+                        <p class="card-description">Scaffolds for Paper 1, Paper 2, the IO, and the HL Essay — all built on the same system.</p>
                         <a href="assessment.html" class="btn btn-primary">Explore Assessment Resources</a>
                     </article>
                 </div>
