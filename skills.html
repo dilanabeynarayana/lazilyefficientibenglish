@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skills Resources – The Lazily Efficient IB English Teacher</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
@@ -15,10 +15,7 @@
             --text-primary: #FDFCF9;
             --text-secondary: #B6BCC4;
             --accent: #CC0000;
-            --spacing-sm: 1rem;
-            --spacing-md: 2rem;
-            --spacing-lg: 3rem;
-            --spacing-xl: 4rem;
+            --spacing-sm: 1rem; --spacing-md: 2rem; --spacing-lg: 3rem; --spacing-xl: 4rem;
             --max-width: 1200px;
             --thumb-height: 280px;
         }
@@ -26,67 +23,36 @@
         h1, h2, h3 { font-family: 'Montserrat', sans-serif; font-weight: 600; line-height: 1.3; margin-bottom: var(--spacing-sm); }
         h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: var(--spacing-md); }
         h2 { font-size: 2rem; margin-bottom: var(--spacing-md); }
-        h3 { font-size: 1.5rem; }
         p { margin-bottom: var(--spacing-sm); }
         a { color: var(--text-primary); text-decoration: none; border-bottom: 2px solid transparent; transition: border-color 0.2s ease; }
         a:hover { border-bottom-color: var(--accent); }
         nav { background-color: var(--bg-primary); border-bottom: 1px solid rgba(253,252,249,0.1); position: sticky; top: 0; z-index: 100; }
         .nav-container { max-width: var(--max-width); margin: 0 auto; padding: var(--spacing-sm) var(--spacing-md); display: flex; justify-content: space-between; align-items: center; }
-        .nav-logo { font-family: 'Montserrat', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--text-primary); border-bottom: none; }
+        .nav-logo { font-family: 'Montserrat', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--text-primary); border-bottom: none; display: flex; align-items: center; }
         .nav-logo:hover { border-bottom: none; color: var(--accent); }
+        .nav-logo-img { height: 32px; width: auto; margin-right: 0.5rem; border-bottom: none; vertical-align: middle; }
         .nav-links { display: flex; gap: var(--spacing-md); list-style: none; }
         .nav-links a { font-weight: 500; font-size: 0.95rem; letter-spacing: 0.02em; }
         .container { max-width: var(--max-width); margin: 0 auto; padding: var(--spacing-xl) var(--spacing-md); }
         .content-section { margin-bottom: var(--spacing-xl); }
-        .section-title { margin-bottom: var(--spacing-lg); }
         .section-description { color: var(--text-secondary); font-size: 1.1rem; max-width: 800px; margin-bottom: var(--spacing-lg); }
         .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--spacing-lg); margin-top: var(--spacing-lg); }
-        .card { background-color: rgba(253,252,249,0.03); border: 1px solid rgba(253,252,249,0.08); padding: var(--spacing-md); border-radius: 4px; transition: border-color 0.2s ease; }
-        .card:hover { border-color: rgba(253,252,249,0.15); }
+        .card { background: linear-gradient(135deg, rgba(253,252,249,0.04) 0%, rgba(253,252,249,0.01) 100%); border: 1px solid rgba(253,252,249,0.08); padding: var(--spacing-md); border-radius: 4px; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.3); }
+        .card:hover { border-color: rgba(253,252,249,0.25); transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
         .card-title { font-family: 'Montserrat', sans-serif; font-size: 1.25rem; font-weight: 600; margin-bottom: var(--spacing-sm); }
         .card-description { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: var(--spacing-md); }
-        .btn { display: inline-block; padding: 0.75rem 1.5rem; font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 500; text-align: center; cursor: pointer; border: none; border-radius: 4px; transition: background-color 0.2s ease; letter-spacing: 0.02em; }
-        .btn-primary { background-color: var(--accent); color: #FFFFFF; border-bottom: none; }
-        .btn-primary:hover { background-color: #A00000; border-bottom: none; }
-        footer { border-top: 1px solid rgba(253,252,249,0.1); padding: var(--spacing-lg) var(--spacing-md); margin-top: var(--spacing-xl); }
+        .btn { display: inline-block; padding: 0.75rem 1.5rem; font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 500; text-align: center; cursor: pointer; border: none; border-radius: 4px; transition: all 0.2s ease; letter-spacing: 0.02em; box-shadow: 0 2px 6px rgba(0,0,0,0.3); }
+        .btn-primary { background: linear-gradient(135deg, #CC0000 0%, #A00000 100%); color: #FFFFFF; border: 1px solid rgba(255,255,255,0.15); }
+        .btn-primary:hover { background: #A00000; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+        footer { background: rgba(0,0,0,0.2); border-top: 1px solid rgba(253,252,249,0.1); padding: var(--spacing-lg) var(--spacing-md); margin-top: var(--spacing-xl); }
         .footer-content { max-width: var(--max-width); margin: 0 auto; text-align: center; color: var(--text-secondary); font-size: 0.9rem; }
-
-        /* mouse‑follow zoom */
-        .thumb-zoom {
-            position: relative;
-            width: 100%;
-            height: var(--thumb-height);
-            overflow: hidden;
-            cursor: zoom-in;
-            background: rgba(0,0,0,0.15);
-            border-radius: 4px;
-            margin-bottom: var(--spacing-sm);
-        }
-        .thumb-zoom img {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            object-fit: contain;
-            transform-origin: 0 0;
-            transition: transform 0.1s ease;
-        }
+        .thumb-zoom { position: relative; width: 100%; height: var(--thumb-height); overflow: hidden; cursor: zoom-in; background: rgba(0,0,0,0.15); border-radius: 4px; margin-bottom: var(--spacing-sm); }
+        .thumb-zoom img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; transform-origin: 0 0; transition: transform 0.1s ease; }
         .thumb-zoom:hover img { transform: scale(2.2); }
-
-        /* depth layers */
-        .card, .btn { box-shadow: 0 2px 6px rgba(0,0,0,0.3); transition: transform 0.2s ease, box-shadow 0.2s ease; }
-        .card:hover, .btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
-        .btn-primary { background: linear-gradient(135deg, #CC0000 0%, #A00000 100%); border: 1px solid rgba(255,255,255,0.15); }
-        nav { border-bottom: 1px solid rgba(253,252,249,0.15); }
-        footer { background: rgba(0,0,0,0.2); border-top: 1px solid rgba(253,252,249,0.1); }
-        .card { background: linear-gradient(135deg, rgba(253,252,249,0.04) 0%, rgba(253,252,249,0.01) 100%); }
-        .card:hover { transform: translateY(-3px); border-color: rgba(253,252,249,0.25); }
         h1, h2 { text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
-
-        .video-wrapper { position: relative; width: 100%; padding-top: 56.25%; margin-bottom: var(--spacing-sm); }
-        .card-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 4px; }
         @media (max-width: 768px) {
-            h1 { font-size: 2rem; } h2 { font-size: 1.5rem; } h3 { font-size: 1.25rem; }
-            .nav-container { flex-direction: column; gap: var(--spacing-sm); padding: var(--spacing-sm); }
+            h1 { font-size: 2rem; } h2 { font-size: 1.5rem; }
+            .nav-container { flex-direction: column; padding: var(--spacing-sm); }
             .nav-links { gap: var(--spacing-sm); flex-wrap: wrap; justify-content: center; }
             .container { padding: var(--spacing-md) var(--spacing-sm); }
             .cards-grid { grid-template-columns: 1fr; }
@@ -98,9 +64,9 @@
     <nav>
         <div class="nav-container">
             <a href="index.html" class="nav-logo">
-    <img src="images/logo.png" alt="Lazily Efficient IB English" class="nav-logo-img">
-    Lazily Efficient IB English
-</a>
+                <img src="images/logo.png" alt="Lazily Efficient IB English" class="nav-logo-img">
+                Lazily Efficient IB English
+            </a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="department.html">Department</a></li>
@@ -143,15 +109,9 @@
         } else {
             let html = '<div class="cards-grid">';
             skillsResources.forEach(resource => {
-                let videoHtml = resource.youtubeId ? `<div class="video-wrapper"><iframe class="card-video" src="https://www.youtube.com/embed/${resource.youtubeId}" allowfullscreen></iframe></div>` : '';
                 let imageHtml = resource.previewImage ? `<div class="thumb-zoom"><img src="${resource.previewImage}" alt="${resource.title}"></div>` : '';
-                let buttonHtml;
-                if (resource.ready && resource.link !== '#') {
-                    buttonHtml = `<a href="${resource.link}" class="btn btn-primary" target="_blank">Download</a>`;
-                } else {
-                    buttonHtml = `<span class="btn btn-primary" style="opacity:0.5;cursor:default;">Coming Soon</span>`;
-                }
-                html += `<article class="card">${videoHtml}${imageHtml}<h3 class="card-title">${resource.title}</h3><p class="card-description">${resource.description}</p>${buttonHtml}</article>`;
+                let buttonHtml = (resource.ready && resource.link !== '#') ? `<a href="${resource.link}" class="btn btn-primary" target="_blank">Download</a>` : `<span class="btn btn-primary" style="opacity:0.5;cursor:default;">Coming Soon</span>`;
+                html += `<article class="card">${imageHtml}<h3 class="card-title">${resource.title}</h3><p class="card-description">${resource.description}</p>${buttonHtml}</article>`;
             });
             html += '</div>';
             container.innerHTML = html;
@@ -161,9 +121,7 @@
                 const zoom = e.target.closest('.thumb-zoom');
                 const img = zoom.querySelector('img');
                 const rect = zoom.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                img.style.transformOrigin = `${(x / rect.width) * 100}% ${(y / rect.height) * 100}%`;
+                img.style.transformOrigin = `${((e.clientX - rect.left) / rect.width) * 100}% ${((e.clientY - rect.top) / rect.height) * 100}%`;
             }
         });
     </script>

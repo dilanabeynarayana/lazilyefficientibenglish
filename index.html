@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Lazily Efficient IB English Teacher</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
@@ -58,13 +58,8 @@
         .connecting-line {
             stroke: var(--accent);
             stroke-width: 2;
-            opacity: 0.4;
-            transition: opacity 0.3s ease, stroke-width 0.3s ease;
-        }
-        .arrow-head {
-            fill: var(--accent);
-            opacity: 0.4;
-            transition: opacity 0.3s ease;
+            stroke-linecap: round;
+            opacity: 0.5;
         }
 
         .circle-node {
@@ -89,7 +84,6 @@
         .circle-node .desc {
             font-size: 0.75rem; color: var(--text-secondary); line-height: 1.3; border-bottom: none;
         }
-
         .circle-node:hover {
             transform: scale(1.08);
             border-color: var(--accent);
@@ -171,16 +165,19 @@
                 <h2 class="section-title">How Everything Connects</h2>
                 <div class="circle-diagram">
                     <svg viewBox="0 0 460 460">
-                        <line x1="230" y1="95" x2="325" y2="190" class="connecting-line"/>
-                        <polygon points="325,190 312,182 318,195" class="arrow-head"/>
-                        <line x1="360" y1="190" x2="305" y2="320" class="connecting-line"/>
-                        <polygon points="305,320 312,308 300,315" class="arrow-head"/>
-                        <line x1="295" y1="350" x2="165" y2="350" class="connecting-line"/>
-                        <polygon points="165,350 178,342 170,356" class="arrow-head"/>
-                        <line x1="135" y1="320" x2="105" y2="190" class="connecting-line"/>
-                        <polygon points="105,190 118,198 110,184" class="arrow-head"/>
-                        <line x1="135" y1="190" x2="195" y2="95" class="connecting-line"/>
-                        <polygon points="195,95 190,108 205,100" class="arrow-head"/>
+                        <defs>
+                            <marker id="arrow" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+                                <path d="M0,0 L6,3 L0,6 Z" fill="#CC0000" opacity="0.5"/>
+                            </marker>
+                            <marker id="arrow-end" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+                                <path d="M6,0 L0,3 L6,6 Z" fill="#CC0000" opacity="0.5"/>
+                            </marker>
+                        </defs>
+                        <line x1="245" y1="95" x2="310" y2="175" class="connecting-line" marker-start="url(#arrow)" marker-end="url(#arrow-end)"/>
+                        <line x1="345" y1="190" x2="320" y2="305" class="connecting-line" marker-start="url(#arrow)" marker-end="url(#arrow-end)"/>
+                        <line x1="280" y1="340" x2="180" y2="340" class="connecting-line" marker-start="url(#arrow)" marker-end="url(#arrow-end)"/>
+                        <line x1="150" y1="305" x2="120" y2="190" class="connecting-line" marker-start="url(#arrow)" marker-end="url(#arrow-end)"/>
+                        <line x1="135" y1="185" x2="185" y2="110" class="connecting-line" marker-start="url(#arrow)" marker-end="url(#arrow-end)"/>
                     </svg>
 
                     <a href="skills.html" class="circle-node pos-skills">
