@@ -15,11 +15,11 @@
             --text-primary: #FDFCF9;
             --text-secondary: #B6BCC4;
             --accent: #CC0000;
-            --spacing-sm: 1rem;
-            --spacing-md: 2rem;
-            --spacing-lg: 3rem;
-            --spacing-xl: 4rem;
+            --spacing-sm: 1rem; --spacing-md: 2rem; --spacing-lg: 3rem; --spacing-xl: 4rem;
             --max-width: 1200px;
+            --diagram-size: 460px;
+            --node-size: 120px;
+            --radius: 130px;
         }
         body { background-color: var(--bg-primary); color: var(--text-primary); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.6; }
         h1, h2, h3 { font-family: 'Montserrat', sans-serif; font-weight: 600; line-height: 1.3; margin-bottom: var(--spacing-sm); }
@@ -38,7 +38,7 @@
         .container { max-width: var(--max-width); margin: 0 auto; padding: var(--spacing-xl) var(--spacing-md); }
         .content-section { margin-bottom: var(--spacing-xl); }
         .section-title { margin-bottom: var(--spacing-lg); }
-        .section-description { color: var(--text-secondary); font-size: 1.1rem; max-width: 800px; margin-bottom: var(--spacing-lg); }
+        .section-description { color: var(--text-secondary); font-size: 1.1rem; max-width: 800px; margin-left: auto; margin-right: auto; margin-bottom: var(--spacing-lg); text-align: center; }
 
         /* three-pillar feature grid */
         .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--spacing-md); margin: var(--spacing-lg) 0; }
@@ -48,18 +48,17 @@
         .feature-item h3 span { color: var(--accent); margin-right: 0.5rem; }
         .feature-item p { color: var(--text-secondary); font-size: 0.95rem; }
 
-        /* Circular connection diagram */
+        /* Circular diagram */
         .circle-diagram {
             position: relative;
-            width: 100%;
-            max-width: 500px;
-            height: 500px;
+            width: var(--diagram-size);
+            height: var(--diagram-size);
             margin: var(--spacing-lg) auto;
         }
         .circle-node {
             position: absolute;
-            width: 130px;
-            height: 130px;
+            width: var(--node-size);
+            height: var(--node-size);
             border-radius: 50%;
             background: rgba(253,252,249,0.03);
             border: 2px solid rgba(253,252,249,0.08);
@@ -72,7 +71,8 @@
             box-shadow: 0 2px 6px rgba(0,0,0,0.3);
             cursor: pointer;
             text-decoration: none;
-            padding: 1rem;
+            padding: 0.5rem;
+            z-index: 2;
         }
         .circle-node:hover {
             transform: scale(1.08);
@@ -82,67 +82,45 @@
         .circle-node .label {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: var(--accent);
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.2rem;
             border-bottom: none;
         }
         .circle-node .desc {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             color: var(--text-secondary);
             line-height: 1.2;
             border-bottom: none;
         }
-        /* Node positions – top, right, bottom, left */
-        .node-top    { top: 0;   left: 50%; transform: translateX(-50%); }
-        .node-right  { top: 50%; right: 0;  transform: translateY(-50%); }
-        .node-bottom { bottom: 0; left: 50%; transform: translateX(-50%); }
-        .node-left   { top: 50%; left: 0;   transform: translateY(-50%); }
 
-        /* Arrows – using rotated squares */
-        .arrow {
+        /* Arrow segment */
+        .arrow-segment {
             position: absolute;
-            width: 0;
-            height: 0;
+            height: 2px;
+            background: var(--accent);
+            transform-origin: left center;
+            z-index: 1;
+            opacity: 0.7;
         }
-        .arrow::after {
+        .arrow-segment::after {
             content: '';
             position: absolute;
+            right: -1px;
+            top: -4px;
             width: 0;
             height: 0;
+            border-left: 8px solid var(--accent);
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
         }
-        /* Arrow from top to right */
-        .arrow-tr {
-            top: 65px;
-            right: 65px;
-            border-left: 20px solid var(--accent);
-            border-bottom: 20px solid transparent;
-            transform: rotate(45deg);
-        }
-        /* Arrow from right to bottom */
-        .arrow-rb {
-            bottom: 65px;
-            right: 65px;
-            border-left: 20px solid var(--accent);
-            border-top: 20px solid transparent;
-            transform: rotate(-45deg);
-        }
-        /* Arrow from bottom to left */
-        .arrow-bl {
-            bottom: 65px;
-            left: 65px;
-            border-left: 20px solid var(--accent);
-            border-bottom: 20px solid transparent;
-            transform: rotate(135deg);
-        }
-        /* Arrow from left to top */
-        .arrow-lt {
-            top: 65px;
-            left: 65px;
-            border-left: 20px solid var(--accent);
-            border-top: 20px solid transparent;
-            transform: rotate(-135deg);
-        }
+
+        /* Node positions (center of node) */
+        .pos-skills    { top: calc(250px - var(--radius) - var(--node-size)/2); left: calc(250px - var(--node-size)/2); }
+        .pos-dept      { top: calc(250px - var(--radius)*cos(72deg) - var(--node-size)/2); left: calc(250px + var(--radius)*sin(72deg) - var(--node-size)/2); }
+        .pos-assessment{ top: calc(250px - var(--radius)*cos(144deg) - var(--node-size)/2); left: calc(250px + var(--radius)*sin(144deg) - var(--node-size)/2); }
+        .pos-exercises { top: calc(250px - var(--radius)*cos(216deg) - var(--node-size)/2); left: calc(250px + var(--radius)*sin(216deg) - var(--node-size)/2); }
+        .pos-youtube   { top: calc(250px - var(--radius)*cos(288deg) - var(--node-size)/2); left: calc(250px + var(--radius)*sin(288deg) - var(--node-size)/2); }
 
         .btn { display: inline-block; padding: 0.75rem 1.5rem; font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 500; text-align: center; cursor: pointer; border: none; border-radius: 4px; transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; letter-spacing: 0.02em; box-shadow: 0 2px 6px rgba(0,0,0,0.3); }
         .btn-primary { background: linear-gradient(135deg, #CC0000 0%, #A00000 100%); color: #FFFFFF; border-bottom: none; border: 1px solid rgba(255,255,255,0.15); }
@@ -158,18 +136,10 @@
             .nav-links { gap: var(--spacing-sm); flex-wrap: wrap; justify-content: center; }
             .container { padding: var(--spacing-md) var(--spacing-sm); }
             .circle-diagram {
-                height: auto;
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: var(--spacing-md);
+                height: auto; display: flex; flex-wrap: wrap; justify-content: center; gap: var(--spacing-md);
             }
-            .circle-node {
-                position: static;
-                transform: none !important;
-                width: 120px; height: 120px;
-            }
-            .arrow { display: none; }
+            .circle-node { position: static; margin: 0; }
+            .arrow-segment { display: none; }
         }
     </style>
 </head>
@@ -199,7 +169,7 @@
 
             <!-- The Three Pillars -->
             <section class="content-section">
-                <h2 class="section-title">Every IB Response Needs To Do Three Things</h2>
+                <h2 class="section-title">Every IB Response Does Three Things</h2>
                 <div class="feature-grid">
                     <div class="feature-item">
                         <h3><span>1.</span> Add Implications</h3>
@@ -216,36 +186,43 @@
                 </div>
             </section>
 
-            <!-- How Everything Connects (CIRCULAR DIAGRAM) -->
+            <!-- How Everything Connects (CIRCULAR DIAGRAM with 5 nodes and clockwise arrows) -->
             <section class="content-section" style="text-align: center;">
                 <h2 class="section-title">How Everything Connects</h2>
                 <div class="circle-diagram">
-                    <!-- Top: Skills -->
-                    <a href="skills.html" class="circle-node node-top">
+                    <!-- Nodes -->
+                    <a href="skills.html" class="circle-node pos-skills">
                         <span class="label">Skills</span>
                         <span class="desc">Annotation, elaboration, deconstruction</span>
                     </a>
-                    <!-- Right: Department -->
-                    <a href="department.html" class="circle-node node-right">
+                    <a href="department.html" class="circle-node pos-dept">
                         <span class="label">Department</span>
                         <span class="desc">Curriculum design, Eight Gates</span>
                     </a>
-                    <!-- Bottom: Exercises -->
-                    <a href="exercises.html" class="circle-node node-bottom">
+                    <a href="assessment.html" class="circle-node pos-assessment">
+                        <span class="label">Assessment</span>
+                        <span class="desc">Paper 1, Paper 2, IO, HL Essay</span>
+                    </a>
+                    <a href="exercises.html" class="circle-node pos-exercises">
                         <span class="label">Exercises</span>
                         <span class="desc">Practice tasks, worked examples</span>
                     </a>
-                    <!-- Left: YouTube -->
-                    <a href="youtube.html" class="circle-node node-left">
+                    <a href="youtube.html" class="circle-node pos-youtube">
                         <span class="label">YouTube</span>
                         <span class="desc">Video walkthroughs</span>
                     </a>
 
-                    <!-- Arrows between circles -->
-                    <div class="arrow arrow-tr"></div>
-                    <div class="arrow arrow-rb"></div>
-                    <div class="arrow arrow-bl"></div>
-                    <div class="arrow arrow-lt"></div>
+                    <!-- Clockwise arrows (positions and rotations computed for radius=130, centre=230,230) -->
+                    <!-- Skills → Department: start (230,230-130=100) bottom of node, end (230+130*sin72=353.6, 230-130*cos72=189.8) top of dept -->
+                    <div class="arrow-segment" style="left:230px; top:165px; width:124px; transform:rotate(-17.9deg);"></div>
+                    <!-- Department → Assessment -->
+                    <div class="arrow-segment" style="left:353.6px; top:254.8px; width:115px; transform:rotate(48.6deg);"></div>
+                    <!-- Assessment → Exercises -->
+                    <div class="arrow-segment" style="left:291px; top:388px; width:117px; transform:rotate(113.4deg);"></div>
+                    <!-- Exercises → YouTube -->
+                    <div class="arrow-segment" style="left:138.4px; top:254.8px; width:119px; transform:rotate(167.1deg);"></div>
+                    <!-- YouTube → Skills -->
+                    <div class="arrow-segment" style="left:106.4px; top:189.8px; width:124px; transform:rotate(-139.1deg);"></div>
                 </div>
                 <p class="section-description" style="margin-top: var(--spacing-md);">
                     Every resource feeds the next. Walk into any classroom with the system already in your students' hands.
