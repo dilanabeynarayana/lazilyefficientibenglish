@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assessment Resources – The Lazily Efficient IB English Teacher</title>
-    <meta name="description" content="Paper 1, Paper 2, IO, and HL Essay scaffolds – all built on the same connected system for IB English.">
+    <meta name="description" content="Every scaffold and skill document for Paper 1, Paper 2, the IO, and the HL Essay – side by side and directly downloadable.">
     <meta property="og:title" content="Assessment Resources – The Lazily Efficient IB English Teacher">
-    <meta property="og:description" content="Scaffolds for Paper 1, Paper 2, the IO, and the HL Essay – all built on the Lazy Efficiency system.">
+    <meta property="og:description" content="All Paper 1, Paper 2, IO, and HL Essay resources in one view – download every document.">
     <meta property="og:url" content="https://lazilyefficientibenglish.com/assessment.html">
     <meta property="og:type" content="website">
     <link rel="icon" type="image/png" href="favicon.png">
@@ -17,21 +17,19 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --bg-primary: #1E2E3E; --text-primary: #FDFCF9; --text-secondary: #B6BCC4; --accent: #CC0000;
-            --spacing-sm: 1rem; --spacing-md: 2rem; --spacing-lg: 3rem; --spacing-xl: 4rem; --max-width: 1200px;
-            --thumb-height: 220px;
+            --spacing-sm: 1rem; --spacing-md: 2rem; --spacing-lg: 3rem; --spacing-xl: 4rem; --max-width: 1400px;
+            --thumb-height: 200px;
         }
         body { background-color: var(--bg-primary); color: var(--text-primary); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.6; }
         body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); opacity: 0.4; pointer-events: none; z-index: 0; }
         h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; font-weight: 600; line-height: 1.3; margin-bottom: var(--spacing-sm); position: relative; z-index: 1; }
         h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: var(--spacing-md); }
-        h2 { font-size: 2rem; margin-bottom: var(--spacing-md); color: var(--accent); }
-        h3 { font-size: 1.1rem; margin-bottom: var(--spacing-sm); }
-        h4 { font-size: 0.9rem; color: var(--accent); margin-bottom: var(--spacing-sm); }
+        h2 { font-size: 1.4rem; margin-bottom: var(--spacing-sm); color: var(--accent); text-align: center; }
         p { margin-bottom: var(--spacing-sm); position: relative; z-index: 1; }
         a { color: var(--text-primary); text-decoration: none; border-bottom: 2px solid transparent; transition: border-color 0.2s ease; }
         a:hover { border-bottom-color: var(--accent); }
         nav { background-color: var(--bg-primary); border-bottom: 1px solid rgba(253,252,249,0.1); position: sticky; top: 0; z-index: 100; }
-        .nav-container { max-width: var(--max-width); margin: 0 auto; padding: var(--spacing-sm) var(--spacing-md); display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 1; }
+        .nav-container { max-width: var(--max-width); margin: 0 auto; padding: var(--spacing-sm) var(--spacing-md); display: flex; justify-content: space-between; align-items: center; }
         .nav-logo { font-family: 'Montserrat', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--text-primary); border-bottom: none; display: flex; align-items: center; }
         .nav-logo:hover { border-bottom: none; color: var(--accent); }
         .nav-logo-img { height: 32px; width: auto; margin-right: 0.5rem; border-bottom: none; vertical-align: middle; }
@@ -42,57 +40,63 @@
         .content-section { margin-bottom: var(--spacing-xl); }
         .section-description { color: var(--text-secondary); font-size: 1.1rem; max-width: 800px; margin-bottom: var(--spacing-lg); }
 
-        /* Assessment section headings */
-        .assessment-section {
-            margin-bottom: var(--spacing-xl);
-        }
-        .assessment-section h2 {
-            border-bottom: 1px solid rgba(253,252,249,0.15);
-            padding-bottom: var(--spacing-sm);
-            margin-bottom: var(--spacing-md);
-        }
-
-        /* Cards grid for resources */
-        .cards-grid {
+        /* Four‑column grid for the whole page */
+        .assessment-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+        /* Column header row */
+        .col-header {
+            background: none;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: var(--spacing-sm);
+            text-align: center;
+        }
+        .col-header h2 {
+            margin-bottom: 0;
+            color: var(--accent);
+            font-size: 1.5rem;
         }
 
+        /* Individual resource card – all cards identical in structure */
         .card {
             background: linear-gradient(135deg, rgba(253,252,249,0.04) 0%, rgba(253,252,249,0.01) 100%);
             border: 1px solid rgba(253,252,249,0.08);
-            padding: var(--spacing-md);
             border-radius: 4px;
+            padding: var(--spacing-sm);
             transition: all 0.2s ease;
             box-shadow: 0 2px 6px rgba(0,0,0,0.3);
             display: flex;
             flex-direction: column;
+            min-height: 360px;  /* ensures uniform height even when empty */
         }
         .card:hover { border-color: rgba(253,252,249,0.2); transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
 
         .card-title {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             font-weight: 600;
-            margin-bottom: var(--spacing-sm);
+            margin-bottom: 0.5rem;
             color: var(--text-primary);
+            line-height: 1.3;
         }
         .card-desc {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             color: var(--text-secondary);
-            margin-bottom: var(--spacing-md);
+            margin-bottom: auto; /* push button to bottom */
             flex-grow: 1;
         }
 
-        /* Thumbnail zoom */
+        /* Thumbnail with zoom */
         .thumb-zoom {
             position: relative;
             width: 100%;
             height: var(--thumb-height);
             overflow: hidden;
             cursor: pointer;
-            background: rgba(0,0,0,0.15);
+            background: rgba(0,0,0,0.2);
             border-radius: 4px;
             margin-bottom: var(--spacing-sm);
         }
@@ -106,12 +110,20 @@
         }
         .thumb-zoom:hover img { transform: scale(2.2); }
 
+        /* Empty placeholder for missing resources */
+        .empty-cell {
+            min-height: 360px;
+            background: rgba(253,252,249,0.02);
+            border: 1px dashed rgba(253,252,249,0.05);
+            border-radius: 4px;
+        }
+
         /* Buttons */
         .btn {
             display: inline-block;
-            padding: 0.6rem 1.4rem;
+            padding: 0.5rem 1.2rem;
             font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 500;
             text-align: center;
             cursor: pointer;
@@ -119,9 +131,11 @@
             border-radius: 4px;
             transition: all 0.2s ease;
             letter-spacing: 0.02em;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
             text-decoration: none;
             color: #FFFFFF;
+            margin-top: var(--spacing-sm);
+            align-self: flex-start;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
         }
         .btn-download {
             background: linear-gradient(135deg, #CC0000 0%, #A00000 100%);
@@ -133,7 +147,7 @@
             border: 1px solid rgba(253,252,249,0.1);
             color: var(--text-secondary);
             cursor: default;
-            opacity: 0.6;
+            opacity: 0.7;
         }
 
         /* Lightbox */
@@ -158,16 +172,20 @@
 
         h1, h2 { text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
 
+        @media (max-width: 1200px) {
+            .assessment-grid { grid-template-columns: repeat(2, 1fr); }
+            .col-header h2 { font-size: 1.3rem; }
+        }
         @media (max-width: 768px) {
-            h1 { font-size: 2rem; } h2 { font-size: 1.5rem; }
+            h1 { font-size: 2rem; }
             .nav-container { flex-direction: column; padding: var(--spacing-sm); }
             .nav-links { gap: var(--spacing-sm); flex-wrap: wrap; justify-content: center; }
             .container { padding: var(--spacing-md) var(--spacing-sm); }
-            .cards-grid { grid-template-columns: 1fr; }
+            .assessment-grid { grid-template-columns: 1fr; }
+            .col-header { display: none; }
             :root { --thumb-height: 180px; }
         }
-
-        @media print { body { background: #fff; color: #000; } nav, footer, .btn, #back-to-top, .signup-box { display: none; } .card, .assessment-section { border: 1px solid #ccc; box-shadow: none; break-inside: avoid; } }
+        @media print { body { background: #fff; color: #000; } nav, footer, .btn, #back-to-top, .signup-box { display: none; } .card, .empty-cell { border: 1px solid #ccc; box-shadow: none; break-inside: avoid; } }
     </style>
 </head>
 <body>
@@ -191,10 +209,11 @@
         <div class="container">
             <section class="content-section">
                 <h1>Assessment Resources</h1>
-                <p class="section-description">Scaffolds and planners for Paper 1, Paper 2, the IO, and the HL Essay — each with the specific skills and tools you need.</p>
+                <p class="section-description">Every scaffold, planner, and deconstruction guide for Paper 1, Paper 2, the IO, and the HL Essay – aligned so you can see what each assessment uses.</p>
             </section>
 
-            <div id="assessment-sections"></div>
+            <!-- Grid container -->
+            <div class="assessment-grid" id="assessment-grid"></div>
         </div>
     </main>
 
@@ -218,217 +237,234 @@
     <div class="lightbox" id="lightbox"><img src="" alt="Preview" id="lightbox-img"></div>
 
     <script>
-        // Define assessment sections with resources
-        const sections = [
-            {
-                heading: "Individual Oral (IO)",
-                resources: [
-                    {
-                        title: "IO TEEAL Structure",
-                        desc: "Whole‑work evidence and structure for the Individual Oral",
-                        link: "https://drive.google.com/file/d/1KPZfLj9xRGSTMZC84VTb46PvK56UCCRZ/view?usp=drive_link",
-                        ready: true,
-                        previewImage: "images/IO.png"
-                    },
-                    {
-                        title: "Islands vs Plane Method",
-                        desc: "When to use each for whole‑work evidence",
-                        link: "#",
-                        ready: false,
-                        previewImage: null
-                    },
-                    {
-                        title: "Double Barrel GI Creation",
-                        desc: "Narrow, defensible Global Issue formulation",
-                        link: "#",
-                        ready: false,
-                        previewImage: null
-                    },
-                    {
-                        title: "Stages of IDEAs for Elaborations",
-                        desc: "Break down ideas into arguable stages",
-                        link: "https://drive.google.com/file/d/1m6GntEDnUTyYM9kVmlk9WKU9_WFrKUKK/view?usp=drive_link",
-                        ready: true,
-                        previewImage: "images/stages-elaborations.png"
-                    },
-                    {
-                        title: "Ways to Phrase Deconstructions",
-                        desc: "Sentence frames for Criterion B analysis",
-                        link: "https://drive.google.com/file/d/1yQmmMjGMfUzgnXUlUySdOIkquTxGeU2P/view?usp=drive_link",
-                        ready: true,
-                        previewImage: "images/ways-to-phrase.png"
-                    }
-                ]
+        // ========== Resource data ==========
+        const assessments = ['IO', 'Paper 1', 'Paper 2', 'HL Essay'];
+
+        // All resources keyed by resource type and assessment
+        const resourceData = {
+            'IO': {
+                'TEEAL Structure': {
+                    title: 'IO TEEAL Structure',
+                    desc: 'Whole‑work evidence and structure for the Individual Oral.',
+                    link: 'https://drive.google.com/file/d/1KPZfLj9xRGSTMZC84VTb46PvK56UCCRZ/view?usp=drive_link',
+                    ready: true,
+                    image: 'images/IO.png'   // actual filename uppercase
+                },
+                'Stages of IDEAs': {
+                    title: 'Stages of IDEAs for Elaborations',
+                    desc: 'Break down ideas into arguable stages.',
+                    link: 'https://drive.google.com/file/d/1m6GntEDnUTyYM9kVmlk9WKU9_WFrKUKK/view?usp=drive_link',
+                    ready: true,
+                    image: 'images/stages-elaborations.png'
+                },
+                'Ways to Phrase': {
+                    title: 'Ways to Phrase Deconstructions',
+                    desc: 'Sentence frames for Criterion B analysis.',
+                    link: 'https://drive.google.com/file/d/1yQmmMjGMfUzgnXUlUySdOIkquTxGeU2P/view?usp=drive_link',
+                    ready: true,
+                    image: 'images/ways-to-phrase.png'
+                },
+                'Islands vs Plane Method': {
+                    title: 'Islands vs Plane Method',
+                    desc: 'When to use each for whole‑work evidence.',
+                    link: '#',
+                    ready: false,
+                    image: null
+                },
+                'Double Barrel GI Creation': {
+                    title: 'Double Barrel GI Creation',
+                    desc: 'Narrow, defensible Global Issue formulation.',
+                    link: '#',
+                    ready: false,
+                    image: null
+                }
             },
-            {
-                heading: "Paper 1",
-                resources: [
-                    {
-                        title: "Paper 1 TEEAL Structure",
-                        desc: "One‑page visual scaffold for unseen text analysis",
-                        link: "https://drive.google.com/file/d/1zQxF-Bqmt7wSkc09i4M0g8HRUHrvS0xy/view?usp=drive_link",
-                        ready: true,
-                        previewImage: "images/paper1teeal.png"
-                    },
-                    {
-                        title: "Lazy Efficient Annotation Rubric",
-                        desc: "DICE/PACT + 3‑Step combined",
-                        link: "https://drive.google.com/file/d/13vrcE7muX5_fAtt3bMf7jNk_0cy3xIqT/view?usp=drive_link",
-                        ready: true,
-                        previewImage: "images/annotation-rubric.png"
-                    },
-                    {
-                        title: "DICE/PACT Annotation Guide",
-                        desc: "Data‑mine, infer, confirm, explain",
-                        link: "https://drive.google.com/file/d/1-lst07QjRILY3wfYDajeoPX6-gvtLvKe/view?usp=drive_link",
-                        ready: true,
-                        previewImage: "images/dice-pact.png"
-                    },
-                    {
-                        title: "Stages of IDEAs for Elaborations",
-                        desc: "Break down ideas into arguable stages",
-                        link: "https://drive.google.com/file/d/1m6GntEDnUTyYM9kVmlk9WKU9_WFrKUKK/view?usp=drive_link",
-                        ready: true,
-                        previewImage: "images/stages-elaborations.png"
-                    },
-                    {
-                        title: "TEEAL Example",
-                        desc: "Worked example of a full Paper 1 TEEAL essay",
-                        link: "#",
-                        ready: false,
-                        previewImage: null
-                    },
-                    {
-                        title: "Ways to Phrase Deconstructions",
-                        desc: "Sentence frames for Criterion B analysis",
-                        link: "https://drive.google.com/file/d/1yQmmMjGMfUzgnXUlUySdOIkquTxGeU2P/view?usp=drive_link",
-                        ready: true,
-                        previewImage: "images/ways-to-phrase.png"
-                    }
-                ]
+            'Paper 1': {
+                'TEEAL Structure': {
+                    title: 'Paper 1 TEEAL Structure',
+                    desc: 'One‑page visual scaffold for unseen text analysis.',
+                    link: 'https://drive.google.com/file/d/1zQxF-Bqmt7wSkc09i4M0g8HRUHrvS0xy/view?usp=drive_link',
+                    ready: true,
+                    image: 'images/paper1teeal.png'
+                },
+                'Annotation Rubric': {
+                    title: 'Lazy Efficient Annotation Rubric',
+                    desc: 'DICE/PACT + 3‑Step combined.',
+                    link: 'https://drive.google.com/file/d/13vrcE7muX5_fAtt3bMf7jNk_0cy3xIqT/view?usp=drive_link',
+                    ready: true,
+                    image: 'images/annotation-rubric.png'
+                },
+                'DICE/PACT': {
+                    title: 'DICE/PACT Annotation Guide',
+                    desc: 'Data‑mine, infer, confirm, explain.',
+                    link: 'https://drive.google.com/file/d/1-lst07QjRILY3wfYDajeoPX6-gvtLvKe/view?usp=drive_link',
+                    ready: true,
+                    image: 'images/dice-pact.png'
+                },
+                'Stages of IDEAs': {
+                    title: 'Stages of IDEAs for Elaborations',
+                    desc: 'Break down ideas into arguable stages.',
+                    link: 'https://drive.google.com/file/d/1m6GntEDnUTyYM9kVmlk9WKU9_WFrKUKK/view?usp=drive_link',
+                    ready: true,
+                    image: 'images/stages-elaborations.png'
+                },
+                'TEEAL Example': {
+                    title: 'TEEAL Example',
+                    desc: 'Worked example of a full Paper 1 TEEAL essay.',
+                    link: '#',
+                    ready: false,
+                    image: null
+                },
+                'Ways to Phrase': {
+                    title: 'Ways to Phrase Deconstructions',
+                    desc: 'Sentence frames for Criterion B analysis.',
+                    link: 'https://drive.google.com/file/d/1yQmmMjGMfUzgnXUlUySdOIkquTxGeU2P/view?usp=drive_link',
+                    ready: true,
+                    image: 'images/ways-to-phrase.png'
+                }
             },
-            {
-                heading: "Paper 2",
-                resources: [
-                    {
-                        title: "Paper 2 TEEAL Structure",
-                        desc: "Style 1,2,3 structures for comparative essays",
-                        link: "https://drive.google.com/file/d/1vpdQHhZiWwN7jZyUeRBwcRXvn5mwmKVq/view?usp=drive_link",
-                        ready: true,
-                        previewImage: "images/paper2teeal.png"
-                    },
-                    {
-                        title: "DDM: Deconstruct, Dichotomise, Merge",
-                        desc: "Build a real thesis from any Paper 2 question",
-                        link: "https://drive.google.com/file/d/1uZnE9OBmkgB4bxgqis9_CvzZVsRhtt7t/view?usp=drive_link",
-                        ready: true,
-                        previewImage: "images/ddm-stages.png"
-                    },
-                    {
-                        title: "Stages of IDEAs for Elaborations",
-                        desc: "Break down ideas into arguable stages",
-                        link: "https://drive.google.com/file/d/1m6GntEDnUTyYM9kVmlk9WKU9_WFrKUKK/view?usp=drive_link",
-                        ready: true,
-                        previewImage: "images/stages-elaborations.png"
-                    },
-                    {
-                        title: "Comparative Plane Method",
-                        desc: "Track Broader ACs across two texts",
-                        link: "#",
-                        ready: false,
-                        previewImage: null
-                    },
-                    {
-                        title: "TEEAL Example",
-                        desc: "Worked comparative essay example",
-                        link: "#",
-                        ready: false,
-                        previewImage: null
-                    },
-                    {
-                        title: "Yin Yang Cards",
-                        desc: "Direct comparative planning tool",
-                        link: "https://drive.google.com/file/d/14DEdHJY_m27jJvSNAukLXtiyadbi86N6/view?usp=drive_link",
-                        ready: true,
-                        previewImage: "images/yingyang.png"
-                    }
-                ]
+            'Paper 2': {
+                'TEEAL Structure': {
+                    title: 'Paper 2 TEEAL Structure',
+                    desc: 'Style 1,2,3 structures for comparative essays.',
+                    link: 'https://drive.google.com/file/d/1vpdQHhZiWwN7jZyUeRBwcRXvn5mwmKVq/view?usp=drive_link',
+                    ready: true,
+                    image: 'images/paper2teeal.png'
+                },
+                'DDM': {
+                    title: 'DDM: Deconstruct, Dichotomise, Merge',
+                    desc: 'Build a real thesis from any Paper 2 question.',
+                    link: 'https://drive.google.com/file/d/1uZnE9OBmkgB4bxgqis9_CvzZVsRhtt7t/view?usp=drive_link',
+                    ready: true,
+                    image: 'images/ddm-stages.png'
+                },
+                'Stages of IDEAs': {
+                    title: 'Stages of IDEAs for Elaborations',
+                    desc: 'Break down ideas into arguable stages.',
+                    link: 'https://drive.google.com/file/d/1m6GntEDnUTyYM9kVmlk9WKU9_WFrKUKK/view?usp=drive_link',
+                    ready: true,
+                    image: 'images/stages-elaborations.png'
+                },
+                'Comparative Plane Method': {
+                    title: 'Comparative Plane Method',
+                    desc: 'Track Broader ACs across two texts.',
+                    link: '#',
+                    ready: false,
+                    image: null
+                },
+                'TEEAL Example': {
+                    title: 'TEEAL Example',
+                    desc: 'Worked comparative essay example.',
+                    link: '#',
+                    ready: false,
+                    image: null
+                },
+                'Ying Yang Cards': {
+                    title: 'Yin Yang Cards',
+                    desc: 'Direct comparative planning tool.',
+                    link: 'https://drive.google.com/file/d/14DEdHJY_m27jJvSNAukLXtiyadbi86N6/view?usp=drive_link',
+                    ready: true,
+                    image: 'images/yingyang.png'
+                }
             },
-            {
-                heading: "HL Essay",
-                resources: [
-                    {
-                        title: "HL Essay TEEAL Structure",
-                        desc: "Essay scaffold tailored for the Higher Level Essay",
-                        link: "https://drive.google.com/file/d/1ZQtkA5OTG7f6OUHyG9RPOKaGjuvaDgYv/view?usp=drive_link",
-                        ready: true,
-                        previewImage: "images/hlessayteeal.png"
-                    },
-                    {
-                        title: "Plane & Island Method",
-                        desc: "Whole‑text analysis for the essay",
-                        link: "#",
-                        ready: false,
-                        previewImage: null
-                    },
-                    {
-                        title: "Stages of IDEAs for Elaborations",
-                        desc: "Break down ideas into arguable stages",
-                        link: "https://drive.google.com/file/d/1m6GntEDnUTyYM9kVmlk9WKU9_WFrKUKK/view?usp=drive_link",
-                        ready: true,
-                        previewImage: "images/stages-elaborations.png"
-                    },
-                    {
-                        title: "Ways to Phrase Deconstructions",
-                        desc: "Sentence frames for Criterion B analysis",
-                        link: "https://drive.google.com/file/d/1yQmmMjGMfUzgnXUlUySdOIkquTxGeU2P/view?usp=drive_link",
-                        ready: true,
-                        previewImage: "images/ways-to-phrase.png"
-                    }
-                ]
+            'HL Essay': {
+                'TEEAL Structure': {
+                    title: 'HL Essay TEEAL Structure',
+                    desc: 'Essay scaffold tailored for the Higher Level Essay.',
+                    link: 'https://drive.google.com/file/d/1ZQtkA5OTG7f6OUHyG9RPOKaGjuvaDgYv/view?usp=drive_link',
+                    ready: true,
+                    image: 'images/hlessayteeal.png'
+                },
+                'Plane and Island Method': {
+                    title: 'Plane & Island Method',
+                    desc: 'Whole‑text analysis for the essay.',
+                    link: '#',
+                    ready: false,
+                    image: null
+                },
+                'Stages of IDEAs': {
+                    title: 'Stages of IDEAs for Elaborations',
+                    desc: 'Break down ideas into arguable stages.',
+                    link: 'https://drive.google.com/file/d/1m6GntEDnUTyYM9kVmlk9WKU9_WFrKUKK/view?usp=drive_link',
+                    ready: true,
+                    image: 'images/stages-elaborations.png'
+                },
+                'Ways to Phrase': {
+                    title: 'Ways to Phrase Deconstructions',
+                    desc: 'Sentence frames for Criterion B analysis.',
+                    link: 'https://drive.google.com/file/d/1yQmmMjGMfUzgnXUlUySdOIkquTxGeU2P/view?usp=drive_link',
+                    ready: true,
+                    image: 'images/ways-to-phrase.png'
+                }
             }
+        };
+
+        // Ordered list of resource types (rows) – they will appear in this order
+        const resourceOrder = [
+            'TEEAL Structure',
+            'Annotation Rubric',
+            'DICE/PACT',
+            'DDM',
+            'Stages of IDEAs',
+            'Ways to Phrase',
+            'Comparative Plane Method',
+            'Islands vs Plane Method',
+            'Double Barrel GI Creation',
+            'Plane and Island Method',
+            'TEEAL Example',
+            'Ying Yang Cards'
         ];
 
-        const container = document.getElementById('assessment-sections');
+        // Build the grid
+        const grid = document.getElementById('assessment-grid');
 
-        // Render each section
-        sections.forEach(section => {
-            const sectionDiv = document.createElement('div');
-            sectionDiv.className = 'assessment-section';
-            sectionDiv.innerHTML = `<h2>${section.heading}</h2>`;
+        // 1. Add column headers as the first row (four cells)
+        const headerRow = document.createElement('div');
+        headerRow.style.display = 'contents'; // makes children behave as direct grid items
+        assessments.forEach(assessment => {
+            const header = document.createElement('div');
+            header.className = 'col-header';
+            header.innerHTML = `<h2>${assessment}</h2>`;
+            headerRow.appendChild(header);
+        });
+        grid.appendChild(headerRow);
 
-            const cardsGrid = document.createElement('div');
-            cardsGrid.className = 'cards-grid';
+        // 2. For each resource type, create a row with four cells
+        resourceOrder.forEach(type => {
+            // Create four cells (one per assessment)
+            assessments.forEach(assessment => {
+                const resource = resourceData[assessment] && resourceData[assessment][type];
+                if (resource) {
+                    // Build card
+                    const card = document.createElement('div');
+                    card.className = 'card';
 
-            section.resources.forEach(res => {
-                const card = document.createElement('div');
-                card.className = 'card';
+                    let thumbHtml = '';
+                    if (resource.image) {
+                        thumbHtml = `<div class="thumb-zoom" data-src="${resource.image}"><img src="${resource.image}" alt="${resource.title}"></div>`;
+                    }
 
-                // Thumbnail if available
-                let thumbHtml = '';
-                if (res.previewImage) {
-                    thumbHtml = `<div class="thumb-zoom" data-src="${res.previewImage}"><img src="${res.previewImage}" alt="${res.title}"></div>`;
+                    const btnHtml = resource.ready
+                        ? `<a href="${resource.link}" class="btn btn-download" target="_blank">Download</a>`
+                        : `<span class="btn btn-coming">Coming Soon</span>`;
+
+                    card.innerHTML = `
+                        ${thumbHtml}
+                        <div class="card-title">${resource.title}</div>
+                        <div class="card-desc">${resource.desc}</div>
+                        ${btnHtml}
+                    `;
+                    grid.appendChild(card);
+                } else {
+                    // Empty placeholder to keep the grid shape
+                    const placeholder = document.createElement('div');
+                    placeholder.className = 'empty-cell';
+                    grid.appendChild(placeholder);
                 }
-
-                // Button
-                const btnHtml = res.ready
-                    ? `<a href="${res.link}" class="btn btn-download" target="_blank">Download</a>`
-                    : `<span class="btn btn-coming">Coming Soon</span>`;
-
-                card.innerHTML = `
-                    ${thumbHtml}
-                    <h3 class="card-title">${res.title}</h3>
-                    <p class="card-desc">${res.desc}</p>
-                    ${btnHtml}
-                `;
-                cardsGrid.appendChild(card);
             });
-
-            sectionDiv.appendChild(cardsGrid);
-            container.appendChild(sectionDiv);
         });
 
-        // ---- Thumbnail zoom & lightbox (same as skills page) ----
+        // --- Thumbnail zoom and lightbox ---
         document.addEventListener('mousemove', function(e) {
             const thumb = e.target.closest('.thumb-zoom');
             if (thumb) {
