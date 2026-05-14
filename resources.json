@@ -100,17 +100,17 @@
   },
   {
     "title": "Paper 1: TEEAL Essay Structure",
-    "description": "One-page visual scaffold",
-    "link": "#",
+    "description": "One-page visual scaffold for unseen text analysis",
+    "link": "https://drive.google.com/file/d/1zQxF-Bqmt7wSkc09i4M0g8HRUHrvS0xy/view?usp=drive_link",
     "category": "assessment",
-    "ready": false,
-    "previewImage": "",
+    "ready": true,
+    "previewImage": "images/paper1teeal.png",
     "youtubeId": null
   },
   {
     "title": "Paper 2: Comparative TEEAL Writing Guide",
     "description": "Style 1,2,3 structures for comparative essays",
-    "link": "https://drive.google.com/file/d/1yRHK5uEa66nTNxgbsdT8lb_bcoWVlFjP/view?usp=drive_link",
+    "link": "https://drive.google.com/file/d/1vpdQHhZiWwN7jZyUeRBwcRXvn5mwmKVq/view?usp=drive_link",
     "category": "assessment",
     "ready": true,
     "previewImage": "images/paper2teeal.png",

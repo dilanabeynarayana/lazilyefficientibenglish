@@ -128,8 +128,8 @@
 
     <script>
         const allResources = [
-          {"title":"Paper 1: TEEAL Essay Structure","description":"One-page visual scaffold","link":"#","category":"assessment","ready":false,"previewImage":"","youtubeId":null},
-          {"title":"Paper 2: Comparative TEEAL Writing Guide","description":"Style 1,2,3 structures for comparative essays","link":"https://drive.google.com/file/d/1yRHK5uEa66nTNxgbsdT8lb_bcoWVlFjP/view?usp=drive_link","category":"assessment","ready":true,"previewImage":"images/paper2teeal.png","youtubeId":null},
+          {"title":"Paper 1: TEEAL Essay Structure","description":"One-page visual scaffold for unseen text analysis","link":"https://drive.google.com/file/d/1zQxF-Bqmt7wSkc09i4M0g8HRUHrvS0xy/view?usp=drive_link","category":"assessment","ready":true,"previewImage":"images/paper1teeal.png","youtubeId":null},
+          {"title":"Paper 2: Comparative TEEAL Writing Guide","description":"Style 1,2,3 structures for comparative essays","link":"https://drive.google.com/file/d/1vpdQHhZiWwN7jZyUeRBwcRXvn5mwmKVq/view?usp=drive_link","category":"assessment","ready":true,"previewImage":"images/paper2teeal.png","youtubeId":null},
           {"title":"Paper 2: Cookie Pairings & Yin Yang Planner","description":"Direct AC comparison","link":"#","category":"assessment","ready":false,"previewImage":"","youtubeId":null},
           {"title":"IO: Structure & Islands Method","description":"Whole-work evidence and structure for the Individual Oral","link":"https://drive.google.com/file/d/1KPZfLj9xRGSTMZC84VTb46PvK56UCCRZ/view?usp=drive_link","category":"assessment","ready":true,"previewImage":"images/io.png","youtubeId":null},
           {"title":"IO: Global Issue Formulation Checklist","description":"Narrow, defensible","link":"#","category":"assessment","ready":false,"previewImage":"","youtubeId":null},
@@ -146,7 +146,6 @@
         });
         html += '</div>'; container.innerHTML = html;
 
-        // Mouse zoom
         document.addEventListener('mousemove', function(e) {
             if (e.target.closest('.thumb-zoom')) {
                 const zoom = e.target.closest('.thumb-zoom');
@@ -156,7 +155,6 @@
             }
         });
 
-        // Lightbox
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
         document.addEventListener('click', function(e) {
