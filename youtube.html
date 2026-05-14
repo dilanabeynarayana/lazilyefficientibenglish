@@ -28,7 +28,7 @@
         a { color: var(--text-primary); text-decoration: none; border-bottom: 2px solid transparent; transition: border-color 0.2s ease; }
         a:hover { border-bottom-color: var(--accent); }
         nav { background-color: var(--bg-primary); border-bottom: 1px solid rgba(253,252,249,0.1); position: sticky; top: 0; z-index: 100; }
-        .nav-container { max-width: var(--max-width); margin: 0 auto; padding: var(--spacing-sm) var(--spacing-md); display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 1; }
+        .nav-container { max-width: var(--max-width); margin: 0 auto; padding: var(--spacing-sm) var(--spacing-md); display: flex; justify-content: space-between; align-items: center; }
         .nav-logo { font-family: 'Montserrat', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--text-primary); border-bottom: none; display: flex; align-items: center; }
         .nav-logo:hover { border-bottom: none; color: var(--accent); }
         .nav-logo-img { height: 32px; width: auto; margin-right: 0.5rem; border-bottom: none; vertical-align: middle; }
@@ -82,25 +82,42 @@
         <div class="nav-container">
             <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Lazily Efficient IB English" class="nav-logo-img">Lazily Efficient IB English</a>
             <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="assessment.html">Assessment</a></li>
-    <li><a href="skills.html">Skills</a></li>
-    <li><a href="exercises.html">Exercises</a></li>
-    <li><a href="department.html">Department</a></li>
-    <li><a href="youtube.html">YouTube</a></li>
-    <li><a href="about.html">About</a></li>
-</ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="assessment.html">Assessment</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="exercises.html">Exercises</a></li>
+                <li><a href="department.html">Department</a></li>
+                <li><a href="youtube.html" class="active">YouTube</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
         </div>
     </nav>
     <main>
         <div class="container">
-            <section class="content-section"><h1>YouTube Channel</h1><p class="short-meta">Watch the full walkthroughs and system explainers.</p><a href="https://youtube.com/@thelazyefficientibenglishtea" class="btn btn-primary" target="_blank">Subscribe on YouTube</a></section>
-            <section class="content-section"><h2>Latest Shorts</h2>
+            <section class="content-section">
+                <h1>YouTube Channel</h1>
+                <p class="short-meta">Watch the full walkthroughs and system explainers.</p>
+                <a href="https://youtube.com/@thelazyefficientibenglishtea" class="btn btn-primary" target="_blank">Subscribe on YouTube</a>
+            </section>
+            <section class="content-section">
+                <h2>Latest Shorts</h2>
                 <div class="shorts-grid">
-                    <a href="https://youtube.com/shorts/x48pgQU7wvk" target="_blank" class="short-card"><div class="short-thumb-wrap"><img class="short-thumb" src="https://i.ytimg.com/vi/x48pgQU7wvk/hqdefault.jpg" alt="3 Things All IB L&L Responses MUST Do"></div><div class="short-info"><p class="short-title">3 Things All IB L&L Responses MUST Do</p></div></a>
-                    <a href="https://youtube.com/shorts/4216-DK0B40" target="_blank" class="short-card"><div class="short-thumb-wrap"><img class="short-thumb" src="https://i.ytimg.com/vi/4216-DK0B40/hqdefault.jpg" alt="Top 10 Tips from an IB L&L Team Leader Examiner"></div><div class="short-info"><p class="short-title">Top 10 Tips from an IB L&L Team Leader Examiner</p></div></a>
-                    <a href="https://youtube.com/shorts/tZcJIrVKPu8" target="_blank" class="short-card"><div class="short-thumb-wrap"><img class="short-thumb" src="https://i.ytimg.com/vi/tZcJIrVKPu8/hqdefault.jpg" alt="3-Step Technique for Effective Analysis"></div><div class="short-info"><p class="short-title">3-Step Technique for Effective Analysis</p></div></a>
-                    <a href="https://youtube.com/shorts/kZNlpSS9J30" target="_blank" class="short-card"><div class="short-thumb-wrap"><img class="short-thumb" src="https://i.ytimg.com/vi/kZNlpSS9J30/hqdefault.jpg" alt="Annotation ≠ Highlighting"></div><div class="short-info"><p class="short-title">Annotation ≠ Highlighting</p></div></a>
+                    <a href="https://youtube.com/shorts/x48pgQU7wvk" target="_blank" class="short-card">
+                        <div class="short-thumb-wrap"><img class="short-thumb" src="https://i.ytimg.com/vi/x48pgQU7wvk/hqdefault.jpg" alt="3 Things All IB L&L Responses MUST Do"></div>
+                        <div class="short-info"><p class="short-title">3 Things All IB L&L Responses MUST Do</p></div>
+                    </a>
+                    <a href="https://youtube.com/shorts/4216-DK0B40" target="_blank" class="short-card">
+                        <div class="short-thumb-wrap"><img class="short-thumb" src="https://i.ytimg.com/vi/4216-DK0B40/hqdefault.jpg" alt="Top 10 Tips from an IB L&L Team Leader Examiner"></div>
+                        <div class="short-info"><p class="short-title">Top 10 Tips from an IB L&L Team Leader Examiner</p></div>
+                    </a>
+                    <a href="https://youtube.com/shorts/tZcJIrVKPu8" target="_blank" class="short-card">
+                        <div class="short-thumb-wrap"><img class="short-thumb" src="https://i.ytimg.com/vi/tZcJIrVKPu8/hqdefault.jpg" alt="3-Step Technique for Effective Analysis"></div>
+                        <div class="short-info"><p class="short-title">3-Step Technique for Effective Analysis</p></div>
+                    </a>
+                    <a href="https://youtube.com/shorts/kZNlpSS9J30" target="_blank" class="short-card">
+                        <div class="short-thumb-wrap"><img class="short-thumb" src="https://i.ytimg.com/vi/kZNlpSS9J30/hqdefault.jpg" alt="Annotation ≠ Highlighting"></div>
+                        <div class="short-info"><p class="short-title">Annotation ≠ Highlighting</p></div>
+                    </a>
                 </div>
             </section>
         </div>
