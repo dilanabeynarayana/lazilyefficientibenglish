@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assessment Resources – The Lazily Efficient IB English Teacher</title>
-    <meta name="description" content="Every scaffold and skill document for Paper 1, Paper 2, the IO, and the HL Essay – organised by criterion, directly downloadable.">
+    <meta name="description" content="Paper 1, Paper 2, IO, and HL Essay scaffolds – organised by criterion, with assessment tags.">
     <meta property="og:title" content="Assessment Resources – The Lazily Efficient IB English Teacher">
-    <meta property="og:description" content="All Paper 1, Paper 2, IO, and HL Essay resources, arranged by IB criteria.">
+    <meta property="og:description" content="Every scaffold and skill document for Paper 1, Paper 2, the IO, and the HL Essay – directly downloadable.">
     <meta property="og:url" content="https://lazilyefficientibenglish.com/assessment.html">
     <meta property="og:type" content="website">
     <link rel="icon" type="image/png" href="favicon.png">
@@ -17,8 +17,9 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --bg-primary: #1E2E3E; --text-primary: #FDFCF9; --text-secondary: #B6BCC4; --accent: #CC0000;
-            --spacing-sm: 1rem; --spacing-md: 2rem; --spacing-lg: 3rem; --spacing-xl: 4rem; --max-width: 1400px;
-            --thumb-height: 200px;
+            --spacing-sm: 1rem; --spacing-md: 2rem; --spacing-lg: 3rem; --spacing-xl: 4rem; --max-width: 1500px;
+            --thumb-height: 220px;
+            --criterion-col-width: 180px;
         }
         body { background-color: var(--bg-primary); color: var(--text-primary); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.6; }
         body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); opacity: 0.4; pointer-events: none; z-index: 0; }
@@ -40,31 +41,54 @@
         .content-section { margin-bottom: var(--spacing-xl); }
         .section-description { color: var(--text-secondary); font-size: 1.1rem; max-width: 800px; margin-bottom: var(--spacing-lg); }
 
-        /* Criterion grid */
+        /* Grid: 5 columns – criterion label + 4 assessments */
         .criterion-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: var(--criterion-col-width) repeat(4, 1fr);
             gap: var(--spacing-md);
             margin-top: var(--spacing-lg);
+            overflow-x: auto; /* allows scrolling on narrow screens */
         }
-        .row-header {
-            grid-column: span 4;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin: var(--spacing-lg) 0 0.5rem 0;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid rgba(253,252,249,0.15);
-        }
+        /* Column headers (assessment names) – skip first column */
         .col-header {
             background: none;
             border-bottom: 2px solid var(--accent);
             padding-bottom: var(--spacing-sm);
             text-align: center;
+            position: sticky;
+            top: 0;
+            background: var(--bg-primary); /* prevents content showing through */
+            z-index: 5;
         }
         .col-header h2 { margin-bottom: 0; color: var(--accent); font-size: 1.5rem; }
 
+        /* Criterion label cell */
+        .criterion-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            padding: var(--spacing-sm) 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            position: sticky;
+            left: 0;
+            background: var(--bg-primary);
+            z-index: 4;
+            border-right: 1px solid rgba(253,252,249,0.1);
+            white-space: nowrap;
+        }
+        .criterion-label span {
+            background: rgba(204,0,0,0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* Card styling */
         .card {
             background: linear-gradient(135deg, rgba(253,252,249,0.04) 0%, rgba(253,252,249,0.01) 100%);
             border: 1px solid rgba(253,252,249,0.08);
@@ -74,12 +98,26 @@
             box-shadow: 0 2px 6px rgba(0,0,0,0.3);
             display: flex;
             flex-direction: column;
-            min-height: 360px;
+            min-height: 380px;
         }
         .card:hover { border-color: rgba(253,252,249,0.2); transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
 
-        .card-title { font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-primary); line-height: 1.3; }
+        .card-title { font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 600; margin-bottom: 0.3rem; color: var(--text-primary); line-height: 1.3; }
         .card-desc { font-size: 0.8rem; color: var(--text-secondary); margin-bottom: auto; flex-grow: 1; }
+
+        /* Assessment tag */
+        .assessment-tag {
+            display: inline-block;
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: var(--accent);
+            background: rgba(204,0,0,0.1);
+            padding: 0.15rem 0.5rem;
+            border-radius: 3px;
+            margin-bottom: var(--spacing-sm);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
 
         .thumb-zoom {
             position: relative;
@@ -102,7 +140,7 @@
         .thumb-zoom:hover img { transform: scale(2.2); }
 
         .empty-cell {
-            min-height: 360px;
+            min-height: 380px;
             background: rgba(253,252,249,0.02);
             border: 1px dashed rgba(253,252,249,0.05);
             border-radius: 4px;
@@ -139,7 +177,7 @@
             opacity: 0.7;
         }
 
-        /* Lightbox with download */
+        /* Lightbox */
         .lightbox {
             display: none;
             position: fixed;
@@ -164,7 +202,7 @@
             margin-top: 1.5rem;
             font-size: 1rem;
             padding: 0.75rem 2rem;
-            display: none; /* shown when a download exists */
+            display: none;
             z-index: 210;
             pointer-events: auto;
         }
@@ -186,7 +224,10 @@
 
         h1, h2 { text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
 
-        @media (max-width: 1200px) { .criterion-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 1200px) {
+            .criterion-grid { grid-template-columns: 150px repeat(2, 1fr); }
+            .col-header:not(:nth-child(2)):not(:nth-child(3)) { display: none; } /* hide extra headers */
+        }
         @media (max-width: 768px) {
             h1 { font-size: 2rem; }
             .nav-container { flex-direction: column; padding: var(--spacing-sm); }
@@ -194,6 +235,7 @@
             .container { padding: var(--spacing-md) var(--spacing-sm); }
             .criterion-grid { grid-template-columns: 1fr; }
             .col-header { display: none; }
+            .criterion-label { position: relative; border-right: none; }
             :root { --thumb-height: 180px; }
         }
         @media print { body { background: #fff; color: #000; } nav, footer, .btn, #back-to-top, .signup-box { display: none; } .card, .empty-cell { border: 1px solid #ccc; box-shadow: none; break-inside: avoid; } }
@@ -220,7 +262,7 @@
         <div class="container">
             <section class="content-section">
                 <h1>Assessment Resources</h1>
-                <p class="section-description">Every scaffold, planner, and deconstruction guide, arranged by IB criterion so you can see exactly what feeds each assessment component.</p>
+                <p class="section-description">Every scaffold, planner, and deconstruction guide, organised by criterion and assessment. Hover to see the assessment tag, click to preview and download.</p>
             </section>
 
             <div class="criterion-grid" id="criterion-grid"></div>
@@ -245,28 +287,29 @@
 
     <button id="back-to-top" title="Back to top">↑</button>
 
+    <!-- Lightbox with download -->
     <div class="lightbox" id="lightbox">
         <img src="" alt="Preview" id="lightbox-img">
         <a href="#" target="_blank" id="lightbox-download" class="btn btn-download">Download Resource</a>
     </div>
 
     <script>
-        // ----- Resource data -----
+        // ---------- Resource data ----------
         const assessments = ['IO', 'Paper 1', 'Paper 2', 'HL Essay'];
 
-        // Define resource groups (rows)
+        // Rows = criteria groups
         const rows = [
             {
-                label: 'TEEAL Structure (covers all criteria)',
+                label: 'TEEAL (all criteria)',
                 resources: {
-                    IO: { title: 'IO TEEAL Structure', desc: 'Whole‑work evidence and structure.', link: 'https://drive.google.com/file/d/1KPZfLj9xRGSTMZC84VTb46PvK56UCCRZ/view?usp=drive_link', ready: true, image: 'images/IO.png' },
-                    'Paper 1': { title: 'Paper 1 TEEAL Structure', desc: 'Unseen text scaffold.', link: 'https://drive.google.com/file/d/1zQxF-Bqmt7wSkc09i4M0g8HRUHrvS0xy/view?usp=drive_link', ready: true, image: 'images/paper1teeal.png' },
-                    'Paper 2': { title: 'Paper 2 TEEAL Structure', desc: 'Comparative styles 1‑3.', link: 'https://drive.google.com/file/d/1vpdQHhZiWwN7jZyUeRBwcRXvn5mwmKVq/view?usp=drive_link', ready: true, image: 'images/paper2teeal.png' },
-                    'HL Essay': { title: 'HL Essay TEEAL Structure', desc: 'Tailored essay scaffold.', link: 'https://drive.google.com/file/d/1ZQtkA5OTG7f6OUHyG9RPOKaGjuvaDgYv/view?usp=drive_link', ready: true, image: 'images/hlessayteeal.png' }
+                    IO: [{ title: 'IO TEEAL Structure', desc: 'Whole‑work evidence and structure.', link: 'https://drive.google.com/file/d/1KPZfLj9xRGSTMZC84VTb46PvK56UCCRZ/view?usp=drive_link', ready: true, image: 'images/IO.png' }],
+                    'Paper 1': [{ title: 'Paper 1 TEEAL Structure', desc: 'Unseen text scaffold.', link: 'https://drive.google.com/file/d/1zQxF-Bqmt7wSkc09i4M0g8HRUHrvS0xy/view?usp=drive_link', ready: true, image: 'images/paper1teeal.png' }],
+                    'Paper 2': [{ title: 'Paper 2 TEEAL Structure', desc: 'Comparative styles 1‑3.', link: 'https://drive.google.com/file/d/1vpdQHhZiWwN7jZyUeRBwcRXvn5mwmKVq/view?usp=drive_link', ready: true, image: 'images/paper2teeal.png' }],
+                    'HL Essay': [{ title: 'HL Essay TEEAL Structure', desc: 'Tailored essay scaffold.', link: 'https://drive.google.com/file/d/1ZQtkA5OTG7f6OUHyG9RPOKaGjuvaDgYv/view?usp=drive_link', ready: true, image: 'images/hlessayteeal.png' }]
                 }
             },
             {
-                label: 'Criterion A – Ideas &amp; Implications',
+                label: 'Criterion A',
                 resources: {
                     IO: [
                         { title: 'Stages of IDEAs for Elaborations', desc: 'Break ideas into arguable stages.', link: 'https://drive.google.com/file/d/1m6GntEDnUTyYM9kVmlk9WKU9_WFrKUKK/view?usp=drive_link', ready: true, image: 'images/stages-elaborations.png' },
@@ -285,7 +328,7 @@
                 }
             },
             {
-                label: 'Criterion B – Deconstructing Authorial Choices',
+                label: 'Criterion B',
                 resources: {
                     IO: [
                         { title: '3‑Step Technique to Analysis', desc: 'What, How, Why.', link: 'https://drive.google.com/file/d/1GeKGIXgzyfdhiJI6p6Cq56lk2Y3JWxCZ/view?usp=drive_link', ready: true, image: 'images/3step.png' },
@@ -309,7 +352,7 @@
                 }
             },
             {
-                label: 'Criterion C – Focus &amp; Organisation (Argument/Thesis)',
+                label: 'Criterion C',
                 resources: {
                     IO: [
                         { title: 'Double‑Barrel GI Creation', desc: 'Also listed under Crit A.', link: '#', ready: false, image: null }
@@ -326,7 +369,7 @@
                 }
             },
             {
-                label: 'Planning &amp; Preparation Tools',
+                label: 'Planning Tools',
                 resources: {
                     IO: [],
                     'Paper 1': [
@@ -336,7 +379,7 @@
                         { title: 'Yin Yang Cards', desc: 'Direct comparative planner.', link: 'https://drive.google.com/file/d/14DEdHJY_m27jJvSNAukLXtiyadbi86N6/view?usp=drive_link', ready: true, image: 'images/yingyang.png' }
                     ],
                     'HL Essay': [
-                        { title: 'Annotation Rubric (usable)', desc: '(See Paper 1)', link: 'https://drive.google.com/file/d/13vrcE7muX5_fAtt3bMf7jNk_0cy3xIqT/view?usp=drive_link', ready: true, image: 'images/annotation-rubric.png' }
+                        { title: 'Annotation Rubric (usable)', desc: 'Same as Paper 1.', link: 'https://drive.google.com/file/d/13vrcE7muX5_fAtt3bMf7jNk_0cy3xIqT/view?usp=drive_link', ready: true, image: 'images/annotation-rubric.png' }
                     ]
                 }
             }
@@ -344,7 +387,12 @@
 
         const grid = document.getElementById('criterion-grid');
 
-        // Render column headers first
+        // 1. Column headers (skip first column)
+        const emptyHeader = document.createElement('div');
+        emptyHeader.className = 'col-header';
+        emptyHeader.style.borderBottom = 'none';
+        grid.appendChild(emptyHeader);
+
         assessments.forEach(assessment => {
             const colHeader = document.createElement('div');
             colHeader.className = 'col-header';
@@ -352,26 +400,27 @@
             grid.appendChild(colHeader);
         });
 
-        // Render each row
+        // 2. Render each row
         rows.forEach(row => {
-            const rowHeader = document.createElement('div');
-            rowHeader.className = 'row-header';
-            rowHeader.textContent = row.label;
-            grid.appendChild(rowHeader);
+            // Criterion label
+            const labelCell = document.createElement('div');
+            labelCell.className = 'criterion-label';
+            labelCell.innerHTML = `<span>${row.label}</span>`;
+            grid.appendChild(labelCell);
 
+            // Cells for each assessment
             assessments.forEach(assessment => {
+                const resources = row.resources[assessment] || [];
                 const cell = document.createElement('div');
-                cell.className = row.resources[assessment] && (Array.isArray(row.resources[assessment]) ? row.resources[assessment].length === 0 : false) ? 'empty-cell' : 'card';
+                cell.className = resources.length === 0 ? 'empty-cell' : 'card';
 
-                // For single-resource rows (like TEEAL), it's an object; for multi-resource rows, it's an array
-                let resourceList = row.resources[assessment];
-                if (!Array.isArray(resourceList)) {
-                    resourceList = [resourceList];
+                if (resources.length === 0) {
+                    grid.appendChild(cell);
+                    return;
                 }
 
                 let innerHTML = '';
-                resourceList.forEach(resource => {
-                    if (!resource) return;
+                resources.forEach(resource => {
                     let thumbHtml = '';
                     if (resource.image) {
                         thumbHtml = `<div class="thumb-zoom" data-src="${resource.image}"><img src="${resource.image}" alt="${resource.title}"></div>`;
@@ -380,7 +429,8 @@
                         ? `<a href="${resource.link}" class="btn btn-download" target="_blank">Download</a>`
                         : `<span class="btn btn-coming">Coming Soon</span>`;
                     innerHTML += `
-                        <div style="margin-bottom:var(--spacing-sm);">
+                        <div style="margin-bottom: var(--spacing-sm);">
+                            <div class="assessment-tag">${assessment}</div>
                             ${thumbHtml}
                             <div class="card-title">${resource.title}</div>
                             <div class="card-desc">${resource.desc}</div>
@@ -388,7 +438,6 @@
                         </div>
                     `;
                 });
-
                 cell.innerHTML = innerHTML;
                 grid.appendChild(cell);
             });
@@ -414,7 +463,6 @@
                 const src = thumb.dataset.src || thumb.querySelector('img').src;
                 lightboxImg.src = src;
                 lightbox.classList.add('show');
-                // Check if there's an associated download link
                 const cardContainer = thumb.closest('.card') || thumb.closest('[class*="card"]');
                 const downloadBtn = cardContainer ? cardContainer.querySelector('.btn-download') : null;
                 if (downloadBtn) {
@@ -432,7 +480,6 @@
             }
         });
         lightboxDownload.addEventListener('click', function(e) {
-            // Allow download link to work
             e.stopPropagation();
         });
         document.addEventListener('keydown', e => { if (e.key === 'Escape') lightbox.classList.remove('show'); });
