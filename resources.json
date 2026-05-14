@@ -23,7 +23,7 @@
     "link": "https://drive.google.com/file/d/1makxiaH44pEsIAHpkBPYFCrBj0js5oMt/view?usp=drive_link",
     "category": "department",
     "ready": true,
-    "previewImage": "",
+    "previewImage": "images/analytical-continuum.png",
     "youtubeId": null
   },
   {
@@ -109,11 +109,11 @@
   },
   {
     "title": "Paper 2: Comparative TEEAL Writing Guide",
-    "description": "Style 1,2,3",
-    "link": "#",
+    "description": "Style 1,2,3 structures for comparative essays",
+    "link": "https://drive.google.com/file/d/1yRHK5uEa66nTNxgbsdT8lb_bcoWVlFjP/view?usp=drive_link",
     "category": "assessment",
-    "ready": false,
-    "previewImage": "",
+    "ready": true,
+    "previewImage": "images/paper2teeal.png",
     "youtubeId": null
   },
   {
@@ -127,11 +127,11 @@
   },
   {
     "title": "IO: Structure & Islands Method",
-    "description": "Whole-work evidence",
-    "link": "#",
+    "description": "Whole-work evidence and structure for the Individual Oral",
+    "link": "https://drive.google.com/file/d/1KPZfLj9xRGSTMZC84VTb46PvK56UCCRZ/view?usp=drive_link",
     "category": "assessment",
-    "ready": false,
-    "previewImage": "",
+    "ready": true,
+    "previewImage": "images/io.png",
     "youtubeId": null
   },
   {
