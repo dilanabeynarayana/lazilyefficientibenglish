@@ -18,13 +18,15 @@
         :root {
             --bg-primary: #1E2E3E; --text-primary: #FDFCF9; --text-secondary: #B6BCC4; --accent: #CC0000;
             --spacing-sm: 1rem; --spacing-md: 2rem; --spacing-lg: 3rem; --spacing-xl: 4rem; --max-width: 1200px;
-            --thumb-height: 280px;
+            --thumb-height: 220px;
         }
         body { background-color: var(--bg-primary); color: var(--text-primary); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.6; }
         body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); opacity: 0.4; pointer-events: none; z-index: 0; }
-        h1, h2, h3 { font-family: 'Montserrat', sans-serif; font-weight: 600; line-height: 1.3; margin-bottom: var(--spacing-sm); position: relative; z-index: 1; }
+        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; font-weight: 600; line-height: 1.3; margin-bottom: var(--spacing-sm); position: relative; z-index: 1; }
         h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: var(--spacing-md); }
         h2 { font-size: 2rem; margin-bottom: var(--spacing-md); }
+        h3 { font-size: 1.1rem; margin-bottom: var(--spacing-sm); }
+        h4 { font-size: 0.9rem; color: var(--accent); margin-bottom: var(--spacing-sm); }
         p { margin-bottom: var(--spacing-sm); position: relative; z-index: 1; }
         a { color: var(--text-primary); text-decoration: none; border-bottom: 2px solid transparent; transition: border-color 0.2s ease; }
         a:hover { border-bottom-color: var(--accent); }
@@ -40,22 +42,136 @@
         .content-section { margin-bottom: var(--spacing-xl); }
         .section-description { color: var(--text-secondary); font-size: 1.1rem; max-width: 800px; margin-bottom: var(--spacing-lg); }
 
-        .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--spacing-lg); margin-top: var(--spacing-lg); }
-        .card { background: linear-gradient(135deg, rgba(253,252,249,0.04) 0%, rgba(253,252,249,0.01) 100%); border: 1px solid rgba(253,252,249,0.08); padding: var(--spacing-md); border-radius: 4px; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.3); }
-        .card:hover { border-color: rgba(253,252,249,0.25); transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
-        .card-title { font-family: 'Montserrat', sans-serif; font-size: 1.25rem; font-weight: 600; margin-bottom: var(--spacing-sm); }
-        .card-description { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: var(--spacing-md); }
-        .btn { display: inline-block; padding: 0.75rem 1.5rem; font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 500; text-align: center; cursor: pointer; border: none; border-radius: 4px; transition: all 0.2s ease; letter-spacing: 0.02em; box-shadow: 0 2px 6px rgba(0,0,0,0.3); }
-        .btn-primary { background: linear-gradient(135deg, #CC0000 0%, #A00000 100%); color: #FFFFFF; border: 1px solid rgba(255,255,255,0.15); }
-        .btn-primary:hover { background: #A00000; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+        /* Four-column assessment grid */
+        .assessment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+        .assessment-col {
+            background: linear-gradient(135deg, rgba(253,252,249,0.04) 0%, rgba(253,252,249,0.01) 100%);
+            border: 1px solid rgba(253,252,249,0.08);
+            border-radius: 4px;
+            padding: var(--spacing-md);
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+        }
+        .assessment-col:hover { border-color: rgba(253,252,249,0.2); }
+        .col-header {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: var(--spacing-sm);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 1px solid rgba(253,252,249,0.1);
+        }
+        .col-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-md);
+            flex-shrink: 0;
+        }
 
-        .thumb-zoom { position: relative; width: 100%; height: var(--thumb-height); overflow: hidden; cursor: pointer; background: rgba(0,0,0,0.15); border-radius: 4px; margin-bottom: var(--spacing-sm); }
-        .thumb-zoom img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; transform-origin: 0 0; transition: transform 0.1s ease; }
-        .thumb-zoom:hover img { transform: scale(2.2); }
+        /* Resource items inside columns */
+        .resource-item {
+            padding: var(--spacing-sm) 0;
+            border-bottom: 1px solid rgba(253,252,249,0.05);
+        }
+        .resource-item:last-of-type { border-bottom: none; }
+        .resource-item .item-title {
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.15rem;
+        }
+        .resource-item .item-desc {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.4rem;
+        }
+        .resource-item .item-btn {
+            display: inline-block;
+            padding: 0.35rem 0.9rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border-radius: 3px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s ease;
+            letter-spacing: 0.02em;
+        }
+        .item-ready {
+            background: linear-gradient(135deg, #CC0000 0%, #A00000 100%);
+            color: #FFFFFF;
+            border: 1px solid rgba(255,255,255,0.15);
+            text-decoration: none;
+        }
+        .item-ready:hover { background: #A00000; transform: translateY(-1px); }
+        .item-coming {
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1px solid rgba(253,252,249,0.1);
+            cursor: default;
+            opacity: 0.6;
+        }
+        .item-link {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            font-style: italic;
+            border-bottom: 1px dotted rgba(253,252,249,0.2);
+        }
+        .item-link:hover { color: var(--accent); border-bottom-color: var(--accent); }
 
+        /* Thumbnail inside resource item */
+        .item-thumb {
+            width: 100%;
+            height: var(--thumb-height);
+            overflow: hidden;
+            cursor: pointer;
+            background: rgba(0,0,0,0.15);
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+        .item-thumb img {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: contain;
+            transform-origin: 0 0;
+            transition: transform 0.1s ease;
+        }
+        .item-thumb:hover img { transform: scale(2.2); }
+
+        /* Lightbox */
         .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 200; align-items: center; justify-content: center; cursor: pointer; }
         .lightbox.show { display: flex; }
         .lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; border-radius: 4px; box-shadow: 0 4px 24px rgba(0,0,0,0.6); }
+
+        /* Shared skills section at bottom of each column */
+        .shared-skills {
+            margin-top: auto;
+            padding-top: var(--spacing-sm);
+            border-top: 1px solid rgba(253,252,249,0.08);
+        }
+        .shared-skills p {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.3rem;
+            font-style: italic;
+        }
+        .shared-skills a {
+            display: inline-block;
+            font-size: 0.75rem;
+            color: var(--accent);
+            border-bottom: 1px dotted var(--accent);
+            margin-right: 0.5rem;
+            margin-bottom: 0.2rem;
+        }
+        .shared-skills a:hover { color: var(--text-primary); }
 
         #back-to-top { position: fixed; bottom: 2rem; right: 2rem; width: 44px; height: 44px; border-radius: 50%; background: var(--accent); color: #FFFFFF; border: none; font-size: 1.5rem; cursor: pointer; opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 99; box-shadow: 0 2px 8px rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; }
         #back-to-top.show { opacity: 1; visibility: visible; }
@@ -79,11 +195,11 @@
             .nav-container { flex-direction: column; padding: var(--spacing-sm); }
             .nav-links { gap: var(--spacing-sm); flex-wrap: wrap; justify-content: center; }
             .container { padding: var(--spacing-md) var(--spacing-sm); }
-            .cards-grid { grid-template-columns: 1fr; }
-            :root { --thumb-height: 220px; }
+            .assessment-grid { grid-template-columns: 1fr; }
+            :root { --thumb-height: 180px; }
         }
 
-        @media print { body { background: #fff; color: #000; } nav, footer, .btn, #back-to-top, .signup-box { display: none; } .card { border: 1px solid #ccc; box-shadow: none; break-inside: avoid; } }
+        @media print { body { background: #fff; color: #000; } nav, footer, .btn, #back-to-top, .signup-box { display: none; } .card, .assessment-col { border: 1px solid #ccc; box-shadow: none; break-inside: avoid; } }
     </style>
 </head>
 <body>
@@ -104,8 +220,123 @@
     </nav>
     <main>
         <div class="container">
-            <section class="content-section"><h1>Assessment Resources</h1><p class="section-description">Scaffolds and planners for Paper 1, Paper 2, IO, and HL Essay.</p></section>
-            <section class="content-section" id="resources-container"></section>
+            <section class="content-section">
+                <h1>Assessment Resources</h1>
+                <p class="section-description">Scaffolds and planners for Paper 1, Paper 2, the IO, and the HL Essay — plus the shared skills every assessment needs.</p>
+            </section>
+
+            <div class="assessment-grid">
+
+                <!-- ===== PAPER 1 ===== -->
+                <div class="assessment-col">
+                    <div class="col-header">Paper 1</div>
+                    <div class="col-desc">Unseen text analysis. Guided textual analysis (SL) or comparative textual analysis (HL).</div>
+
+                    <div class="resource-item">
+                        <div class="item-thumb" data-src="images/paper1teeal.png"><img src="images/paper1teeal.png" alt="Paper 1 TEEAL"></div>
+                        <div class="item-title">Paper 1 TEEAL Structure</div>
+                        <div class="item-desc">One-page visual scaffold for unseen analysis</div>
+                        <a href="https://drive.google.com/file/d/1zQxF-Bqmt7wSkc09i4M0g8HRUHrvS0xy/view?usp=drive_link" class="item-btn item-ready" target="_blank">Download</a>
+                    </div>
+
+                    <div class="shared-skills">
+                        <p>Also need these shared skills:</p>
+                        <a href="skills.html">Annotation Rubric</a>
+                        <a href="skills.html">DICE/PACT</a>
+                        <a href="skills.html">Stages of IDEAs</a>
+                        <a href="skills.html">Ways to Phrase</a>
+                    </div>
+                </div>
+
+                <!-- ===== PAPER 2 ===== -->
+                <div class="assessment-col">
+                    <div class="col-header">Paper 2</div>
+                    <div class="col-desc">Comparative essay based on two literary works studied.</div>
+
+                    <div class="resource-item">
+                        <div class="item-thumb" data-src="images/paper2teeal.png"><img src="images/paper2teeal.png" alt="Paper 2 TEEAL"></div>
+                        <div class="item-title">Paper 2 TEEAL Structure</div>
+                        <div class="item-desc">Style 1,2,3 structures for comparative essays</div>
+                        <a href="https://drive.google.com/file/d/1vpdQHhZiWwN7jZyUeRBwcRXvn5mwmKVq/view?usp=drive_link" class="item-btn item-ready" target="_blank">Download</a>
+                    </div>
+
+                    <div class="resource-item">
+                        <div class="item-title">Yin Yang Cards</div>
+                        <div class="item-desc">Direct comparative planning tool</div>
+                        <span class="item-btn item-coming">Coming Soon</span>
+                    </div>
+
+                    <div class="resource-item">
+                        <div class="item-title">Comparative Plane Method</div>
+                        <div class="item-desc">Track Broader ACs across two texts</div>
+                        <span class="item-btn item-coming">Coming Soon</span>
+                    </div>
+
+                    <div class="shared-skills">
+                        <p>Also need these shared skills:</p>
+                        <a href="skills.html">DDM</a>
+                        <a href="skills.html">Stages of IDEAs</a>
+                        <a href="skills.html">Ways to Phrase</a>
+                    </div>
+                </div>
+
+                <!-- ===== IO ===== -->
+                <div class="assessment-col">
+                    <div class="col-header">Individual Oral</div>
+                    <div class="col-desc">15‑minute oral on one literary and one non‑literary text through a Global Issue.</div>
+
+                    <div class="resource-item">
+                        <div class="item-thumb" data-src="images/io.png"><img src="images/io.png" alt="IO TEEAL"></div>
+                        <div class="item-title">IO TEEAL Structure</div>
+                        <div class="item-desc">Whole-work evidence and structure for the oral</div>
+                        <a href="https://drive.google.com/file/d/1KPZfLj9xRGSTMZC84VTb46PvK56UCCRZ/view?usp=drive_link" class="item-btn item-ready" target="_blank">Download</a>
+                    </div>
+
+                    <div class="resource-item">
+                        <div class="item-title">Double‑Barrel GI Creation</div>
+                        <div class="item-desc">Narrow, defensible Global Issue formulation</div>
+                        <span class="item-btn item-coming">Coming Soon</span>
+                    </div>
+
+                    <div class="resource-item">
+                        <div class="item-title">Islands vs Plane Method</div>
+                        <div class="item-desc">When to use each for whole-work evidence</div>
+                        <span class="item-btn item-coming">Coming Soon</span>
+                    </div>
+
+                    <div class="shared-skills">
+                        <p>Also need these shared skills:</p>
+                        <a href="skills.html">Stages of IDEAs</a>
+                        <a href="skills.html">Ways to Phrase</a>
+                    </div>
+                </div>
+
+                <!-- ===== HL ESSAY ===== -->
+                <div class="assessment-col">
+                    <div class="col-header">HL Essay</div>
+                    <div class="col-desc">1200‑1500 word essay on one literary or non‑literary text studied.</div>
+
+                    <div class="resource-item">
+                        <div class="item-thumb" data-src="images/hlessayteeal.png"><img src="images/hlessayteeal.png" alt="HL Essay TEEAL"></div>
+                        <div class="item-title">HL Essay TEEAL Structure</div>
+                        <div class="item-desc">Essay scaffold for the Higher Level Essay</div>
+                        <a href="https://drive.google.com/file/d/1ZQtkA5OTG7f6OUHyG9RPOKaGjuvaDgYv/view?usp=drive_link" class="item-btn item-ready" target="_blank">Download</a>
+                    </div>
+
+                    <div class="resource-item">
+                        <div class="item-title">Plane & Island Method</div>
+                        <div class="item-desc">Whole-text analysis for the essay</div>
+                        <span class="item-btn item-coming">Coming Soon</span>
+                    </div>
+
+                    <div class="shared-skills">
+                        <p>Also need these shared skills:</p>
+                        <a href="skills.html">Stages of IDEAs</a>
+                        <a href="skills.html">Ways to Phrase</a>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </main>
     <footer>
@@ -127,44 +358,27 @@
     <div class="lightbox" id="lightbox"><img src="" alt="Preview" id="lightbox-img"></div>
 
     <script>
-        const allResources = [
-          {"title":"Paper 1: TEEAL Essay Structure","description":"One-page visual scaffold for unseen text analysis","link":"https://drive.google.com/file/d/1zQxF-Bqmt7wSkc09i4M0g8HRUHrvS0xy/view?usp=drive_link","category":"assessment","ready":true,"previewImage":"images/paper1teeal.png","youtubeId":null},
-          {"title":"Paper 2: Comparative TEEAL Writing Guide","description":"Style 1,2,3 structures for comparative essays","link":"https://drive.google.com/file/d/1vpdQHhZiWwN7jZyUeRBwcRXvn5mwmKVq/view?usp=drive_link","category":"assessment","ready":true,"previewImage":"images/paper2teeal.png","youtubeId":null},
-          {"title":"Paper 2: Cookie Pairings & Yin Yang Planner","description":"Direct AC comparison","link":"#","category":"assessment","ready":false,"previewImage":"","youtubeId":null},
-          {"title":"IO: Structure & Islands Method","description":"Whole-work evidence and structure for the Individual Oral","link":"https://drive.google.com/file/d/1KPZfLj9xRGSTMZC84VTb46PvK56UCCRZ/view?usp=drive_link","category":"assessment","ready":true,"previewImage":"images/io.png","youtubeId":null},
-          {"title":"IO: Global Issue Formulation Checklist","description":"Narrow, defensible","link":"#","category":"assessment","ready":false,"previewImage":"","youtubeId":null},
-          {"title":"HL Essay: TEEAL Structure","description":"Essay scaffold tailored for the Higher Level Essay","link":"https://drive.google.com/file/d/1ZQtkA5OTG7f6OUHyG9RPOKaGjuvaDgYv/view?usp=drive_link","category":"assessment","ready":true,"previewImage":"images/hlessayteeal.png","youtubeId":null},
-          {"title":"HL Essay: Plane Method for Whole-Text Analysis","description":"Track Broader ACs","link":"#","category":"assessment","ready":false,"previewImage":"","youtubeId":null},
-          {"title":"HL Essay: Thesis Formulation with DDM","description":"From line of inquiry to argument","link":"#","category":"assessment","ready":false,"previewImage":"","youtubeId":null}
-        ];
-        const container = document.getElementById('resources-container');
-        const assessmentResources = allResources.filter(r => r.category === 'assessment');
-        let html = '<div class="cards-grid">';
-        assessmentResources.forEach(resource => {
-            let imageHtml = resource.previewImage ? `<div class="thumb-zoom" data-src="${resource.previewImage}"><img src="${resource.previewImage}" alt="${resource.title}"></div>` : '';
-            let buttonHtml = (resource.ready && resource.link !== '#') ? `<a href="${resource.link}" class="btn btn-primary" target="_blank">Download</a>` : `<span class="btn btn-primary" style="opacity:0.5;cursor:default;">Coming Soon</span>`;
-            html += `<article class="card">${imageHtml}<h3 class="card-title">${resource.title}</h3><p class="card-description">${resource.description}</p>${buttonHtml}</article>`;
-        });
-        html += '</div>'; container.innerHTML = html;
-
+        // Mouse zoom on thumbnails
         document.addEventListener('mousemove', function(e) {
-            if (e.target.closest('.thumb-zoom')) {
-                const zoom = e.target.closest('.thumb-zoom');
-                const img = zoom.querySelector('img');
-                const rect = zoom.getBoundingClientRect();
+            if (e.target.closest('.item-thumb')) {
+                const thumb = e.target.closest('.item-thumb');
+                const img = thumb.querySelector('img');
+                const rect = thumb.getBoundingClientRect();
                 img.style.transformOrigin = `${((e.clientX - rect.left) / rect.width) * 100}% ${((e.clientY - rect.top) / rect.height) * 100}%`;
             }
         });
 
+        // Lightbox
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
         document.addEventListener('click', function(e) {
-            const thumb = e.target.closest('.thumb-zoom');
+            const thumb = e.target.closest('.item-thumb');
             if (thumb) { const src = thumb.dataset.src || thumb.querySelector('img').src; lightboxImg.src = src; lightbox.classList.add('show'); }
         });
         lightbox.addEventListener('click', () => { lightbox.classList.remove('show'); });
         document.addEventListener('keydown', e => { if (e.key === 'Escape') lightbox.classList.remove('show'); });
 
+        // Back to top
         const btt = document.getElementById('back-to-top');
         window.addEventListener('scroll', () => { btt.classList.toggle('show', window.scrollY > 300); });
         btt.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });

@@ -117,12 +117,12 @@
     "youtubeId": null
   },
   {
-    "title": "Paper 2: Cookie Pairings & Yin Yang Planner",
-    "description": "Direct AC comparison",
-    "link": "#",
+    "title": "Paper 2: Yin Yang Cards",
+    "description": "Direct comparative planning tool",
+    "link": "https://drive.google.com/file/d/14DEdHJY_m27jJvSNAukLXtiyadbi86N6/view?usp=drive_link",
     "category": "assessment",
-    "ready": false,
-    "previewImage": "",
+    "ready": true,
+    "previewImage": "images/yingyang.png",
     "youtubeId": null
   },
   {
