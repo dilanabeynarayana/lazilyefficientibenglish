@@ -6,7 +6,7 @@
     <title>Exercises & Examples – The Lazily Efficient IB English Teacher</title>
     <meta name="description" content="Worked examples, practice tasks, and interactive Google Docs for IB English teachers and students.">
     <meta property="og:title" content="Exercises & Examples – The Lazily Efficient IB English Teacher">
-    <meta property="og:description" content="Worked examples and practice tasks for IB English – interactive Google Docs you can use in class.">
+    <meta property="og:description" content="Worked examples and practice tasks for IB English – coming soon.">
     <meta property="og:url" content="https://lazilyefficientibenglish.com/exercises.html">
     <meta property="og:type" content="website">
     <link rel="icon" type="image/png" href="favicon.png">
@@ -23,12 +23,11 @@
         body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); opacity: 0.4; pointer-events: none; z-index: 0; }
         h1, h2, h3 { font-family: 'Montserrat', sans-serif; font-weight: 600; line-height: 1.3; margin-bottom: var(--spacing-sm); position: relative; z-index: 1; }
         h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: var(--spacing-md); }
-        h2 { font-size: 2rem; margin-bottom: var(--spacing-md); }
         p { margin-bottom: var(--spacing-sm); position: relative; z-index: 1; }
         a { color: var(--text-primary); text-decoration: none; border-bottom: 2px solid transparent; transition: border-color 0.2s ease; }
         a:hover { border-bottom-color: var(--accent); }
         nav { background-color: var(--bg-primary); border-bottom: 1px solid rgba(253,252,249,0.1); position: sticky; top: 0; z-index: 100; }
-        .nav-container { max-width: var(--max-width); margin: 0 auto; padding: var(--spacing-sm) var(--spacing-md); display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 1; }
+        .nav-container { max-width: var(--max-width); margin: 0 auto; padding: var(--spacing-sm) var(--spacing-md); display: flex; justify-content: space-between; align-items: center; }
         .nav-logo { font-family: 'Montserrat', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--text-primary); border-bottom: none; display: flex; align-items: center; }
         .nav-logo:hover { border-bottom: none; color: var(--accent); }
         .nav-logo-img { height: 32px; width: auto; margin-right: 0.5rem; border-bottom: none; vertical-align: middle; }
@@ -36,18 +35,19 @@
         .nav-links a { font-weight: 500; font-size: 0.95rem; letter-spacing: 0.02em; }
         .nav-links a.active { border-bottom: 2px solid var(--accent); }
         .container { max-width: var(--max-width); margin: 0 auto; padding: var(--spacing-xl) var(--spacing-md); position: relative; z-index: 1; }
-        .content-section { margin-bottom: var(--spacing-xl); }
-        .section-description { color: var(--text-secondary); font-size: 1.1rem; max-width: 800px; margin-bottom: var(--spacing-lg); }
-        .doc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-md); margin-top: var(--spacing-lg); }
-        .doc-card { background: rgba(253,252,249,0.03); border: 1px solid rgba(253,252,249,0.08); border-radius: 4px; overflow: hidden; padding: var(--spacing-sm); box-shadow: 0 2px 6px rgba(0,0,0,0.3); }
-        iframe.doc-embed { width: 100%; height: 400px; border: none; }
-        .btn { display: inline-block; padding: 0.75rem 1.5rem; font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 500; text-align: center; cursor: pointer; border: none; border-radius: 4px; transition: all 0.2s ease; letter-spacing: 0.02em; margin-top: var(--spacing-md); box-shadow: 0 2px 6px rgba(0,0,0,0.3); }
+        .content-section { margin-bottom: var(--spacing-xl); text-align: center; }
+        .section-description { color: var(--text-secondary); font-size: 1.1rem; max-width: 800px; margin: 0 auto var(--spacing-lg) auto; }
+        .coming-soon-box {
+            background: rgba(253,252,249,0.03);
+            border: 1px solid rgba(253,252,249,0.08);
+            border-radius: 8px;
+            padding: var(--spacing-xl);
+            display: inline-block;
+            margin: var(--spacing-lg) auto;
+        }
+        .btn { display: inline-block; padding: 0.75rem 1.5rem; font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 500; text-align: center; cursor: pointer; border: none; border-radius: 4px; transition: all 0.2s ease; letter-spacing: 0.02em; box-shadow: 0 2px 6px rgba(0,0,0,0.3); }
         .btn-primary { background: linear-gradient(135deg, #CC0000 0%, #A00000 100%); color: #FFFFFF; border: 1px solid rgba(255,255,255,0.15); }
         .btn-primary:hover { background: #A00000; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
-
-        #back-to-top { position: fixed; bottom: 2rem; right: 2rem; width: 44px; height: 44px; border-radius: 50%; background: var(--accent); color: #FFFFFF; border: none; font-size: 1.5rem; cursor: pointer; opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 99; box-shadow: 0 2px 8px rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; }
-        #back-to-top.show { opacity: 1; visibility: visible; }
-        #back-to-top:hover { background: #A00000; transform: translateY(-2px); }
 
         footer { background: rgba(0,0,0,0.3); border-top: 1px solid rgba(253,252,249,0.1); padding: var(--spacing-xl) var(--spacing-md) var(--spacing-md) var(--spacing-md); margin-top: var(--spacing-xl); position: relative; z-index: 1; }
         .footer-grid { max-width: var(--max-width); margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-lg); margin-bottom: var(--spacing-lg); }
@@ -60,42 +60,39 @@
         .signup-box input { width: 100%; padding: 0.6rem; background: rgba(253,252,249,0.05); border: 1px solid rgba(253,252,249,0.15); border-radius: 4px; color: var(--text-primary); font-family: 'Inter', sans-serif; margin-bottom: var(--spacing-sm); }
         .signup-box input:focus { outline: none; border-color: var(--accent); }
 
-        h1, h2 { text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
-
         @media (max-width: 768px) {
-            h1 { font-size: 2rem; } h2 { font-size: 1.5rem; }
+            h1 { font-size: 2rem; }
             .nav-container { flex-direction: column; padding: var(--spacing-sm); }
             .nav-links { gap: var(--spacing-sm); flex-wrap: wrap; justify-content: center; }
             .container { padding: var(--spacing-md) var(--spacing-sm); }
-            .doc-grid { grid-template-columns: 1fr; }
         }
-
-        @media print { body { background: #fff; color: #000; } nav, footer, .btn, #back-to-top, .signup-box, iframe { display: none; } .card { border: 1px solid #ccc; box-shadow: none; break-inside: avoid; } }
+        @media print { body { background: #fff; color: #000; } nav, footer, .btn, #back-to-top, .signup-box { display: none; } .card { border: 1px solid #ccc; box-shadow: none; break-inside: avoid; } }
     </style>
 </head>
 <body>
     <nav>
         <div class="nav-container">
             <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Lazily Efficient IB English" class="nav-logo-img">Lazily Efficient IB English</a>
-           <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="assessment.html">Assessment</a></li>
-    <li><a href="skills.html">Skills</a></li>
-    <li><a href="exercises.html">Exercises</a></li>
-    <li><a href="department.html">Department</a></li>
-    <li><a href="youtube.html">YouTube</a></li>
-    <li><a href="about.html">About</a></li>
-</ul>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="assessment.html">Assessment</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="exercises.html" class="active">Exercises</a></li>
+                <li><a href="department.html">Department</a></li>
+                <li><a href="youtube.html">YouTube</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
         </div>
     </nav>
     <main>
         <div class="container">
-            <section class="content-section"><h1>Exercises & Examples</h1><p class="section-description">Worked examples, practice tasks, and interactive exercises for you and your students.</p></section>
-            <section class="content-section"><h2>Google Docs Activities</h2>
-                <div class="doc-grid">
-                    <div class="doc-card"><iframe class="doc-embed" src="https://docs.google.com/document/d/1BarlZE86CrxdjDPdhC9oe5xRNVgOH39sM4mheY3tvU/pub?embedded=true" allowfullscreen></iframe><p style="text-align:center;margin-top:0.5rem;">Stages of IDEAs Exercise</p></div>
-                    <div class="doc-card"><iframe class="doc-embed" src="https://docs.google.com/document/d/1M2kT-VcNh4Hy8_zuVD-tIQ7NgNwGzUoSgr8-Vcteeqc/pub?embedded=true" allowfullscreen></iframe><p style="text-align:center;margin-top:0.5rem;">Ways to Phrase Deconstructions – Practice</p></div>
-                    <div class="doc-card"><p class="section-description" style="text-align:center;">More exercises coming soon. Subscribe to the YouTube channel for walkthroughs.</p></div>
+            <section class="content-section">
+                <h1>Exercises &amp; Examples</h1>
+                <p class="section-description">Worked examples and practice tasks are being built. Watch the YouTube channel for walkthroughs in the meantime.</p>
+                <div class="coming-soon-box">
+                    <p style="font-family:'Montserrat',sans-serif;font-size:1.5rem;font-weight:600;color:var(--accent);margin-bottom:var(--spacing-sm);">Coming Soon</p>
+                    <p style="color:var(--text-secondary);">I'm creating interactive exercises that connect directly to the resources on the Skills and Assessment pages.</p>
+                    <a href="https://youtube.com/@thelazyefficientibenglishtea" class="btn btn-primary" target="_blank">Watch on YouTube</a>
                 </div>
             </section>
         </div>
@@ -115,11 +112,5 @@
         </div>
         <div class="footer-bottom"><p>&copy; 2026 The Lazily Efficient IB English Teacher. All rights reserved.</p></div>
     </footer>
-    <button id="back-to-top" title="Back to top">↑</button>
-    <script>
-        const btt = document.getElementById('back-to-top');
-        window.addEventListener('scroll', () => { btt.classList.toggle('show', window.scrollY > 300); });
-        btt.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
-    </script>
 </body>
 </html>
