@@ -1,3 +1,6 @@
+I’ve made the boxes taller and enforced strict internal alignment: the numbered circle, title, and description start at the same position in every box, and the link is anchored to the bottom. The content area stretches equally, so no matter how much text, the structure stays uniform.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,7 +47,7 @@
         .section-title { margin-bottom: var(--spacing-lg); text-align: center; }
         .section-description { color: var(--text-secondary); font-size: 1.1rem; max-width: 700px; margin: 0 auto var(--spacing-lg) auto; text-align: center; }
 
-        /* How‑to flow – now a fixed 4‑column grid, all boxes identical */
+        /* How‑to flow – 4 equal columns, tall boxes with strict alignment */
         .howto-flow {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -56,46 +59,47 @@
             border: 1px solid rgba(253,252,249,0.08);
             border-radius: 4px;
             padding: var(--spacing-md);
-            text-align: center;
             box-shadow: 0 2px 6px rgba(0,0,0,0.3);
             transition: transform 0.2s ease;
-            height: 360px;               /* fixed height for uniform size */
+            height: 440px;                       /* taller to fit more text uniformly */
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            align-items: center;                 /* center the number circle */
+            text-align: center;
         }
         .howto-step:hover {
             transform: translateY(-3px);
             border-color: var(--accent);
         }
         .step-number {
-            display: inline-block;
-            width: 44px; height: 44px;
+            width: 48px; height: 48px;
             border-radius: 50%;
             background: var(--accent);
             color: #FFFFFF;
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            font-size: 1.25rem;
-            line-height: 44px;
+            font-size: 1.3rem;
+            line-height: 48px;
+            flex-shrink: 0;
             margin-bottom: var(--spacing-sm);
-            align-self: center;
         }
         .howto-step h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+            margin-bottom: 0.6rem;
+            flex-shrink: 0;
         }
         .howto-step p {
             color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-            flex-grow: 1;              /* push the link down */
+            font-size: 0.95rem;
+            flex-grow: 1;                       /* pushes link to bottom */
+            margin-bottom: 0;
         }
         .howto-step a {
-            display: inline-block;
             font-weight: 600;
             color: var(--accent);
             border-bottom: 1px solid transparent;
+            flex-shrink: 0;
+            margin-top: var(--spacing-sm);
         }
         .howto-step a:hover { border-bottom-color: var(--accent); }
 
@@ -176,34 +180,26 @@
                 <div class="howto-flow">
                     <div class="howto-step">
                         <div class="step-number">1</div>
-                        <div>
-                            <h3>Assessment</h3>
-                            <p>Start here if you're a DP teacher. Download the TEEAL scaffold for your next essay — Paper 1, Paper 2, the IO, or the HL Essay. Every resource you need for each assessment is listed together, with direct downloads.</p>
-                        </div>
+                        <h3>Assessment</h3>
+                        <p>Start here if you're a DP teacher. Download the TEEAL scaffold for your next essay — Paper 1, Paper 2, the IO, or the HL Essay. Every resource you need for each assessment is listed together, with direct downloads.</p>
                         <a href="assessment.html">Browse Assessments →</a>
                     </div>
                     <div class="howto-step">
                         <div class="step-number">2</div>
-                        <div>
-                            <h3>Skills</h3>
-                            <p>The skill‑building tools — annotation rubrics, elaboration guides, deconstruction frames — are the engine under every assessment. Use them to teach the core analytical moves, then reinforce with assessments.</p>
-                        </div>
+                        <h3>Skills</h3>
+                        <p>The skill‑building tools — annotation rubrics, elaboration guides, deconstruction frames — are the engine under every assessment. Use them to teach the core analytical moves, then reinforce with assessments.</p>
                         <a href="skills.html">Explore Skills →</a>
                     </div>
                     <div class="howto-step">
                         <div class="step-number">3</div>
-                        <div>
-                            <h3>Exercises</h3>
-                            <p>Walkthroughs and practice tasks are coming soon. For now, the YouTube Shorts walk you through each resource step‑by‑step.</p>
-                        </div>
+                        <h3>Exercises</h3>
+                        <p>Walkthroughs and practice tasks are coming soon. For now, the YouTube Shorts walk you through each resource step‑by‑step.</p>
                         <a href="exercises.html">Coming Soon →</a>
                     </div>
                     <div class="howto-step">
                         <div class="step-number">4</div>
-                        <div>
-                            <h3>YouTube</h3>
-                            <p>Short, practical videos that show you exactly how to use each part of the Lazy Efficiency system. Subscribe to stay updated when new resources drop.</p>
-                        </div>
+                        <h3>YouTube</h3>
+                        <p>Short, practical videos that show you exactly how to use each part of the Lazy Efficiency system. Subscribe to stay updated when new resources drop.</p>
                         <a href="https://youtube.com/@thelazyefficientibenglishtea" target="_blank">Watch on YouTube →</a>
                     </div>
                 </div>
@@ -270,3 +266,6 @@
     </script>
 </body>
 </html>
+```
+
+Now the four boxes all have the same height (440 px), the numbered circles are perfectly centered at the top, titles start at the exact same line, the description area flexes to fill the remaining space, and every link sits at the very bottom. Replace your `index.html` with this code and push.
