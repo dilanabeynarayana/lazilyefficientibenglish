@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercises & Examples – The Lazily Efficient IB English Teacher</title>
-    <meta name="description" content="Worked examples, practice tasks, and interactive Google Docs for IB English teachers and students.">
+    <meta name="description" content="Worked examples, practice tasks, and interactive exercises for IB English teachers and students – coming soon.">
     <meta property="og:title" content="Exercises & Examples – The Lazily Efficient IB English Teacher">
-    <meta property="og:description" content="Worked examples and practice tasks for IB English – coming soon.">
+    <meta property="og:description" content="Worked examples and practice tasks for IB English – coming soon. In the meantime, watch the YouTube Shorts.">
     <meta property="og:url" content="https://lazilyefficientibenglish.com/exercises.html">
     <meta property="og:type" content="website">
     <link rel="icon" type="image/png" href="favicon.png">
@@ -34,9 +34,8 @@
         .nav-links { display: flex; gap: var(--spacing-md); list-style: none; }
         .nav-links a { font-weight: 500; font-size: 0.95rem; letter-spacing: 0.02em; }
         .nav-links a.active { border-bottom: 2px solid var(--accent); }
-        .container { max-width: var(--max-width); margin: 0 auto; padding: var(--spacing-xl) var(--spacing-md); position: relative; z-index: 1; }
-        .content-section { margin-bottom: var(--spacing-xl); text-align: center; }
-        .section-description { color: var(--text-secondary); font-size: 1.1rem; max-width: 800px; margin: 0 auto var(--spacing-lg) auto; }
+        .container { max-width: var(--max-width); margin: 0 auto; padding: var(--spacing-xl) var(--spacing-md); position: relative; z-index: 1; display: flex; justify-content: center; align-items: center; min-height: 70vh; }
+        .content-section { text-align: center; }
         .coming-soon-box {
             background: rgba(253,252,249,0.03);
             border: 1px solid rgba(253,252,249,0.08);
@@ -64,9 +63,8 @@
             h1 { font-size: 2rem; }
             .nav-container { flex-direction: column; padding: var(--spacing-sm); }
             .nav-links { gap: var(--spacing-sm); flex-wrap: wrap; justify-content: center; }
-            .container { padding: var(--spacing-md) var(--spacing-sm); }
+            .container { padding: var(--spacing-md) var(--spacing-sm); min-height: 60vh; }
         }
-        @media print { body { background: #fff; color: #000; } nav, footer, .btn, #back-to-top, .signup-box { display: none; } .card { border: 1px solid #ccc; box-shadow: none; break-inside: avoid; } }
     </style>
 </head>
 <body>
@@ -88,10 +86,11 @@
         <div class="container">
             <section class="content-section">
                 <h1>Exercises &amp; Examples</h1>
-                <p class="section-description">Worked examples and practice tasks are being built. Watch the YouTube channel for walkthroughs in the meantime.</p>
+                <p class="section-description" style="color:var(--text-secondary);font-size:1.1rem;max-width:800px;margin:0 auto 2rem auto;">
+                    Worked examples and practice tasks are being built right now. In the meantime, watch the YouTube Shorts for walkthroughs of every skill and assessment.
+                </p>
                 <div class="coming-soon-box">
-                    <p style="font-family:'Montserrat',sans-serif;font-size:1.5rem;font-weight:600;color:var(--accent);margin-bottom:var(--spacing-sm);">Coming Soon</p>
-                    <p style="color:var(--text-secondary);">I'm creating interactive exercises that connect directly to the resources on the Skills and Assessment pages.</p>
+                    <p style="font-family:'Montserrat',sans-serif;font-size:1.5rem;font-weight:600;color:var(--accent);margin-bottom:1rem;">Coming Soon</p>
                     <a href="https://youtube.com/@thelazyefficientibenglishtea" class="btn btn-primary" target="_blank">Watch on YouTube</a>
                 </div>
             </section>
