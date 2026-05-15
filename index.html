@@ -54,7 +54,46 @@
         .section-title { margin-bottom: var(--spacing-lg); text-align: center; }
         .section-description { color: var(--text-secondary); font-size: 1.1rem; max-width: 700px; margin: 0 auto var(--spacing-lg) auto; text-align: center; }
 
-        .howto-flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--spacing-md); margin: var(--spacing-xl) 0; }
+        /* Resource Counter Bar */
+        .counter-bar {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-xl);
+            margin: var(--spacing-lg) 0;
+            flex-wrap: wrap;
+        }
+        .counter-item {
+            text-align: center;
+            background: rgba(253,252,249,0.03);
+            border: 1px solid rgba(253,252,249,0.08);
+            border-radius: 6px;
+            padding: var(--spacing-md) var(--spacing-lg);
+            min-width: 140px;
+            transition: all 0.2s ease;
+            display: block;
+        }
+        a.counter-item:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+        .counter-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent);
+            line-height: 1;
+        }
+        .counter-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-top: 0.3rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* How‑to flow */
+        .howto-wrapper { position: relative; }
+        .howto-flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--spacing-md); margin: var(--spacing-xl) 0; position: relative; z-index: 2; }
         .howto-step { background: rgba(253,252,249,0.03); border: 1px solid rgba(253,252,249,0.08); border-radius: 4px; padding: var(--spacing-md); box-shadow: 0 2px 6px rgba(0,0,0,0.3); transition: all 0.2s ease; height: 440px; display: flex; flex-direction: column; align-items: center; text-align: center; }
         .howto-step:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: 0 6px 16px rgba(0,0,0,0.5); }
         .step-number { width: 48px; height: 48px; border-radius: 50%; background: var(--accent); color: #FFFFFF; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.3rem; line-height: 48px; flex-shrink: 0; margin-bottom: var(--spacing-sm); }
@@ -63,11 +102,112 @@
         .howto-step a { font-weight: 600; color: var(--accent); border-bottom: 1px solid transparent; flex-shrink: 0; margin-top: var(--spacing-sm); }
         .howto-step a:hover { border-bottom-color: var(--accent); }
 
-        .teeal-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--spacing-md); margin: var(--spacing-xl) 0; }
-        .teeal-strip-card { background: rgba(253,252,249,0.03); border: 1px solid rgba(253,252,249,0.08); border-radius: 4px; overflow: hidden; text-align: center; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.3); text-decoration: none; display: block; }
-        .teeal-strip-card:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: 0 6px 16px rgba(0,0,0,0.5); }
-        .teeal-strip-card img { width: 100%; height: 200px; object-fit: contain; display: block; background: rgba(0,0,0,0.2); }
-        .teeal-strip-card .strip-label { font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 600; color: var(--text-primary); padding: var(--spacing-sm); }
+        /* Animated dotted lines */
+        .connector-svg {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .connector-line {
+            stroke: var(--accent);
+            stroke-width: 2;
+            stroke-dasharray: 8 6;
+            opacity: 0.5;
+            animation: dashFlow 2s linear infinite;
+        }
+        @keyframes dashFlow {
+            0%   { stroke-dashoffset: 0; }
+            100% { stroke-dashoffset: -28; }
+        }
+
+        /* TEEAL Carousel – now with lightbox on images */
+        .carousel-outer {
+            overflow: hidden;
+            border-radius: 6px;
+            margin: var(--spacing-xl) 0;
+            position: relative;
+        }
+        .carousel-track {
+            display: flex;
+            animation: carouselScroll 16s linear infinite;
+            width: max-content;
+        }
+        .carousel-track:hover { animation-play-state: paused; }
+        @keyframes carouselScroll {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .carousel-card {
+            flex: 0 0 280px;
+            margin-right: var(--spacing-md);
+            background: rgba(253,252,249,0.03);
+            border: 1px solid rgba(253,252,249,0.08);
+            border-radius: 4px;
+            overflow: hidden;
+            text-align: center;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+        }
+        .carousel-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 6px 16px rgba(0,0,0,0.5); }
+        .carousel-thumb {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            cursor: pointer;
+            background: rgba(0,0,0,0.2);
+            position: relative;
+        }
+        .carousel-thumb img {
+            width: 100%; height: 100%;
+            object-fit: contain;
+            display: block;
+            transition: transform 0.2s ease;
+        }
+        .carousel-thumb:hover img { transform: scale(1.05); }
+        .carousel-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            padding: var(--spacing-sm);
+            display: block;
+            border-bottom: none;
+        }
+        .carousel-label:hover { color: var(--accent); border-bottom: none; }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 200;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .lightbox.show { display: flex; }
+        .lightbox img {
+            max-width: 90vw;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 4px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.6);
+        }
+        #lightbox-download {
+            margin-top: 1.5rem;
+            font-size: 1rem;
+            padding: 0.75rem 2rem;
+            display: none;
+            z-index: 210;
+            pointer-events: auto;
+        }
 
         .btn { display: inline-block; padding: 0.75rem 1.5rem; font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 500; text-align: center; cursor: pointer; border: none; border-radius: 4px; transition: all 0.2s ease; letter-spacing: 0.02em; box-shadow: 0 2px 6px rgba(0,0,0,0.3); }
         .btn-primary { background: linear-gradient(135deg, #CC0000 0%, #A00000 100%); color: #FFFFFF; border: 1px solid rgba(255,255,255,0.15); }
@@ -91,9 +231,18 @@
 
         h1, h2 { text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
 
-        @media (max-width: 900px) { .howto-flow { grid-template-columns: repeat(2, 1fr); } .teeal-strip { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 600px) { .howto-flow { grid-template-columns: 1fr; } .teeal-strip { grid-template-columns: 1fr; } }
-        @media print { body { background: #fff; color: #000; } nav, footer, .btn, #back-to-top, .signup-box { display: none; } }
+        @media (max-width: 900px) {
+            .howto-flow { grid-template-columns: repeat(2, 1fr); }
+            .connector-svg { display: none; }
+        }
+        @media (max-width: 600px) {
+            .howto-flow { grid-template-columns: 1fr; }
+            .carousel-card { flex: 0 0 220px; }
+            .counter-bar { gap: var(--spacing-sm); }
+            .counter-item { min-width: 100px; padding: var(--spacing-sm); }
+            .counter-number { font-size: 1.8rem; }
+        }
+        @media print { body { background: #fff; color: #000; } nav, footer, .btn, #back-to-top, .signup-box, .carousel-outer { display: none; } }
     </style>
 </head>
 <body>
@@ -114,69 +263,88 @@
 
     <main>
         <div class="container">
+            <!-- Hero -->
             <section class="content-section">
                 <h1 class="section-title">Lazily Efficient IB English</h1>
                 <p class="section-description">Biggest impact. Fewest moving parts. Everything your students need to stop describing and start <em>adding</em>: implications, connotations, and real arguments.</p>
             </section>
 
+            <!-- How to Use -->
             <section class="content-section">
                 <h2 class="section-title">How to Use This Site</h2>
-                <div class="howto-flow">
-                    <div class="howto-step">
-                        <div class="step-number">1</div>
-                        <h3>Assessment</h3>
-                        <p>Start here if you're a DP teacher. Download the TEEAL scaffold for your next assessment: Paper 1, Paper 2, the IO, or the HL Essay. Every resource you need for each assessment is listed together, with direct downloads.</p>
-                        <a href="assessment.html">Browse Assessments →</a>
-                    </div>
-                    <div class="howto-step">
-                        <div class="step-number">2</div>
-                        <h3>Skills</h3>
-                        <p>The skill building tools: annotation rubrics, elaboration guides, deconstruction frames. These are the engine under every assessment. Use them to teach the core analytical moves, then reinforce with assessments.</p>
-                        <a href="skills.html">Explore Skills →</a>
-                    </div>
-                    <div class="howto-step">
-                        <div class="step-number">3</div>
-                        <h3>Exercises</h3>
-                        <p>Walkthroughs and practice tasks are coming soon. For now, the YouTube Shorts walk you through each resource step by step.</p>
-                        <a href="exercises.html">Coming Soon →</a>
-                    </div>
-                    <div class="howto-step">
-                        <div class="step-number">4</div>
-                        <h3>YouTube</h3>
-                        <p>Short, practical videos that show you exactly how to use each part of the Lazy Efficiency system. Subscribe to stay updated when new resources drop.</p>
-                        <a href="https://youtube.com/@thelazyefficientibenglishtea" target="_blank">Watch on YouTube →</a>
+                <div class="howto-wrapper">
+                    <svg class="connector-svg" viewBox="0 0 1200 440" preserveAspectRatio="none">
+                        <line x1="280" y1="220" x2="320" y2="220" stroke="#CC0000" stroke-width="2" stroke-dasharray="8 6" opacity="0.4"/>
+                    </svg>
+                    <div class="howto-flow">
+                        <div class="howto-step">
+                            <div class="step-number">1</div>
+                            <h3>Assessment</h3>
+                            <p>Start here if you're a DP teacher. Download the TEEAL scaffold for your next assessment: Paper 1, Paper 2, the IO, or the HL Essay. Every resource you need for each assessment is listed together, with direct downloads.</p>
+                            <a href="assessment.html">Browse Assessments →</a>
+                        </div>
+                        <div class="howto-step">
+                            <div class="step-number">2</div>
+                            <h3>Skills</h3>
+                            <p>The skill building tools: annotation rubrics, elaboration guides, deconstruction frames. These are the engine under every assessment. Use them to teach the core analytical moves, then reinforce with assessments.</p>
+                            <a href="skills.html">Explore Skills →</a>
+                        </div>
+                        <div class="howto-step">
+                            <div class="step-number">3</div>
+                            <h3>Exercises</h3>
+                            <p>Walkthroughs and practice tasks are coming soon. For now, the YouTube Shorts walk you through each resource step by step.</p>
+                            <a href="exercises.html">Coming Soon →</a>
+                        </div>
+                        <div class="howto-step">
+                            <div class="step-number">4</div>
+                            <h3>YouTube</h3>
+                            <p>Short, practical videos that show you exactly how to use each part of the Lazy Efficiency system. Subscribe to stay updated when new resources drop.</p>
+                            <a href="https://youtube.com/@thelazyefficientibenglishtea" target="_blank">Watch on YouTube →</a>
+                        </div>
                     </div>
                 </div>
             </section>
 
+            <!-- Resource Counter -->
+            <section class="content-section">
+                <div class="counter-bar">
+                    <a href="resources.html" class="counter-item">
+                        <div class="counter-number">14</div>
+                        <div class="counter-label">Free Downloads</div>
+                    </a>
+                    <a href="assessment.html" class="counter-item">
+                        <div class="counter-number">4</div>
+                        <div class="counter-label">Assessments Covered</div>
+                    </a>
+                    <a href="youtube.html" class="counter-item">
+                        <div class="counter-number">4</div>
+                        <div class="counter-label">YouTube Shorts</div>
+                    </a>
+                    <div class="counter-item">
+                        <div class="counter-number">1</div>
+                        <div class="counter-label">Connected System</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TEEAL Carousel with lightbox and download -->
             <section class="content-section">
                 <h2 class="section-title">Start With Your Assessment</h2>
-                <p class="section-description">Every assessment has a dedicated TEEAL scaffold, plus the specific skill documents you need. Click any one to jump straight to the resources.</p>
-                <div class="teeal-strip">
-                    <a href="assessment.html#assessment-io" class="teeal-strip-card">
-                        <img src="images/IO.png" alt="IO TEEAL Structure">
-                        <span class="strip-label">Individual Oral</span>
-                    </a>
-                    <a href="assessment.html#assessment-paper1" class="teeal-strip-card">
-                        <img src="images/paper1teeal.png" alt="Paper 1 TEEAL Structure">
-                        <span class="strip-label">Paper 1</span>
-                    </a>
-                    <a href="assessment.html#assessment-paper2" class="teeal-strip-card">
-                        <img src="images/paper2teeal.png" alt="Paper 2 TEEAL Structure">
-                        <span class="strip-label">Paper 2</span>
-                    </a>
-                    <a href="assessment.html#assessment-hl-essay" class="teeal-strip-card">
-                        <img src="images/hlessayteeal.png" alt="HL Essay TEEAL Structure">
-                        <span class="strip-label">HL Essay</span>
-                    </a>
+                <p class="section-description">Every assessment has a dedicated TEEAL scaffold. Click the image to preview and download, or click the label to browse all resources.</p>
+                <div class="carousel-outer">
+                    <div class="carousel-track" id="carousel-track">
+                        <!-- dynamically built by JS -->
+                    </div>
                 </div>
             </section>
 
+            <!-- CTA -->
             <section class="content-section" style="text-align: center;">
                 <p class="section-description">From curriculum design to deconstruction frames, from essay scaffolds to video walkthroughs: everything connects.</p>
                 <a href="assessment.html" class="btn btn-primary btn-large">Browse All Resources →</a>
             </section>
 
+            <!-- About Snippet -->
             <section class="content-section" style="margin-top: var(--spacing-xl); text-align: center;">
                 <h2 class="section-title">Who Built This</h2>
                 <p class="section-description">I'm Dilan Abeynarayana. Team Leader for Paper 1 and the HL Essay, IB examiner since 2016, and Subject Lead for a three-language L&L department. This site is the system I use every day. <a href="about.html">More about me →</a></p>
@@ -204,14 +372,83 @@
 
     <button id="back-to-top" title="Back to top">↑</button>
 
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <img src="" alt="Preview" id="lightbox-img">
+        <a href="#" target="_blank" id="lightbox-download" class="btn btn-primary">Download Resource</a>
+    </div>
+
     <script>
         function handleSubmit() {
             setTimeout(function() {
-                document.getElementById('signup-msg').stylex.display = 'block';
+                document.getElementById('signup-msg').style.display = 'block';
                 document.getElementById('signup-form').reset();
             }, 1000);
             return true;
         }
+
+        // Carousel data – same as before, but now with download links
+        const teealResources = [
+            { label: 'Individual Oral', image: 'images/IO.png', link: 'assessment.html#assessment-io', download: 'https://drive.google.com/file/d/1m10ygbmp5AEJzdJwj7r6HRnm77IAJa-x/view?usp=drive_link' },
+            { label: 'Paper 1', image: 'images/paper1teeal.png', link: 'assessment.html#assessment-paper1', download: 'https://drive.google.com/file/d/15ybuv5v58JJBfzCY77OMpITBPw178nYp/view?usp=drive_link' },
+            { label: 'Paper 2', image: 'images/paper2teeal.png', link: 'assessment.html#assessment-paper2', download: 'https://drive.google.com/file/d/1wI7RMaepBu8dt7R3AyhTzHSEr0smdFPW/view?usp=drive_link' },
+            { label: 'HL Essay', image: 'images/hlessayteeal.png', link: 'assessment.html#assessment-hl-essay', download: 'https://drive.google.com/file/d/1gb_JNas7mluK4rzybENnJ72UtjGx11KC/view?usp=drive_link' }
+        ];
+
+        const track = document.getElementById('carousel-track');
+
+        // Build double set for infinite loop
+        function buildCarousel() {
+            let html = '';
+            for (let i = 0; i < 2; i++) {
+                teealResources.forEach(res => {
+                    html += `
+                        <div class="carousel-card">
+                            <div class="carousel-thumb" data-image="${res.image}" data-download="${res.download}">
+                                <img src="${res.image}" alt="${res.label}">
+                            </div>
+                            <a href="${res.link}" class="carousel-label">${res.label}</a>
+                        </div>
+                    `;
+                });
+            }
+            track.innerHTML = html;
+        }
+        buildCarousel();
+
+        // Lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxDownload = document.getElementById('lightbox-download');
+
+        document.addEventListener('click', function(e) {
+            const thumb = e.target.closest('.carousel-thumb');
+            if (thumb) {
+                const imageSrc = thumb.dataset.image;
+                const downloadUrl = thumb.dataset.download;
+                lightboxImg.src = imageSrc;
+                if (downloadUrl && downloadUrl !== '#') {
+                    lightboxDownload.href = downloadUrl.replace(/\/view\?usp=.*$/, '/uc?export=download');
+                    lightboxDownload.style.display = 'inline-block';
+                } else {
+                    lightboxDownload.style.display = 'none';
+                }
+                lightbox.classList.add('show');
+            }
+        });
+
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox || e.target === lightboxImg) {
+                lightbox.classList.remove('show');
+            }
+        });
+        lightboxDownload.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') lightbox.classList.remove('show'); });
+
+        // Back to top
         const btt = document.getElementById('back-to-top');
         window.addEventListener('scroll', () => { btt.classList.toggle('show', window.scrollY > 300); });
         btt.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
