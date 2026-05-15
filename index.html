@@ -44,18 +44,14 @@
         .section-title { margin-bottom: var(--spacing-lg); text-align: center; }
         .section-description { color: var(--text-secondary); font-size: 1.1rem; max-width: 700px; margin: 0 auto var(--spacing-lg) auto; text-align: center; }
 
-        /* How‑to flow */
+        /* How‑to flow – now a fixed 4‑column grid, all boxes identical */
         .howto-flow {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
             gap: var(--spacing-md);
             margin: var(--spacing-xl) 0;
-            flex-wrap: wrap;
         }
         .howto-step {
-            flex: 1;
-            min-width: 220px;
             background: rgba(253,252,249,0.03);
             border: 1px solid rgba(253,252,249,0.08);
             border-radius: 4px;
@@ -63,7 +59,10 @@
             text-align: center;
             box-shadow: 0 2px 6px rgba(0,0,0,0.3);
             transition: transform 0.2s ease;
-            position: relative;
+            height: 360px;               /* fixed height for uniform size */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         .howto-step:hover {
             transform: translateY(-3px);
@@ -80,6 +79,7 @@
             font-size: 1.25rem;
             line-height: 44px;
             margin-bottom: var(--spacing-sm);
+            align-self: center;
         }
         .howto-step h3 {
             font-size: 1.2rem;
@@ -89,6 +89,7 @@
             color: var(--text-secondary);
             font-size: 0.9rem;
             margin-bottom: 1rem;
+            flex-grow: 1;              /* push the link down */
         }
         .howto-step a {
             display: inline-block;
@@ -134,15 +135,14 @@
 
         h1, h2 { text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
 
-        @media (max-width: 768px) {
-            h1 { font-size: 2rem; } h2 { font-size: 1.5rem; }
-            .nav-container { flex-direction: column; padding: var(--spacing-sm); }
-            .nav-links { gap: var(--spacing-sm); flex-wrap: wrap; justify-content: center; }
-            .container { padding: var(--spacing-md) var(--spacing-sm); }
+        @media (max-width: 900px) {
+            .howto-flow { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .howto-flow { grid-template-columns: 1fr; }
             .circle-diagram { width: auto; height: auto; display: flex; flex-wrap: wrap; justify-content: center; gap: var(--spacing-md); }
             .circle-node { position: relative; left: auto; top: auto; }
             .circle-diagram svg { display: none; }
-            .howto-flow { flex-direction: column; }
         }
         @media print { body { background: #fff; color: #000; } nav, footer, .btn, #back-to-top, .signup-box { display: none; } }
     </style>
@@ -176,26 +176,34 @@
                 <div class="howto-flow">
                     <div class="howto-step">
                         <div class="step-number">1</div>
-                        <h3>Assessment</h3>
-                        <p>Start here if you're a DP teacher. Download the TEEAL scaffold for your next essay — Paper 1, Paper 2, the IO, or the HL Essay. Every resource you need for each assessment is listed together, with direct downloads.</p>
+                        <div>
+                            <h3>Assessment</h3>
+                            <p>Start here if you're a DP teacher. Download the TEEAL scaffold for your next essay — Paper 1, Paper 2, the IO, or the HL Essay. Every resource you need for each assessment is listed together, with direct downloads.</p>
+                        </div>
                         <a href="assessment.html">Browse Assessments →</a>
                     </div>
                     <div class="howto-step">
                         <div class="step-number">2</div>
-                        <h3>Skills</h3>
-                        <p>The skill‑building tools — annotation rubrics, elaboration guides, deconstruction frames — are the engine under every assessment. Use them to teach the core analytical moves, then reinforce with assessments.</p>
+                        <div>
+                            <h3>Skills</h3>
+                            <p>The skill‑building tools — annotation rubrics, elaboration guides, deconstruction frames — are the engine under every assessment. Use them to teach the core analytical moves, then reinforce with assessments.</p>
+                        </div>
                         <a href="skills.html">Explore Skills →</a>
                     </div>
                     <div class="howto-step">
                         <div class="step-number">3</div>
-                        <h3>Exercises</h3>
-                        <p>Walkthroughs and practice tasks are coming soon. For now, the YouTube Shorts walk you through each resource step‑by‑step.</p>
+                        <div>
+                            <h3>Exercises</h3>
+                            <p>Walkthroughs and practice tasks are coming soon. For now, the YouTube Shorts walk you through each resource step‑by‑step.</p>
+                        </div>
                         <a href="exercises.html">Coming Soon →</a>
                     </div>
                     <div class="howto-step">
                         <div class="step-number">4</div>
-                        <h3>YouTube</h3>
-                        <p>Short, practical videos that show you exactly how to use each part of the Lazy Efficiency system. Subscribe to stay updated when new resources drop.</p>
+                        <div>
+                            <h3>YouTube</h3>
+                            <p>Short, practical videos that show you exactly how to use each part of the Lazy Efficiency system. Subscribe to stay updated when new resources drop.</p>
+                        </div>
                         <a href="https://youtube.com/@thelazyefficientibenglishtea" target="_blank">Watch on YouTube →</a>
                     </div>
                 </div>
