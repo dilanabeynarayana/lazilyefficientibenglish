@@ -1,9 +1,6 @@
-I’ve made the boxes taller and enforced strict internal alignment: the numbered circle, title, and description start at the same position in every box, and the link is anchored to the bottom. The content area stretches equally, so no matter how much text, the structure stays uniform.
-
-```html
 <!DOCTYPE html>
 <html lang="en">
-<<head>
+<head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GX95G557NH"></script>
     <script>
@@ -13,9 +10,6 @@ I’ve made the boxes taller and enforced strict internal alignment: the numbere
       gtag('config', 'G-GX95G557NH');
     </script>
 
-    <meta charset="UTF-8">
-    ...
-</head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Lazily Efficient IB English Teacher</title>
@@ -59,63 +53,15 @@ I’ve made the boxes taller and enforced strict internal alignment: the numbere
         .section-title { margin-bottom: var(--spacing-lg); text-align: center; }
         .section-description { color: var(--text-secondary); font-size: 1.1rem; max-width: 700px; margin: 0 auto var(--spacing-lg) auto; text-align: center; }
 
-        /* How‑to flow – 4 equal columns, tall boxes with strict alignment */
-        .howto-flow {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: var(--spacing-md);
-            margin: var(--spacing-xl) 0;
-        }
-        .howto-step {
-            background: rgba(253,252,249,0.03);
-            border: 1px solid rgba(253,252,249,0.08);
-            border-radius: 4px;
-            padding: var(--spacing-md);
-            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-            transition: transform 0.2s ease;
-            height: 440px;                       /* taller to fit more text uniformly */
-            display: flex;
-            flex-direction: column;
-            align-items: center;                 /* center the number circle */
-            text-align: center;
-        }
-        .howto-step:hover {
-            transform: translateY(-3px);
-            border-color: var(--accent);
-        }
-        .step-number {
-            width: 48px; height: 48px;
-            border-radius: 50%;
-            background: var(--accent);
-            color: #FFFFFF;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 1.3rem;
-            line-height: 48px;
-            flex-shrink: 0;
-            margin-bottom: var(--spacing-sm);
-        }
-        .howto-step h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.6rem;
-            flex-shrink: 0;
-        }
-        .howto-step p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            flex-grow: 1;                       /* pushes link to bottom */
-            margin-bottom: 0;
-        }
-        .howto-step a {
-            font-weight: 600;
-            color: var(--accent);
-            border-bottom: 1px solid transparent;
-            flex-shrink: 0;
-            margin-top: var(--spacing-sm);
-        }
+        .howto-flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--spacing-md); margin: var(--spacing-xl) 0; }
+        .howto-step { background: rgba(253,252,249,0.03); border: 1px solid rgba(253,252,249,0.08); border-radius: 4px; padding: var(--spacing-md); box-shadow: 0 2px 6px rgba(0,0,0,0.3); transition: transform 0.2s ease; height: 440px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+        .howto-step:hover { transform: translateY(-3px); border-color: var(--accent); }
+        .step-number { width: 48px; height: 48px; border-radius: 50%; background: var(--accent); color: #FFFFFF; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.3rem; line-height: 48px; flex-shrink: 0; margin-bottom: var(--spacing-sm); }
+        .howto-step h3 { font-size: 1.25rem; margin-bottom: 0.6rem; flex-shrink: 0; }
+        .howto-step p { color: var(--text-secondary); font-size: 0.95rem; flex-grow: 1; margin-bottom: 0; }
+        .howto-step a { font-weight: 600; color: var(--accent); border-bottom: 1px solid transparent; flex-shrink: 0; margin-top: var(--spacing-sm); }
         .howto-step a:hover { border-bottom-color: var(--accent); }
 
-        /* Circle diagram (unchanged) */
         .circle-diagram { position: relative; width: 460px; height: 460px; margin: var(--spacing-lg) auto; }
         .circle-diagram svg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
         .connecting-line { stroke: var(--accent); stroke-width: 2; stroke-linecap: round; opacity: 0.5; }
@@ -151,15 +97,8 @@ I’ve made the boxes taller and enforced strict internal alignment: the numbere
 
         h1, h2 { text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
 
-        @media (max-width: 900px) {
-            .howto-flow { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 600px) {
-            .howto-flow { grid-template-columns: 1fr; }
-            .circle-diagram { width: auto; height: auto; display: flex; flex-wrap: wrap; justify-content: center; gap: var(--spacing-md); }
-            .circle-node { position: relative; left: auto; top: auto; }
-            .circle-diagram svg { display: none; }
-        }
+        @media (max-width: 900px) { .howto-flow { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 600px) { .howto-flow { grid-template-columns: 1fr; } .circle-diagram { width: auto; height: auto; display: flex; flex-wrap: wrap; justify-content: center; gap: var(--spacing-md); } .circle-node { position: relative; left: auto; top: auto; } .circle-diagram svg { display: none; } }
         @media print { body { background: #fff; color: #000; } nav, footer, .btn, #back-to-top, .signup-box { display: none; } }
     </style>
 </head>
@@ -186,7 +125,6 @@ I’ve made the boxes taller and enforced strict internal alignment: the numbere
                 <p class="section-description">Biggest impact. Fewest moving parts. Everything your students need to stop describing and start <em>adding</em> — implications, connotations, and real arguments.</p>
             </section>
 
-            <!-- How to Use: Step‑by‑step guidance -->
             <section class="content-section">
                 <h2 class="section-title">How to Use This Site</h2>
                 <div class="howto-flow">
@@ -217,7 +155,6 @@ I’ve made the boxes taller and enforced strict internal alignment: the numbere
                 </div>
             </section>
 
-            <!-- Quick overview: the interconnected system -->
             <section class="content-section">
                 <h2 class="section-title">How Everything Connects</h2>
                 <div class="circle-diagram">
@@ -278,6 +215,3 @@ I’ve made the boxes taller and enforced strict internal alignment: the numbere
     </script>
 </body>
 </html>
-```
-
-Now the four boxes all have the same height (440 px), the numbered circles are perfectly centered at the top, titles start at the exact same line, the description area flexes to fill the remaining space, and every link sits at the very bottom. Replace your `index.html` with this code and push.

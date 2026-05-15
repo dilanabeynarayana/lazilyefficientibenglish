@@ -11,9 +11,6 @@
     </script>
 
     <meta charset="UTF-8">
-    ...
-</head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skills Resources – The Lazily Efficient IB English Teacher</title>
     <meta name="description" content="Annotation rubrics, deconstruction frames, elaboration guides – every student skill resource for IB English.">
@@ -41,7 +38,7 @@
         a { color: var(--text-primary); text-decoration: none; border-bottom: 2px solid transparent; transition: border-color 0.2s ease; }
         a:hover { border-bottom-color: var(--accent); }
         nav { background-color: var(--bg-primary); border-bottom: 1px solid rgba(253,252,249,0.1); position: sticky; top: 0; z-index: 100; }
-        .nav-container { max-width: var(--max-width); margin: 0 auto; padding: var(--spacing-sm) var(--spacing-md); display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 1; }
+        .nav-container { max-width: var(--max-width); margin: 0 auto; padding: var(--spacing-sm) var(--spacing-md); display: flex; justify-content: space-between; align-items: center; }
         .nav-logo { font-family: 'Montserrat', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--text-primary); border-bottom: none; display: flex; align-items: center; }
         .nav-logo:hover { border-bottom: none; color: var(--accent); }
         .nav-logo-img { height: 32px; width: auto; margin-right: 0.5rem; border-bottom: none; vertical-align: middle; }
@@ -59,32 +56,25 @@
         .btn { display: inline-block; padding: 0.75rem 1.5rem; font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 500; text-align: center; cursor: pointer; border: none; border-radius: 4px; transition: all 0.2s ease; letter-spacing: 0.02em; box-shadow: 0 2px 6px rgba(0,0,0,0.3); }
         .btn-primary { background: linear-gradient(135deg, #CC0000 0%, #A00000 100%); color: #FFFFFF; border: 1px solid rgba(255,255,255,0.15); }
         .btn-primary:hover { background: #A00000; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
-
         .thumb-zoom { position: relative; width: 100%; height: var(--thumb-height); overflow: hidden; cursor: pointer; background: rgba(0,0,0,0.15); border-radius: 4px; margin-bottom: var(--spacing-sm); }
         .thumb-zoom img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; transform-origin: 0 0; transition: transform 0.1s ease; }
         .thumb-zoom:hover img { transform: scale(2.2); }
-
         .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 200; align-items: center; justify-content: center; cursor: pointer; }
         .lightbox.show { display: flex; }
         .lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; border-radius: 4px; box-shadow: 0 4px 24px rgba(0,0,0,0.6); }
-
         #back-to-top { position: fixed; bottom: 2rem; right: 2rem; width: 44px; height: 44px; border-radius: 50%; background: var(--accent); color: #FFFFFF; border: none; font-size: 1.5rem; cursor: pointer; opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 99; box-shadow: 0 2px 8px rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; }
         #back-to-top.show { opacity: 1; visibility: visible; }
         #back-to-top:hover { background: #A00000; transform: translateY(-2px); }
-
         footer { background: rgba(0,0,0,0.3); border-top: 1px solid rgba(253,252,249,0.1); padding: var(--spacing-xl) var(--spacing-md) var(--spacing-md) var(--spacing-md); margin-top: var(--spacing-xl); position: relative; z-index: 1; }
         .footer-grid { max-width: var(--max-width); margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-lg); margin-bottom: var(--spacing-lg); }
         .footer-col h4 { font-family: 'Montserrat', sans-serif; font-size: 0.9rem; margin-bottom: var(--spacing-sm); color: var(--accent); }
         .footer-col a { display: block; color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.3rem; border-bottom: none; }
         .footer-col a:hover { color: var(--text-primary); }
         .footer-bottom { max-width: var(--max-width); margin: 0 auto; text-align: center; color: var(--text-secondary); font-size: 0.85rem; padding-top: var(--spacing-md); border-top: 1px solid rgba(253,252,249,0.08); }
-
         .signup-box { background: rgba(253,252,249,0.03); border: 1px solid rgba(253,252,249,0.08); padding: var(--spacing-md); border-radius: 4px; text-align: center; max-width: 400px; margin: var(--spacing-lg) auto; }
         .signup-box input { width: 100%; padding: 0.6rem; background: rgba(253,252,249,0.05); border: 1px solid rgba(253,252,249,0.15); border-radius: 4px; color: var(--text-primary); font-family: 'Inter', sans-serif; margin-bottom: var(--spacing-sm); }
         .signup-box input:focus { outline: none; border-color: var(--accent); }
-
         h1, h2 { text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
-
         @media (max-width: 768px) {
             h1 { font-size: 2rem; } h2 { font-size: 1.5rem; }
             .nav-container { flex-direction: column; padding: var(--spacing-sm); }
@@ -93,7 +83,6 @@
             .cards-grid { grid-template-columns: 1fr; }
             :root { --thumb-height: 220px; }
         }
-
         @media print { body { background: #fff; color: #000; } nav, footer, .btn, #back-to-top, .signup-box { display: none; } .card { border: 1px solid #ccc; box-shadow: none; break-inside: avoid; } }
     </style>
 </head>
@@ -101,15 +90,15 @@
     <nav>
         <div class="nav-container">
             <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Lazily Efficient IB English" class="nav-logo-img">Lazily Efficient IB English</a>
-           <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="assessment.html">Assessment</a></li>
-    <li><a href="skills.html">Skills</a></li>
-    <li><a href="exercises.html">Exercises</a></li>
-    <li><a href="department.html">Department</a></li>
-    <li><a href="youtube.html">YouTube</a></li>
-    <li><a href="about.html">About</a></li>
-</ul>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="assessment.html">Assessment</a></li>
+                <li><a href="skills.html" class="active">Skills</a></li>
+                <li><a href="exercises.html">Exercises</a></li>
+                <li><a href="department.html">Department</a></li>
+                <li><a href="youtube.html">YouTube</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
         </div>
     </nav>
     <main>
@@ -135,7 +124,6 @@
     </footer>
     <button id="back-to-top" title="Back to top">↑</button>
     <div class="lightbox" id="lightbox"><img src="" alt="Preview" id="lightbox-img"></div>
-
     <script>
         const allResources = [
           {"title":"Stages of IDEAs for Elaborations","description":"Break down ideas into arguable stages","link":"https://drive.google.com/file/d/1m6GntEDnUTyYM9kVmlk9WKU9_WFrKUKK/view?usp=drive_link","category":"skills","ready":true,"previewImage":"images/stages-elaborations.png","youtubeId":null},
@@ -158,7 +146,6 @@
             });
             html += '</div>'; container.innerHTML = html;
         }
-
         document.addEventListener('mousemove', function(e) {
             if (e.target.closest('.thumb-zoom')) {
                 const zoom = e.target.closest('.thumb-zoom');
@@ -167,7 +154,6 @@
                 img.style.transformOrigin = `${((e.clientX - rect.left) / rect.width) * 100}% ${((e.clientY - rect.top) / rect.height) * 100}%`;
             }
         });
-
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
         document.addEventListener('click', function(e) {
@@ -176,7 +162,6 @@
         });
         lightbox.addEventListener('click', () => { lightbox.classList.remove('show'); });
         document.addEventListener('keydown', e => { if (e.key === 'Escape') lightbox.classList.remove('show'); });
-
         const btt = document.getElementById('back-to-top');
         window.addEventListener('scroll', () => { btt.classList.toggle('show', window.scrollY > 300); });
         btt.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });

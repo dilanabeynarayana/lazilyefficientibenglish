@@ -11,23 +11,17 @@
     </script>
 
     <meta charset="UTF-8">
-    ...
-</head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="All free IB English teaching resources — curriculum planning, annotation rubrics, deconstruction frames, essay scaffolds, and video walkthroughs.">
+    <meta name="description" content="All free IB English teaching resources – curriculum planning, annotation rubrics, deconstruction frames, essay scaffolds, and video walkthroughs.">
     <title>All Resources – The Lazily Efficient IB English Teacher</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
-
     <meta property="og:title" content="All Free IB English Resources">
     <meta property="og:description" content="Curriculum planning, annotation rubrics, deconstruction frames, essay scaffolds — all in one connected system.">
     <meta property="og:url" content="https://lazilyefficientibenglish.com/resources.html">
     <meta property="og:type" content="website">
-
-    <!-- Structured Data for all ready resources -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -127,7 +121,6 @@
       ]
     }
     </script>
-
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
@@ -143,7 +136,7 @@
         a { color: var(--text-primary); text-decoration: none; border-bottom: 2px solid transparent; transition: border-color 0.2s ease; }
         a:hover { border-bottom-color: var(--accent); }
         nav { background-color: var(--bg-primary); border-bottom: 1px solid rgba(253,252,249,0.1); position: sticky; top: 0; z-index: 100; }
-        .nav-container { max-width: var(--max-width); margin: 0 auto; padding: var(--spacing-sm) var(--spacing-md); display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 1; }
+        .nav-container { max-width: var(--max-width); margin: 0 auto; padding: var(--spacing-sm) var(--spacing-md); display: flex; justify-content: space-between; align-items: center; }
         .nav-logo { font-family: 'Montserrat', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--text-primary); border-bottom: none; display: flex; align-items: center; }
         .nav-logo:hover { border-bottom: none; color: var(--accent); }
         .nav-logo-img { height: 32px; width: auto; margin-right: 0.5rem; border-bottom: none; vertical-align: middle; }
@@ -153,14 +146,11 @@
         .container { max-width: var(--max-width); margin: 0 auto; padding: var(--spacing-xl) var(--spacing-md); position: relative; z-index: 1; }
         .content-section { margin-bottom: var(--spacing-xl); }
         .section-description { color: var(--text-secondary); font-size: 1.1rem; max-width: 800px; margin-bottom: var(--spacing-lg); }
-
-        /* Search & Filter */
         .search-bar { width: 100%; max-width: 500px; padding: 0.75rem 1rem; background: rgba(253,252,249,0.05); border: 1px solid rgba(253,252,249,0.15); border-radius: 4px; color: var(--text-primary); font-family: 'Inter', sans-serif; font-size: 0.95rem; margin-bottom: var(--spacing-md); }
         .search-bar:focus { outline: none; border-color: var(--accent); }
         .filter-bar { display: flex; gap: var(--spacing-sm); flex-wrap: wrap; margin-bottom: var(--spacing-lg); }
         .filter-btn { padding: 0.5rem 1.25rem; background: transparent; border: 1px solid rgba(253,252,249,0.15); border-radius: 4px; color: var(--text-secondary); font-family: 'Inter', sans-serif; font-size: 0.9rem; cursor: pointer; transition: all 0.2s ease; }
         .filter-btn:hover, .filter-btn.active { background: var(--accent); color: #FFFFFF; border-color: var(--accent); }
-
         .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--spacing-lg); margin-top: var(--spacing-lg); }
         .card { background: linear-gradient(135deg, rgba(253,252,249,0.04) 0%, rgba(253,252,249,0.01) 100%); border: 1px solid rgba(253,252,249,0.08); padding: var(--spacing-md); border-radius: 4px; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.3); }
         .card:hover { border-color: rgba(253,252,249,0.25); transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
@@ -170,27 +160,20 @@
         .btn { display: inline-block; padding: 0.75rem 1.5rem; font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 500; text-align: center; cursor: pointer; border: none; border-radius: 4px; transition: all 0.2s ease; letter-spacing: 0.02em; box-shadow: 0 2px 6px rgba(0,0,0,0.3); }
         .btn-primary { background: linear-gradient(135deg, #CC0000 0%, #A00000 100%); color: #FFFFFF; border: 1px solid rgba(255,255,255,0.15); }
         .btn-primary:hover { background: #A00000; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
-
         .no-results { text-align: center; color: var(--text-secondary); padding: var(--spacing-xl); }
-
-        /* Email signup */
         .signup-box { background: rgba(253,252,249,0.03); border: 1px solid rgba(253,252,249,0.08); padding: var(--spacing-md); border-radius: 4px; text-align: center; max-width: 500px; margin: 0 auto; }
         .signup-box input { width: 100%; padding: 0.7rem; background: rgba(253,252,249,0.05); border: 1px solid rgba(253,252,249,0.15); border-radius: 4px; color: var(--text-primary); font-family: 'Inter', sans-serif; margin-bottom: var(--spacing-sm); }
         .signup-box input:focus { outline: none; border-color: var(--accent); }
-
         #back-to-top { position: fixed; bottom: 2rem; right: 2rem; width: 44px; height: 44px; border-radius: 50%; background: var(--accent); color: #FFFFFF; border: none; font-size: 1.5rem; cursor: pointer; opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 99; box-shadow: 0 2px 8px rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; }
         #back-to-top.show { opacity: 1; visibility: visible; }
         #back-to-top:hover { background: #A00000; transform: translateY(-2px); }
-
         footer { background: rgba(0,0,0,0.3); border-top: 1px solid rgba(253,252,249,0.1); padding: var(--spacing-xl) var(--spacing-md) var(--spacing-md) var(--spacing-md); margin-top: var(--spacing-xl); position: relative; z-index: 1; }
         .footer-grid { max-width: var(--max-width); margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-lg); margin-bottom: var(--spacing-lg); }
         .footer-col h4 { font-family: 'Montserrat', sans-serif; font-size: 0.9rem; margin-bottom: var(--spacing-sm); color: var(--accent); }
         .footer-col a { display: block; color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.3rem; border-bottom: none; }
         .footer-col a:hover { color: var(--text-primary); }
         .footer-bottom { max-width: var(--max-width); margin: 0 auto; text-align: center; color: var(--text-secondary); font-size: 0.85rem; padding-top: var(--spacing-md); border-top: 1px solid rgba(253,252,249,0.08); }
-
         @media print { body { background: #fff; color: #000; } nav, footer, .filter-bar, .search-bar, #back-to-top, .signup-box, .btn { display: none; } .card { border: 1px solid #ccc; box-shadow: none; break-inside: avoid; } }
-
         @media (max-width: 768px) {
             h1 { font-size: 2rem; } h2 { font-size: 1.5rem; }
             .nav-container { flex-direction: column; padding: var(--spacing-sm); }
@@ -206,17 +189,15 @@
             <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Lazily Efficient IB English" class="nav-logo-img">Lazily Efficient IB English</a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="department.html">Department</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="resources.html" class="active">All Resources</a></li>
                 <li><a href="assessment.html">Assessment</a></li>
+                <li><a href="skills.html">Skills</a></li>
                 <li><a href="exercises.html">Exercises</a></li>
+                <li><a href="department.html">Department</a></li>
                 <li><a href="youtube.html">YouTube</a></li>
                 <li><a href="about.html">About</a></li>
             </ul>
         </div>
     </nav>
-
     <main>
         <div class="container">
             <section class="content-section">
@@ -243,7 +224,6 @@
             </section>
         </div>
     </main>
-
     <footer>
         <div class="footer-grid">
             <div class="footer-col"><h4>Resources</h4><a href="department.html">Department</a><a href="skills.html">Skills</a><a href="assessment.html">Assessment</a><a href="exercises.html">Exercises</a></div>
@@ -251,9 +231,7 @@
         </div>
         <div class="footer-bottom"><p>&copy; 2026 The Lazily Efficient IB English Teacher. All rights reserved.</p></div>
     </footer>
-
     <button id="back-to-top" title="Back to top">↑</button>
-
     <script>
         const allResources = [
           {"title":"Stages of IDEAs for Conceptual Teaching","description":"Plan units around concepts, not texts","link":"#","category":"department","ready":false,"previewImage":"","youtubeId":null},
@@ -269,16 +247,14 @@
           {"title":"The Graveyard of Analysis","description":"Banned phrases wall chart","link":"#","category":"skills","ready":false,"previewImage":"","youtubeId":null},
           {"title":"Paper 1: TEEAL Essay Structure","description":"One-page visual scaffold for unseen text analysis","link":"https://drive.google.com/file/d/1zQxF-Bqmt7wSkc09i4M0g8HRUHrvS0xy/view?usp=drive_link","category":"assessment","ready":true,"previewImage":"images/paper1teeal.png","youtubeId":null},
           {"title":"Paper 2: Comparative TEEAL Writing Guide","description":"Style 1,2,3 structures for comparative essays","link":"https://drive.google.com/file/d/1vpdQHhZiWwN7jZyUeRBwcRXvn5mwmKVq/view?usp=drive_link","category":"assessment","ready":true,"previewImage":"images/paper2teeal.png","youtubeId":null},
-          {"title":"Paper 2: Yin Yang Cards","description":"Direct comparative planning tool","link":"https://drive.google.com/file/d/14DEdHJY_m27jJvSNAukLXtiyadbi86N6/view?usp=drive_link","category":"assessment","ready":true,"previewImage":"images/yingyang.png","youtubeId":null},
-          {"title":"IO: Structure & Islands Method","description":"Whole-work evidence and structure for the Individual Oral","link":"https://drive.google.com/file/d/1KPZfLj9xRGSTMZC84VTb46PvK56UCCRZ/view?usp=drive_link","category":"assessment","ready":true,"previewImage":"images/io.png","youtubeId":null},
+          {"title":"Paper 2: Yin Yang Cards","description":"Direct comparative planning tool","link":"https://drive.google.com/file/d/14DEdHJY_m27jJvSNAukLXtiyadbi86N6/view?usp=drive_link","category":"assessment","ready":true,"previewImage":"images/yingyang.jpeg","youtubeId":null},
+          {"title":"IO: Structure & Islands Method","description":"Whole-work evidence and structure for the Individual Oral","link":"https://drive.google.com/file/d/1KPZfLj9xRGSTMZC84VTb46PvK56UCCRZ/view?usp=drive_link","category":"assessment","ready":true,"previewImage":"images/IO.png","youtubeId":null},
           {"title":"IO: Global Issue Formulation Checklist","description":"Narrow, defensible","link":"#","category":"assessment","ready":false,"previewImage":"","youtubeId":null},
           {"title":"HL Essay: TEEAL Structure","description":"Essay scaffold tailored for the Higher Level Essay","link":"https://drive.google.com/file/d/1ZQtkA5OTG7f6OUHyG9RPOKaGjuvaDgYv/view?usp=drive_link","category":"assessment","ready":true,"previewImage":"images/hlessayteeal.png","youtubeId":null},
           {"title":"HL Essay: Plane Method for Whole-Text Analysis","description":"Track Broader ACs","link":"#","category":"assessment","ready":false,"previewImage":"","youtubeId":null},
           {"title":"HL Essay: Thesis Formulation with DDM","description":"From line of inquiry to argument","link":"#","category":"assessment","ready":false,"previewImage":"","youtubeId":null}
         ];
-
         let currentFilter = 'all';
-
         function renderResources() {
             const searchTerm = document.getElementById('search').value.toLowerCase();
             const container = document.getElementById('resources-container');
@@ -287,31 +263,16 @@
                 const matchSearch = r.title.toLowerCase().includes(searchTerm) || r.description.toLowerCase().includes(searchTerm);
                 return matchFilter && matchSearch;
             });
-
-            if (filtered.length === 0) {
-                container.innerHTML = '<p class="no-results">No resources match. Try a different filter or search term.</p>';
-                return;
-            }
-
+            if (filtered.length === 0) { container.innerHTML = '<p class="no-results">No resources match. Try a different filter or search term.</p>'; return; }
             let html = '<div class="cards-grid">';
             filtered.forEach(resource => {
                 let categoryLabel = resource.category.charAt(0).toUpperCase() + resource.category.slice(1);
-                let buttonHtml = (resource.ready && resource.link !== '#')
-                    ? `<a href="${resource.link}" class="btn btn-primary" target="_blank">Download</a>`
-                    : `<span class="btn btn-primary" style="opacity:0.5;cursor:default;">Coming Soon</span>`;
-                html += `<article class="card">
-                    <span class="card-category">${categoryLabel}</span>
-                    <h3 class="card-title">${resource.title}</h3>
-                    <p class="card-description">${resource.description}</p>
-                    ${buttonHtml}
-                </article>`;
+                let buttonHtml = (resource.ready && resource.link !== '#') ? `<a href="${resource.link}" class="btn btn-primary" target="_blank">Download</a>` : `<span class="btn btn-primary" style="opacity:0.5;cursor:default;">Coming Soon</span>`;
+                html += `<article class="card"><span class="card-category">${categoryLabel}</span><h3 class="card-title">${resource.title}</h3><p class="card-description">${resource.description}</p>${buttonHtml}</article>`;
             });
-            html += '</div>';
-            container.innerHTML = html;
+            html += '</div>'; container.innerHTML = html;
         }
-
         document.getElementById('search').addEventListener('input', renderResources);
-
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -320,9 +281,7 @@
                 renderResources();
             });
         });
-
         renderResources();
-
         const btt = document.getElementById('back-to-top');
         window.addEventListener('scroll', () => { btt.classList.toggle('show', window.scrollY > 300); });
         btt.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
