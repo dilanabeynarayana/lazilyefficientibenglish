@@ -32,7 +32,7 @@
         a { color: var(--text-primary); text-decoration: none; border-bottom: 2px solid transparent; transition: border-color 0.2s ease; }
         a:hover { border-bottom-color: var(--accent); }
         nav { background-color: var(--bg-primary); border-bottom: 1px solid rgba(253,252,249,0.1); position: sticky; top: 0; z-index: 100; }
-        .nav-container { max-width: var(--max-width); margin: 0 auto; padding: var(--spacing-sm) var(--spacing-md); display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 1; }
+        .nav-container { max-width: var(--max-width); margin: 0 auto; padding: var(--spacing-sm) var(--spacing-md); display: flex; justify-content: space-between; align-items: center; }
         .nav-logo { font-family: 'Montserrat', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--text-primary); border-bottom: none; display: flex; align-items: center; }
         .nav-logo:hover { border-bottom: none; color: var(--accent); }
         .nav-logo-img { height: 32px; width: auto; margin-right: 0.5rem; border-bottom: none; vertical-align: middle; }
@@ -44,12 +44,61 @@
         .section-title { margin-bottom: var(--spacing-lg); text-align: center; }
         .section-description { color: var(--text-secondary); font-size: 1.1rem; max-width: 700px; margin: 0 auto var(--spacing-lg) auto; text-align: center; }
 
-        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--spacing-md); margin: var(--spacing-lg) 0; }
-        .feature-item { background: rgba(253,252,249,0.03); border: 1px solid rgba(253,252,249,0.08); padding: var(--spacing-md); border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.3); transition: transform 0.2s ease; }
-        .feature-item:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
-        .feature-item h3 span { color: var(--accent); margin-right: 0.5rem; }
-        .feature-item p { color: var(--text-secondary); font-size: 0.95rem; }
+        /* How‑to flow */
+        .howto-flow {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: var(--spacing-md);
+            margin: var(--spacing-xl) 0;
+            flex-wrap: wrap;
+        }
+        .howto-step {
+            flex: 1;
+            min-width: 220px;
+            background: rgba(253,252,249,0.03);
+            border: 1px solid rgba(253,252,249,0.08);
+            border-radius: 4px;
+            padding: var(--spacing-md);
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+            transition: transform 0.2s ease;
+            position: relative;
+        }
+        .howto-step:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent);
+        }
+        .step-number {
+            display: inline-block;
+            width: 44px; height: 44px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: #FFFFFF;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            line-height: 44px;
+            margin-bottom: var(--spacing-sm);
+        }
+        .howto-step h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .howto-step p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        .howto-step a {
+            display: inline-block;
+            font-weight: 600;
+            color: var(--accent);
+            border-bottom: 1px solid transparent;
+        }
+        .howto-step a:hover { border-bottom-color: var(--accent); }
 
+        /* Circle diagram (unchanged) */
         .circle-diagram { position: relative; width: 460px; height: 460px; margin: var(--spacing-lg) auto; }
         .circle-diagram svg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
         .connecting-line { stroke: var(--accent); stroke-width: 2; stroke-linecap: round; opacity: 0.5; }
@@ -93,9 +142,9 @@
             .circle-diagram { width: auto; height: auto; display: flex; flex-wrap: wrap; justify-content: center; gap: var(--spacing-md); }
             .circle-node { position: relative; left: auto; top: auto; }
             .circle-diagram svg { display: none; }
+            .howto-flow { flex-direction: column; }
         }
-
-        @media print { body { background: #fff; color: #000; } nav, footer, .btn, #back-to-top, .search-bar, .filter-bar, .signup-box { display: none; } .card { border: 1px solid #ccc; box-shadow: none; break-inside: avoid; } }
+        @media print { body { background: #fff; color: #000; } nav, footer, .btn, #back-to-top, .signup-box { display: none; } }
     </style>
 </head>
 <body>
@@ -103,30 +152,56 @@
         <div class="nav-container">
             <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Lazily Efficient IB English" class="nav-logo-img">Lazily Efficient IB English</a>
             <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="assessment.html">Assessment</a></li>
-    <li><a href="skills.html">Skills</a></li>
-    <li><a href="exercises.html">Exercises</a></li>
-    <li><a href="department.html">Department</a></li>
-    <li><a href="youtube.html">YouTube</a></li>
-    <li><a href="about.html">About</a></li>
-</ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="assessment.html">Assessment</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="exercises.html">Exercises</a></li>
+                <li><a href="department.html">Department</a></li>
+                <li><a href="youtube.html">YouTube</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
         </div>
     </nav>
 
     <main>
         <div class="container">
             <section class="content-section">
+                <h1 class="section-title">Lazily Efficient IB English</h1>
                 <p class="section-description">Biggest impact. Fewest moving parts. Everything your students need to stop describing and start <em>adding</em> — implications, connotations, and real arguments.</p>
             </section>
+
+            <!-- How to Use: Step‑by‑step guidance -->
             <section class="content-section">
-                <h2 class="section-title">Every IB Response Does Three Things</h2>
-                <div class="feature-grid">
-                    <div class="feature-item"><h3><span>1.</span> Add Implications</h3><p>Break ideas into stages. Move from "friendship" to exactly what kind, why it matters, and what the writer is claiming.</p></div>
-                    <div class="feature-item"><h3><span>2.</span> Add Connotations</h3><p>Deconstruct specific words, visuals, and elements — then link them to a precise idea. No more "vivid imagery."</p></div>
-                    <div class="feature-item"><h3><span>3.</span> Add an Argument</h3><p>A real thesis, not "this essay will explore." A claim that only exists because the student built it.</p></div>
+                <h2 class="section-title">How to Use This Site</h2>
+                <div class="howto-flow">
+                    <div class="howto-step">
+                        <div class="step-number">1</div>
+                        <h3>Assessment</h3>
+                        <p>Start here if you're a DP teacher. Download the TEEAL scaffold for your next essay — Paper 1, Paper 2, the IO, or the HL Essay. Every resource you need for each assessment is listed together, with direct downloads.</p>
+                        <a href="assessment.html">Browse Assessments →</a>
+                    </div>
+                    <div class="howto-step">
+                        <div class="step-number">2</div>
+                        <h3>Skills</h3>
+                        <p>The skill‑building tools — annotation rubrics, elaboration guides, deconstruction frames — are the engine under every assessment. Use them to teach the core analytical moves, then reinforce with assessments.</p>
+                        <a href="skills.html">Explore Skills →</a>
+                    </div>
+                    <div class="howto-step">
+                        <div class="step-number">3</div>
+                        <h3>Exercises</h3>
+                        <p>Walkthroughs and practice tasks are coming soon. For now, the YouTube Shorts walk you through each resource step‑by‑step.</p>
+                        <a href="exercises.html">Coming Soon →</a>
+                    </div>
+                    <div class="howto-step">
+                        <div class="step-number">4</div>
+                        <h3>YouTube</h3>
+                        <p>Short, practical videos that show you exactly how to use each part of the Lazy Efficiency system. Subscribe to stay updated when new resources drop.</p>
+                        <a href="https://youtube.com/@thelazyefficientibenglishtea" target="_blank">Watch on YouTube →</a>
+                    </div>
                 </div>
             </section>
+
+            <!-- Quick overview: the interconnected system -->
             <section class="content-section">
                 <h2 class="section-title">How Everything Connects</h2>
                 <div class="circle-diagram">
@@ -149,10 +224,12 @@
                 </div>
                 <p class="section-description" style="margin-top: var(--spacing-md);">Every resource feeds the next. Walk into any classroom with the system already in your students' hands.</p>
             </section>
+
             <section class="content-section" style="text-align: center;">
                 <p class="section-description">From curriculum design to deconstruction frames, from essay scaffolds to video walkthroughs — everything connects.</p>
-                <a href="department.html" class="btn btn-primary btn-large">Browse All Resources →</a>
+                <a href="assessment.html" class="btn btn-primary btn-large">Browse All Resources →</a>
             </section>
+
             <section class="content-section" style="margin-top: var(--spacing-xl); text-align: center;">
                 <h2 class="section-title">Who Built This</h2>
                 <p class="section-description">I'm Dilan Abeynarayana. Team Leader for Paper 1 and the HL Essay, IB examiner since 2016, and Subject Lead for a three‑language L&L department. This site is the system I use every day. <a href="about.html">More about me →</a></p>
