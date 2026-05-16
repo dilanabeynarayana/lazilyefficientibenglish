@@ -305,6 +305,17 @@
                 </div>
             </section>
 
+            <!-- TEEAL Carousel with lightbox and download (moved above the counter) -->
+            <section class="content-section">
+                <h2 class="section-title">Start With Your Assessment</h2>
+                <p class="section-description">Every assessment has a dedicated TEEAL scaffold. Click the image to preview and download, or click the label to browse all resources.</p>
+                <div class="carousel-outer">
+                    <div class="carousel-track" id="carousel-track">
+                        <!-- dynamically built by JS -->
+                    </div>
+                </div>
+            </section>
+
             <!-- Resource Counter -->
             <section class="content-section">
                 <div class="counter-bar">
@@ -323,17 +334,6 @@
                     <div class="counter-item">
                         <div class="counter-number">1</div>
                         <div class="counter-label">Connected System</div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- TEEAL Carousel with lightbox and download -->
-            <section class="content-section">
-                <h2 class="section-title">Start With Your Assessment</h2>
-                <p class="section-description">Every assessment has a dedicated TEEAL scaffold. Click the image to preview and download, or click the label to browse all resources.</p>
-                <div class="carousel-outer">
-                    <div class="carousel-track" id="carousel-track">
-                        <!-- dynamically built by JS -->
                     </div>
                 </div>
             </section>
@@ -387,7 +387,7 @@
             return true;
         }
 
-        // Carousel data – same as before, but now with download links
+        // Carousel data
         const teealResources = [
             { label: 'Individual Oral', image: 'images/IO.png', link: 'assessment.html#assessment-io', download: 'https://drive.google.com/file/d/1m10ygbmp5AEJzdJwj7r6HRnm77IAJa-x/view?usp=drive_link' },
             { label: 'Paper 1', image: 'images/paper1teeal.png', link: 'assessment.html#assessment-paper1', download: 'https://drive.google.com/file/d/15ybuv5v58JJBfzCY77OMpITBPw178nYp/view?usp=drive_link' },
@@ -397,7 +397,6 @@
 
         const track = document.getElementById('carousel-track');
 
-        // Build double set for infinite loop
         function buildCarousel() {
             let html = '';
             for (let i = 0; i < 2; i++) {
