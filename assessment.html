@@ -41,6 +41,7 @@
         p { margin-bottom: var(--spacing-sm); position: relative; z-index: 1; }
         a { color: var(--text-primary); text-decoration: none; border-bottom: 2px solid transparent; transition: border-color 0.2s ease; }
         a:hover { border-bottom-color: var(--accent); }
+        a:focus-visible, button:focus-visible, .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
         nav { background-color: var(--bg-primary); border-bottom: 1px solid rgba(253,252,249,0.1); position: sticky; top: 0; z-index: 100; }
         .nav-container { max-width: var(--max-width); margin: 0 auto; padding: var(--spacing-sm) var(--spacing-md); display: flex; justify-content: space-between; align-items: center; }
         .nav-logo { font-family: 'Montserrat', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--text-primary); border-bottom: none; display: flex; align-items: center; }
@@ -52,29 +53,19 @@
         .container { max-width: var(--max-width); margin: 0 auto; padding: var(--spacing-xl) var(--spacing-md); position: relative; z-index: 1; }
         .content-section { margin-bottom: var(--spacing-xl); }
         .section-description { color: var(--text-secondary); font-size: 1.1rem; max-width: 800px; margin-bottom: var(--spacing-lg); }
-
         .side-nav { position: fixed; right: 1.5rem; top: 50%; transform: translateY(-50%); background: rgba(30, 46, 62, 0.85); backdrop-filter: blur(6px); border: 1px solid rgba(253,252,249,0.15); border-radius: 8px; padding: 0.8rem 0.5rem; z-index: 90; display: flex; flex-direction: column; gap: 0.8rem; min-width: 120px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
         .side-nav a { display: block; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); padding: 0.3rem 0.6rem; border-radius: 4px; border-bottom: none; transition: all 0.2s ease; }
         .side-nav a:hover { background: rgba(255,255,255,0.08); color: #FFFFFF; }
         .side-nav a.active-section { background: var(--accent); color: #FFFFFF; }
-
         .assessment-block { background: rgba(253,252,249,0.02); border: 1px solid rgba(253,252,249,0.08); border-radius: 6px; padding: var(--spacing-md); margin-bottom: var(--spacing-lg); }
-        .assessment-block h2 { margin-bottom: var(--spacing-md); }
-
         .teeal-card { background: linear-gradient(135deg, rgba(253,252,249,0.06) 0%, rgba(253,252,249,0.02) 100%); border: 1px solid rgba(253,252,249,0.1); border-radius: 6px; padding: var(--spacing-md); display: flex; flex-wrap: wrap; gap: var(--spacing-md); margin-bottom: var(--spacing-lg); align-items: center; transition: all 0.2s ease; }
         .teeal-card:hover { transform: translateY(-4px); box-shadow: 0 6px 16px rgba(0,0,0,0.5); }
         .teeal-thumb { width: 300px; height: var(--thumb-height); overflow: hidden; cursor: pointer; background: rgba(0,0,0,0.2); border-radius: 4px; flex-shrink: 0; }
         .teeal-thumb img { width: 100%; height: 100%; object-fit: contain; transform-origin: 0 0; transition: transform 0.1s ease; }
         .teeal-thumb:hover img { transform: scale(2.2); }
         .teeal-info { flex: 1; min-width: 200px; }
-        .teeal-info h3 { margin-bottom: 0.25rem; }
-        .teeal-info .desc { color: var(--text-secondary); margin-bottom: var(--spacing-sm); }
-
         .criterion-group { margin-bottom: var(--spacing-md); padding-left: var(--spacing-sm); border-left: 3px solid var(--accent); }
-        .criterion-group h4 { margin-bottom: var(--spacing-sm); }
-
         .resource-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--spacing-md); }
-
         .small-card { background: linear-gradient(135deg, rgba(253,252,249,0.04) 0%, rgba(253,252,249,0.01) 100%); border: 1px solid rgba(253,252,249,0.08); border-radius: 4px; padding: var(--spacing-sm); transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.3); display: flex; flex-direction: column; }
         .small-card:hover { border-color: rgba(253,252,249,0.2); transform: translateY(-4px); box-shadow: 0 6px 16px rgba(0,0,0,0.5); }
         .small-thumb { width: 100%; height: var(--small-thumb-height); overflow: hidden; cursor: pointer; background: rgba(0,0,0,0.2); border-radius: 4px; margin-bottom: var(--spacing-sm); }
@@ -82,43 +73,29 @@
         .small-thumb:hover img { transform: scale(2.2); }
         .small-card .card-title { font-family: 'Montserrat', sans-serif; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.25rem; color: var(--text-primary); line-height: 1.3; }
         .small-card .card-desc { font-size: 0.75rem; color: var(--text-secondary); margin-bottom: auto; flex-grow: 1; }
-
         .btn { display: inline-block; padding: 0.5rem 1.2rem; font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 500; text-align: center; cursor: pointer; border: none; border-radius: 4px; transition: all 0.2s ease; letter-spacing: 0.02em; text-decoration: none; color: #FFFFFF; box-shadow: 0 2px 6px rgba(0,0,0,0.3); margin-top: var(--spacing-sm); align-self: flex-start; }
         .btn-download { background: linear-gradient(135deg, #CC0000 0%, #A00000 100%); border: 1px solid rgba(255,255,255,0.15); }
         .btn-download:hover { background: #A00000; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
         .btn-coming { background: transparent; border: 1px solid rgba(253,252,249,0.1); color: var(--text-secondary); cursor: default; opacity: 0.7; }
         .skills-link { font-size: 0.75rem; color: var(--accent); margin-top: 0.4rem; text-decoration: none; border-bottom: 1px dotted var(--accent); display: inline-block; }
         .skills-link:hover { color: var(--text-primary); border-bottom-color: var(--text-primary); }
-
         .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 200; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; }
         .lightbox.show { display: flex; }
         .lightbox img { max-width: 90vw; max-height: 80vh; object-fit: contain; border-radius: 4px; box-shadow: 0 4px 24px rgba(0,0,0,0.6); }
         #lightbox-download { margin-top: 1.5rem; font-size: 1rem; padding: 0.75rem 2rem; display: none; z-index: 210; pointer-events: auto; }
-
         #back-to-top { position: fixed; bottom: 2rem; right: 2rem; width: 44px; height: 44px; border-radius: 50%; background: var(--accent); color: #FFFFFF; border: none; font-size: 1.5rem; cursor: pointer; opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 99; box-shadow: 0 2px 8px rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; }
         #back-to-top.show { opacity: 1; visibility: visible; }
         #back-to-top:hover { background: #A00000; transform: translateY(-2px); }
-
         footer { background: rgba(0,0,0,0.3); border-top: 1px solid rgba(253,252,249,0.1); padding: var(--spacing-xl) var(--spacing-md) var(--spacing-md) var(--spacing-md); margin-top: var(--spacing-xl); position: relative; z-index: 1; }
         .footer-grid { max-width: var(--max-width); margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-lg); margin-bottom: var(--spacing-lg); }
         .footer-col h4 { font-family: 'Montserrat', sans-serif; font-size: 0.9rem; margin-bottom: var(--spacing-sm); color: var(--accent); }
         .footer-col a { display: block; color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.3rem; border-bottom: none; }
         .footer-col a:hover { color: var(--text-primary); }
         .footer-bottom { max-width: var(--max-width); margin: 0 auto; text-align: center; color: var(--text-secondary); font-size: 0.85rem; padding-top: var(--spacing-md); border-top: 1px solid rgba(253,252,249,0.08); }
-
         .signup-box { background: rgba(253,252,249,0.03); border: 1px solid rgba(253,252,249,0.08); padding: var(--spacing-md); border-radius: 4px; text-align: center; max-width: 400px; margin: var(--spacing-lg) auto; }
         .signup-box input { width: 100%; padding: 0.6rem; background: rgba(253,252,249,0.05); border: 1px solid rgba(253,252,249,0.15); border-radius: 4px; color: var(--text-primary); font-family: 'Inter', sans-serif; margin-bottom: var(--spacing-sm); }
         .signup-box input:focus { outline: none; border-color: var(--accent); }
-
-        @media (max-width: 768px) {
-            h1 { font-size: 2rem; } h2 { font-size: 1.5rem; }
-            .nav-container { flex-direction: column; padding: var(--spacing-sm); }
-            .nav-links { gap: var(--spacing-sm); flex-wrap: wrap; justify-content: center; }
-            .container { padding: var(--spacing-md) var(--spacing-sm); }
-            .teeal-card { flex-direction: column; }
-            .teeal-thumb { width: 100%; }
-            .side-nav { display: none; }
-        }
+        @media (max-width: 768px) { h1 { font-size: 2rem; } h2 { font-size: 1.5rem; } .nav-container { flex-direction: column; padding: var(--spacing-sm); } .nav-links { gap: var(--spacing-sm); flex-wrap: wrap; justify-content: center; } .container { padding: var(--spacing-md) var(--spacing-sm); } .teeal-card { flex-direction: column; } .teeal-thumb { width: 100%; } .side-nav { display: none; } }
     </style>
 </head>
 <body>
@@ -136,24 +113,18 @@
             </ul>
         </div>
     </nav>
-
     <nav class="side-nav" id="side-nav">
         <a href="#assessment-io">IO</a>
         <a href="#assessment-paper1">Paper 1</a>
         <a href="#assessment-paper2">Paper 2</a>
         <a href="#assessment-hl-essay">HL Essay</a>
     </nav>
-
     <main>
         <div class="container">
-            <section class="content-section">
-                <h1>Assessment Resources</h1>
-                <p class="section-description">Every scaffold, planner, and deconstruction guide for each assessment: TEEAL first, then organised by criterion. Click any thumbnail to preview, then download directly.</p>
-            </section>
+            <section class="content-section"><h1>Assessment Resources</h1><p class="section-description">Every scaffold, planner, and deconstruction guide for each assessment: TEEAL first, then organised by criterion. Click any thumbnail to preview, then download directly.</p></section>
             <div id="assessment-container"></div>
         </div>
     </main>
-
     <footer>
         <div class="footer-grid">
             <div class="footer-col"><h4>Resources</h4><a href="department.html">Department</a><a href="skills.html">Skills</a><a href="assessment.html">Assessment</a><a href="exercises.html">Exercises</a></div>
@@ -165,68 +136,34 @@
             <form id="signup-form" action="https://docs.google.com/forms/d/e/1FAIpQLSdmK_2KaKlAJtWN1_JuHt02ATZFkbFvA8kkvv7tQqPnNpc0cA/formResponse" method="POST" target="hidden_iframe" onsubmit="return handleSubmit()">
                 <input type="email" name="entry.1104949410" placeholder="Your email" required style="width:100%; padding:0.6rem; background:rgba(253,252,249,0.05); border:1px solid rgba(253,252,249,0.15); border-radius:4px; color:var(--text-primary); font-family:'Inter',sans-serif; margin-bottom:var(--spacing-sm);">
                 <button type="submit" class="btn btn-download" style="border:none; cursor:pointer; width:100%;">Subscribe</button>
-                <p id="signup-msg" style="color:#4BA66C; font-weight:600; margin-top:1rem; display:none;">You're on the list!</p>
+                <p id="signup-msg" style="color:#4BA66C; font-weight:600; margin-top:1rem; display:none;"></p>
             </form>
             <iframe name="hidden_iframe" style="display:none;"></iframe>
         </div>
         <div class="footer-bottom"><p>&copy; 2026 Dilan Abeynarayana</p></div>
     </footer>
-
     <button id="back-to-top" title="Back to top">↑</button>
     <div class="lightbox" id="lightbox">
-        <img src="" alt="Preview" id="lightbox-img">
+        <img src="" alt="" id="lightbox-img">
         <a href="#" target="_blank" id="lightbox-download" class="btn btn-download">Download Resource</a>
     </div>
-
     <script>
         function convertToDirectDownload(url) { if (!url || url === '#') return url; return url.replace(/\/view\?usp=.*$/, '/uc?export=download'); }
         const assessmentsData = [
-            {
-                id: 'assessment-io', name: 'IO', teeal: { title: 'IO TEEAL Structure', desc: 'Whole‑work evidence and structure for the Individual Oral.', link: 'https://drive.google.com/file/d/1hvOFBUpnTg66GLiJPeaNxE9xtlXVY3RA/view?usp=drive_link', ready: true, image: 'images/IO.png' },
-                criteria: {
-                    'Criterion A – Ideas & Implications': [
-                        { title: 'Stages of IDEAs for Elaborations', desc: 'Break ideas into arguable stages', link: 'https://drive.google.com/file/d/1l1s6HCGAm11sZNqr8U71izTsSRWecAqy/view?usp=drive_link', ready: true, image: 'images/stages-elaborations.png' },
-                    ],
-                    'Criterion B – Extract Analysis': [
-                        { title: '3‑Step Technique to Analysis', desc: 'What, How, Why', link: 'https://drive.google.com/file/d/1KGpJV1t3rVNFBlCYorD6i4IcTJ5l3do8/view?usp=drive_link', ready: true, image: 'images/3step.png' },
-                        { title: 'Ways to Phrase Deconstructions', desc: 'Sentence frames', link: 'https://drive.google.com/file/d/1P1SOYycPD_zAD3GkXoNjOiFOFLAeT-wD/view?usp=drive_link', ready: true, image: 'images/ways-to-phrase.png' }
-                    ],
-                    'Criterion B – Whole Text': [
-                        { title: 'Plane Method: Broader ACs', desc: 'Whole‑text analysis via Broader ACs', link: 'https://drive.google.com/file/d/10GndeILCWuQawo9DaKfOXjjkVUVQmWsM/view?usp=drive_link', ready: true, image: 'images/plane.png' },
-                        { title: 'Islands Method: Whole‑Text Analysis', desc: 'Mini‑extracts from across the text, all linked to one GI', link: 'https://drive.google.com/file/d/1PFrlOk-NTlm6n4Oda7_OgCWIbN40INDv/view?usp=drive_link', ready: true, image: 'images/islands.png' }
-                    ],
-                    'Criterion C – Focus & Organisation': [
-                        { title: 'Double‑Barrel GI Creation', desc: 'Also listed under Crit A', link: 'https://drive.google.com/file/d/19TO6AhmGFn3n5aoz2EL3HQ5T-d3D0eJC/view?usp=drive_link', ready: true, image: 'images/dbGI.png' }
-                    ],
-                    'Planning Tools': []
-                }
-            },
+            { id: 'assessment-io', name: 'IO', teeal: { title: 'IO TEEAL Structure', desc: 'Whole‑work evidence and structure for the Individual Oral.', link: 'https://drive.google.com/file/d/1hvOFBUpnTg66GLiJPeaNxE9xtlXVY3RA/view?usp=drive_link', ready: true, image: 'images/IO.png' },
+              criteria: { 'Criterion A – Ideas & Implications': [ { title: 'Stages of IDEAs for Elaborations', desc: 'Break ideas into arguable stages', link: 'https://drive.google.com/file/d/1l1s6HCGAm11sZNqr8U71izTsSRWecAqy/view?usp=drive_link', ready: true, image: 'images/stages-elaborations.png' } ], 'Criterion B – Extract Analysis': [ { title: '3‑Step Technique to Analysis', desc: 'What, How, Why', link: 'https://drive.google.com/file/d/1KGpJV1t3rVNFBlCYorD6i4IcTJ5l3do8/view?usp=drive_link', ready: true, image: 'images/3step.png' }, { title: 'Ways to Phrase Deconstructions', desc: 'Sentence frames', link: 'https://drive.google.com/file/d/1P1SOYycPD_zAD3GkXoNjOiFOFLAeT-wD/view?usp=drive_link', ready: true, image: 'images/ways-to-phrase.png' } ], 'Criterion B – Whole Text': [ { title: 'Plane Method: Broader ACs', desc: 'Whole‑text analysis via Broader ACs', link: 'https://drive.google.com/file/d/10GndeILCWuQawo9DaKfOXjjkVUVQmWsM/view?usp=drive_link', ready: true, image: 'images/plane.png' }, { title: 'Islands Method: Whole‑Text Analysis', desc: 'Mini‑extracts from across the text, all linked to one GI', link: 'https://drive.google.com/file/d/1PFrlOk-NTlm6n4Oda7_OgCWIbN40INDv/view?usp=drive_link', ready: true, image: 'images/islands.png' } ], 'Criterion C – Focus & Organisation': [ { title: 'Double‑Barrel GI Creation', desc: 'Also listed under Crit A', link: 'https://drive.google.com/file/d/19TO6AhmGFn3n5aoz2EL3HQ5T-d3D0eJC/view?usp=drive_link', ready: true, image: 'images/dbGI.png' } ], 'Planning Tools': [] } },
             { id: 'assessment-paper1', name: 'Paper 1', teeal: { title: 'Paper 1 TEEAL Structure', desc: 'One‑page visual scaffold for unseen text analysis.', link: 'https://drive.google.com/file/d/1UKiIcmq6Tw-eYghtQR0cOb9horpKXqwm/view?usp=drive_link', ready: true, image: 'images/paper1teeal.png' },
-              criteria: { 'Criterion A – Ideas & Implications': [ { title: 'Stages of IDEAs for Elaborations', desc: 'Break ideas into arguable stages', link: 'https://drive.google.com/file/d/1l1s6HCGAm11sZNqr8U71izTsSRWecAqy/view?usp=drive_link', ready: true, image: 'images/stages-elaborations.png' }, { title: 'DICE/PACT Annotation Guide', desc: 'Infer from text + context', link: 'https://drive.google.com/file/d/1XvBY87Oqtou6z1_5rNx3Zt-VFLK3waFJ/view?usp=drive_link', ready: true, image: 'images/dice-pact.png' } ], 'Criterion B – Deconstructing ACs': [ { title: '3‑Step Technique to Analysis', desc: 'What, How, Why', link: 'https://drive.google.com/file/d/1KGpJV1t3rVNFBlCYorD6i4IcTJ5l3do8/view?usp=drive_link', ready: true, image: 'images/3step.png' }, { title: 'Ways to Phrase Deconstructions', desc: 'Sentence frames', link: 'https://drive.google.com/file/d/1P1SOYycPD_zAD3GkXoNjOiFOFLAeT-wD/view?usp=drive_link', ready: true, image: 'images/ways-to-phrase.png' } ], 'Criterion C – Focus & Organisation': [ { title: 'TEEAL & Stages guide argument', desc: '(See above rows)', link: '#', ready: false, image: null } ], 'Planning Tools': [ { title: 'Lazy Efficient Annotation Rubric', desc: 'DICE/PACT + 3‑Step combined', link: 'https://drive.google.com/file/d/1EMUzwBRdLk8IOPx_CDeM8d8ccar5Q9Pg/view?usp=drive_link', ready: true, image: 'images/annotation-rubric.png' } ] }
-            },
+              criteria: { 'Criterion A – Ideas & Implications': [ { title: 'Stages of IDEAs for Elaborations', desc: 'Break ideas into arguable stages', link: 'https://drive.google.com/file/d/1l1s6HCGAm11sZNqr8U71izTsSRWecAqy/view?usp=drive_link', ready: true, image: 'images/stages-elaborations.png' }, { title: 'DICE/PACT Annotation Guide', desc: 'Infer from text + context', link: 'https://drive.google.com/file/d/1XvBY87Oqtou6z1_5rNx3Zt-VFLK3waFJ/view?usp=drive_link', ready: true, image: 'images/dice-pact.png' } ], 'Criterion B – Deconstructing ACs': [ { title: '3‑Step Technique to Analysis', desc: 'What, How, Why', link: 'https://drive.google.com/file/d/1KGpJV1t3rVNFBlCYorD6i4IcTJ5l3do8/view?usp=drive_link', ready: true, image: 'images/3step.png' }, { title: 'Ways to Phrase Deconstructions', desc: 'Sentence frames', link: 'https://drive.google.com/file/d/1P1SOYycPD_zAD3GkXoNjOiFOFLAeT-wD/view?usp=drive_link', ready: true, image: 'images/ways-to-phrase.png' } ], 'Criterion C – Focus & Organisation': [ { title: 'TEEAL & Stages guide argument', desc: '(See above rows)', link: '#', ready: false, image: null } ], 'Planning Tools': [ { title: 'Lazy Efficient Annotation Rubric', desc: 'DICE/PACT + 3‑Step combined', link: 'https://drive.google.com/file/d/1EMUzwBRdLk8IOPx_CDeM8d8ccar5Q9Pg/view?usp=drive_link', ready: true, image: 'images/annotation-rubric.png' } ] } },
             { id: 'assessment-paper2', name: 'Paper 2', teeal: { title: 'Paper 2 TEEAL Structure', desc: 'Comparative styles 1‑3.', link: 'https://drive.google.com/file/d/1hxKO4YolRn9yDzw81EvmflRx858SV5Bi/view?usp=drive_link', ready: true, image: 'images/paper2teeal.png' },
-              criteria: {
-                  'Criterion A – Ideas & Implications': [ { title: 'Stages of IDEAs for Elaborations', desc: 'Break ideas into arguable stages', link: 'https://drive.google.com/file/d/1l1s6HCGAm11sZNqr8U71izTsSRWecAqy/view?usp=drive_link', ready: true, image: 'images/stages-elaborations.png' } ],
-                  'Criterion B – Deconstructing ACs': [
-                      { title: '5 Steps to Finding Comparisons', desc: 'Direct comparison method', link: 'https://drive.google.com/file/d/1mztvibIge8WmeqM3nTuuw1I3LlBPKrkj/view?usp=drive_link', ready: true, image: 'images/5steps.png' },
-                      { title: 'Comparative Plane Method', desc: 'Track broader ACs', link: '#', ready: false, image: null }
-                  ],
-                  'Criterion C – Focus & Organisation': [
-                      { title: 'DDM: Deconstruct, Dichotomise, Merge', desc: 'Build thesis from any question', link: 'https://drive.google.com/file/d/1_iZVVTKRUZ_nwoymjtndPVHz9GwtcQWH/view?usp=drive_link', ready: true, image: 'images/ddm-stages.png' },
-                      { title: 'DDM: Quick Reference', desc: 'Simplified one‑page visual', link: 'https://drive.google.com/file/d/1KY3SILFPtlvHFl5UEe6ZqIGSkL7wQqvb/view?usp=drive_link', ready: true, image: 'images/ddm2.png' }
-                  ],
-                  'Planning Tools': [ { title: 'Yin Yang Cards', desc: 'Direct comparative planner', link: 'https://drive.google.com/file/d/1JBUDeD-N8rhLuOW8u-rFHgiheVhJPUJF/view?usp=drive_link', ready: true, image: 'images/yingyang.jpeg' } ]
-              }
-            },
+              criteria: { 'Criterion A – Ideas & Implications': [ { title: 'Stages of IDEAs for Elaborations', desc: 'Break ideas into arguable stages', link: 'https://drive.google.com/file/d/1l1s6HCGAm11sZNqr8U71izTsSRWecAqy/view?usp=drive_link', ready: true, image: 'images/stages-elaborations.png' } ], 'Criterion B – Deconstructing ACs': [ { title: '5 Steps to Finding Comparisons', desc: 'Direct comparison method', link: 'https://drive.google.com/file/d/1mztvibIge8WmeqM3nTuuw1I3LlBPKrkj/view?usp=drive_link', ready: true, image: 'images/5steps.png' }, { title: 'Comparative Plane Method', desc: 'Track broader ACs', link: '#', ready: false, image: null } ], 'Criterion C – Focus & Organisation': [ { title: 'DDM: Deconstruct, Dichotomise, Merge', desc: 'Build thesis from any question', link: 'https://drive.google.com/file/d/1_iZVVTKRUZ_nwoymjtndPVHz9GwtcQWH/view?usp=drive_link', ready: true, image: 'images/ddm-stages.png' }, { title: 'DDM: Quick Reference', desc: 'Simplified one‑page visual', link: 'https://drive.google.com/file/d/1KY3SILFPtlvHFl5UEe6ZqIGSkL7wQqvb/view?usp=drive_link', ready: true, image: 'images/ddm2.png' } ], 'Planning Tools': [ { title: 'Yin Yang Cards', desc: 'Direct comparative planner', link: 'https://drive.google.com/file/d/1JBUDeD-N8rhLuOW8u-rFHgiheVhJPUJF/view?usp=drive_link', ready: true, image: 'images/yingyang.jpeg' } ] } },
             { id: 'assessment-hl-essay', name: 'HL Essay', teeal: { title: 'HL Essay TEEAL Structure', desc: 'Essay scaffold tailored for the Higher Level Essay.', link: 'https://drive.google.com/file/d/1QrqneW3Jp4CpDhZrbxiH_KlQu-VsaMTW/view?usp=drive_link', ready: true, image: 'images/hlessayteeal.png' },
-              criteria: { 'Criterion A – Ideas & Implications': [ { title: 'Stages of IDEAs for Elaborations', desc: 'Break ideas into arguable stages', link: 'https://drive.google.com/file/d/1l1s6HCGAm11sZNqr8U71izTsSRWecAqy/view?usp=drive_link', ready: true, image: 'images/stages-elaborations.png' } ], 'Criterion B – Deconstructing ACs': [ { title: '3‑Step Technique to Analysis', desc: 'What, How, Why', link: 'https://drive.google.com/file/d/1KGpJV1t3rVNFBlCYorD6i4IcTJ5l3do8/view?usp=drive_link', ready: true, image: 'images/3step.png' }, { title: 'Ways to Phrase Deconstructions', desc: 'Sentence frames', link: 'https://drive.google.com/file/d/1P1SOYycPD_zAD3GkXoNjOiFOFLAeT-wD/view?usp=drive_link', ready: true, image: 'images/ways-to-phrase.png' }, { title: 'Plane Method: Broader ACs', desc: 'Whole‑text analysis via Broader ACs', link: 'https://drive.google.com/file/d/10GndeILCWuQawo9DaKfOXjjkVUVQmWsM/view?usp=drive_link', ready: true, image: 'images/plane.png' }, { title: 'Islands Method: Whole‑Text Analysis', desc: 'Mini‑extracts from across the text, all linked to one LOI', link: 'https://drive.google.com/file/d/1PFrlOk-NTlm6n4Oda7_OgCWIbN40INDv/view?usp=drive_link', ready: true, image: 'images/islands.png' } ], 'Criterion C – Focus & Organisation': [ { title: 'HL Essay Thesis Formulation with DDM', desc: 'Line of inquiry to argument', link: '#', ready: false, image: null } ], 'Planning Tools': [ { title: 'Lazy Efficient Annotation Rubric', desc: 'DICE/PACT + 3‑Step combined', link: 'https://drive.google.com/file/d/1EMUzwBRdLk8IOPx_CDeM8d8ccar5Q9Pg/view?usp=drive_link', ready: true, image: 'images/annotation-rubric.png' } ] }
-            }
+              criteria: { 'Criterion A – Ideas & Implications': [ { title: 'Stages of IDEAs for Elaborations', desc: 'Break ideas into arguable stages', link: 'https://drive.google.com/file/d/1l1s6HCGAm11sZNqr8U71izTsSRWecAqy/view?usp=drive_link', ready: true, image: 'images/stages-elaborations.png' } ], 'Criterion B – Deconstructing ACs': [ { title: '3‑Step Technique to Analysis', desc: 'What, How, Why', link: 'https://drive.google.com/file/d/1KGpJV1t3rVNFBlCYorD6i4IcTJ5l3do8/view?usp=drive_link', ready: true, image: 'images/3step.png' }, { title: 'Ways to Phrase Deconstructions', desc: 'Sentence frames', link: 'https://drive.google.com/file/d/1P1SOYycPD_zAD3GkXoNjOiFOFLAeT-wD/view?usp=drive_link', ready: true, image: 'images/ways-to-phrase.png' }, { title: 'Plane Method: Broader ACs', desc: 'Whole‑text analysis via Broader ACs', link: 'https://drive.google.com/file/d/10GndeILCWuQawo9DaKfOXjjkVUVQmWsM/view?usp=drive_link', ready: true, image: 'images/plane.png' }, { title: 'Islands Method: Whole‑Text Analysis', desc: 'Mini‑extracts from across the text, all linked to one LOI', link: 'https://drive.google.com/file/d/1PFrlOk-NTlm6n4Oda7_OgCWIbN40INDv/view?usp=drive_link', ready: true, image: 'images/islands.png' } ], 'Criterion C – Focus & Organisation': [ { title: 'HL Essay Thesis Formulation with DDM', desc: 'Line of inquiry to argument', link: '#', ready: false, image: null } ], 'Planning Tools': [ { title: 'Lazy Efficient Annotation Rubric', desc: 'DICE/PACT + 3‑Step combined', link: 'https://drive.google.com/file/d/1EMUzwBRdLk8IOPx_CDeM8d8ccar5Q9Pg/view?usp=drive_link', ready: true, image: 'images/annotation-rubric.png' } ] } }
         ];
         const container = document.getElementById('assessment-container');
         assessmentsData.forEach(assessment => {
             const block = document.createElement('div'); block.className = 'assessment-block'; block.id = assessment.id;
             const teealLink = convertToDirectDownload(assessment.teeal.link);
-            const teealHTML = `<h2>${assessment.name}</h2><div class="teeal-card"><div class="teeal-thumb" data-image="${assessment.teeal.image}" data-download="${teealLink}"><img src="${assessment.teeal.image}" alt="${assessment.teeal.title}"></div><div class="teeal-info"><h3>${assessment.teeal.title}</h3><p class="desc">${assessment.teeal.desc}</p>${assessment.teeal.ready ? `<a href="${teealLink}" class="btn btn-download">Download</a>` : `<span class="btn btn-coming">Coming Soon</span>`}</div></div>`;
+            const teealHTML = `<h2>${assessment.name}</h2><div class="teeal-card"><div class="teeal-thumb" data-image="${assessment.teeal.image}" data-download="${teealLink}" data-label="${assessment.teeal.title}"><img src="${assessment.teeal.image}" alt="${assessment.teeal.title}"></div><div class="teeal-info"><h3>${assessment.teeal.title}</h3><p class="desc">${assessment.teeal.desc}</p>${assessment.teeal.ready ? `<a href="${teealLink}" class="btn btn-download">Download</a>` : `<span class="btn btn-coming">Coming Soon</span>`}</div></div>`;
             let criteriaHTML = '';
             const criteria = assessment.criteria;
             for (const [group, items] of Object.entries(criteria)) {
@@ -234,7 +171,7 @@
                 let cardsHTML = '';
                 items.forEach(item => {
                     const link = item.ready ? convertToDirectDownload(item.link) : '#';
-                    const imageHtml = item.image ? `<div class="small-thumb" data-image="${item.image}" data-download="${link}"><img src="${item.image}" alt="${item.title}"></div>` : '';
+                    const imageHtml = item.image ? `<div class="small-thumb" data-image="${item.image}" data-download="${link}" data-label="${item.title}"><img src="${item.image}" alt="${item.title}"></div>` : '';
                     const button = item.ready ? `<a href="${link}" class="btn btn-download">Download</a>` : `<span class="btn btn-coming">Coming Soon</span>`;
                     const skillsPageLink = item.ready ? `<a href="skills.html" class="skills-link">View on Skills page →</a>` : '';
                     cardsHTML += `<div class="small-card">${imageHtml}<div class="card-title">${item.title}</div><div class="card-desc">${item.desc}</div>${button}${skillsPageLink}</div>`;
@@ -244,24 +181,45 @@
             block.innerHTML = teealHTML + criteriaHTML;
             container.appendChild(block);
         });
-
         const lightbox = document.getElementById('lightbox'), lightboxImg = document.getElementById('lightbox-img'), lightboxDownload = document.getElementById('lightbox-download');
-        document.addEventListener('click', function(e) { const thumb = e.target.closest('.teeal-thumb') || e.target.closest('.small-thumb'); if (thumb) { const imageSrc = thumb.dataset.image, downloadUrl = thumb.dataset.download; lightboxImg.src = imageSrc; if (downloadUrl && downloadUrl !== '#') { lightboxDownload.href = downloadUrl; lightboxDownload.style.display = 'inline-block'; } else { lightboxDownload.style.display = 'none'; } lightbox.classList.add('show'); } });
+        document.addEventListener('click', function(e) {
+            const thumb = e.target.closest('.teeal-thumb') || e.target.closest('.small-thumb');
+            if (thumb) {
+                const imageSrc = thumb.dataset.image, downloadUrl = thumb.dataset.download, label = thumb.dataset.label;
+                lightboxImg.src = imageSrc;
+                lightboxImg.alt = label ? label + ' preview' : 'Resource preview';
+                if (downloadUrl && downloadUrl !== '#') { lightboxDownload.href = downloadUrl; lightboxDownload.style.display = 'inline-block'; }
+                else { lightboxDownload.style.display = 'none'; }
+                lightbox.classList.add('show');
+            }
+        });
         lightbox.addEventListener('click', function(e) { if (e.target === lightbox || e.target === lightboxImg) lightbox.classList.remove('show'); });
         lightboxDownload.addEventListener('click', function(e) { e.stopPropagation(); });
         document.addEventListener('keydown', e => { if (e.key === 'Escape') lightbox.classList.remove('show'); });
-
-        document.addEventListener('mousemove', function(e) { const thumb = e.target.closest('.teeal-thumb') || e.target.closest('.small-thumb'); if (thumb) { const img = thumb.querySelector('img'), rect = thumb.getBoundingClientRect(); img.style.transformOrigin = `${((e.clientX - rect.left) / rect.width) * 100}% ${((e.clientY - rect.top) / rect.height) * 100}%`; } });
-
+        document.addEventListener('mousemove', function(e) {
+            const thumb = e.target.closest('.teeal-thumb') || e.target.closest('.small-thumb');
+            if (thumb) { const img = thumb.querySelector('img'), rect = thumb.getBoundingClientRect(); img.style.transformOrigin = `${((e.clientX - rect.left) / rect.width) * 100}% ${((e.clientY - rect.top) / rect.height) * 100}%`; }
+        });
         const sideNavLinks = document.querySelectorAll('.side-nav a'), sections = assessmentsData.map(a => document.getElementById(a.id));
         function updateActiveNav() { let current = ''; sections.forEach(section => { if (!section) return; const rect = section.getBoundingClientRect(); if (rect.top <= 200) current = section.id; }); sideNavLinks.forEach(link => { link.classList.toggle('active-section', link.getAttribute('href') === '#' + current); }); }
         window.addEventListener('scroll', updateActiveNav); updateActiveNav();
-
         function handleSubmit() {
+            const form = document.getElementById('signup-form');
+            const iframe = document.querySelector('iframe[name="hidden_iframe"]');
+            const msg = document.getElementById('signup-msg');
+            iframe.onload = function() {
+                msg.style.display = 'block';
+                msg.textContent = "You're on the list! (Check your email)";
+                form.reset();
+                setTimeout(() => { msg.style.display = 'none'; }, 5000);
+            };
             setTimeout(function() {
-                document.getElementById('signup-msg').style.display = 'block';
-                document.getElementById('signup-form').reset();
-            }, 1000);
+                if (msg.style.display !== 'block') {
+                    msg.style.display = 'block';
+                    msg.textContent = "Submitted! (If you don't see a confirmation, try again)";
+                    form.reset();
+                }
+            }, 3000);
             return true;
         }
         const btt = document.getElementById('back-to-top');

@@ -59,6 +59,7 @@
         p { margin-bottom: var(--spacing-sm); position: relative; z-index: 1; }
         a { color: var(--text-primary); text-decoration: none; border-bottom: 2px solid transparent; transition: border-color 0.2s ease; }
         a:hover { border-bottom-color: var(--accent); }
+        a:focus-visible, button:focus-visible, .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
         nav { background-color: var(--bg-primary); border-bottom: 1px solid rgba(253,252,249,0.1); position: sticky; top: 0; z-index: 100; }
         .nav-container { max-width: var(--max-width); margin: 0 auto; padding: var(--spacing-sm) var(--spacing-md); display: flex; justify-content: space-between; align-items: center; }
         .nav-logo { font-family: 'Montserrat', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--text-primary); border-bottom: none; display: flex; align-items: center; }
@@ -98,13 +99,7 @@
         .footer-col a:hover { color: var(--text-primary); }
         .footer-bottom { max-width: var(--max-width); margin: 0 auto; text-align: center; color: var(--text-secondary); font-size: 0.85rem; padding-top: var(--spacing-md); border-top: 1px solid rgba(253,252,249,0.08); }
         @media print { body { background: #fff; color: #000; } nav, footer, .filter-bar, .search-bar, #back-to-top, .signup-box, .btn { display: none; } .card { border: 1px solid #ccc; box-shadow: none; break-inside: avoid; } }
-        @media (max-width: 768px) {
-            h1 { font-size: 2rem; } h2 { font-size: 1.5rem; }
-            .nav-container { flex-direction: column; padding: var(--spacing-sm); }
-            .nav-links { gap: var(--spacing-sm); flex-wrap: wrap; justify-content: center; }
-            .container { padding: var(--spacing-md) var(--spacing-sm); }
-            .cards-grid { grid-template-columns: 1fr; }
-        }
+        @media (max-width: 768px) { h1 { font-size: 2rem; } h2 { font-size: 1.5rem; } .nav-container { flex-direction: column; padding: var(--spacing-sm); } .nav-links { gap: var(--spacing-sm); flex-wrap: wrap; justify-content: center; } .container { padding: var(--spacing-md) var(--spacing-sm); } .cards-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -143,7 +138,7 @@
                     <form id="signup-form" action="https://docs.google.com/forms/d/e/1FAIpQLSdmK_2KaKlAJtWN1_JuHt02ATZFkbFvA8kkvv7tQqPnNpc0cA/formResponse" method="POST" target="hidden_iframe" onsubmit="return handleSubmit()">
                         <input type="email" name="entry.1104949410" placeholder="Your email address" required>
                         <button type="submit" class="btn btn-primary" style="border:none; cursor:pointer; width:100%;">Subscribe</button>
-                        <p id="signup-msg" style="color:#4BA66C; font-weight:600; margin-top:1rem; display:none;">You're on the list!</p>
+                        <p id="signup-msg" style="color:#4BA66C; font-weight:600; margin-top:1rem; display:none;"></p>
                     </form>
                     <iframe name="hidden_iframe" style="display:none;"></iframe>
                 </div>
@@ -170,7 +165,7 @@
           {"title":"Lazy Efficient Annotation Rubric","description":"DICE/PACT + 3-Step combined","link":"https://drive.google.com/file/d/1grBngaLIBBsWuAaA1yMqCKpKinsvZn2d/view?usp=drive_link","category":"skills","ready":true,"previewImage":"images/annotation-rubric.png","youtubeId":null},
           {"title":"Ways to Phrase Deconstructions","description":"Sentence frames for Criterion B analysis","link":"https://drive.google.com/file/d/1NYytMqyY_je3CXGTE757JptMQELmxaNY/view?usp=drive_link","category":"skills","ready":true,"previewImage":"images/ways-to-phrase.png","youtubeId":null},
           {"title":"DICE/PACT Annotation Guide","description":"Data-mine, infer, confirm, explain","link":"https://drive.google.com/file/d/1fukMmrxaK2TZyHcTiWmEurXBVjuikMtz/view?usp=drive_link","category":"skills","ready":true,"previewImage":"images/dice-pact.png","youtubeId":null},
-          {"title":"Film Analysis Guide","description":"Apply the Plane Method and 3-Step Technique to moving-image texts","link":"https://docs.google.com/document/d/1htTAiCuIqgMRSkr21rW-gZrZdFe3ibAFJqeP8GJDwjQ/edit","category":"skills","ready":true,"previewImage":"images/filmguide.png","youtubeId":null},
+          {"title":"Film Analysis Guide","description":"Apply the Plane Method and 3-Step Technique to moving-image texts","link":"https://docs.google.com/document/d/1htTAiCuIqgMRSkr21rW-gZrZdFe3ibAFJqeP8GJDwjQ/edit","category":"skills","ready":true,"previewImage":"","youtubeId":null},
           {"title":"The Graveyard of Analysis","description":"Banned phrases wall chart","link":"#","category":"skills","ready":false,"previewImage":"","youtubeId":null},
           {"title":"Paper 1: TEEAL Essay Structure","description":"One-page visual scaffold for unseen text analysis","link":"https://drive.google.com/file/d/15ybuv5v58JJBfzCY77OMpITBPw178nYp/view?usp=drive_link","category":"assessment","ready":true,"previewImage":"images/paper1teeal.png","youtubeId":null},
           {"title":"Paper 2: Comparative TEEAL Writing Guide","description":"Style 1,2,3 structures for comparative essays","link":"https://drive.google.com/file/d/1wI7RMaepBu8dt7R3AyhTzHSEr0smdFPW/view?usp=drive_link","category":"assessment","ready":true,"previewImage":"images/paper2teeal.png","youtubeId":null},
@@ -210,10 +205,22 @@
         });
         renderResources();
         function handleSubmit() {
+            const form = document.getElementById('signup-form');
+            const iframe = document.querySelector('iframe[name="hidden_iframe"]');
+            const msg = document.getElementById('signup-msg');
+            iframe.onload = function() {
+                msg.style.display = 'block';
+                msg.textContent = "You're on the list! (Check your email)";
+                form.reset();
+                setTimeout(() => { msg.style.display = 'none'; }, 5000);
+            };
             setTimeout(function() {
-                document.getElementById('signup-msg').style.display = 'block';
-                document.getElementById('signup-form').reset();
-            }, 1000);
+                if (msg.style.display !== 'block') {
+                    msg.style.display = 'block';
+                    msg.textContent = "Submitted! (If you don't see a confirmation, try again)";
+                    form.reset();
+                }
+            }, 3000);
             return true;
         }
         const btt = document.getElementById('back-to-top');

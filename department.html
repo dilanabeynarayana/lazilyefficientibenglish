@@ -38,6 +38,7 @@
         p { margin-bottom: var(--spacing-sm); position: relative; z-index: 1; }
         a { color: var(--text-primary); text-decoration: none; border-bottom: 2px solid transparent; transition: border-color 0.2s ease; }
         a:hover { border-bottom-color: var(--accent); }
+        a:focus-visible, button:focus-visible, .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
         nav { background-color: var(--bg-primary); border-bottom: 1px solid rgba(253,252,249,0.1); position: sticky; top: 0; z-index: 100; }
         .nav-container { max-width: var(--max-width); margin: 0 auto; padding: var(--spacing-sm) var(--spacing-md); display: flex; justify-content: space-between; align-items: center; }
         .nav-logo { font-family: 'Montserrat', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--text-primary); border-bottom: none; display: flex; align-items: center; }
@@ -76,14 +77,7 @@
         .signup-box input { width: 100%; padding: 0.6rem; background: rgba(253,252,249,0.05); border: 1px solid rgba(253,252,249,0.15); border-radius: 4px; color: var(--text-primary); font-family: 'Inter', sans-serif; margin-bottom: var(--spacing-sm); }
         .signup-box input:focus { outline: none; border-color: var(--accent); }
         h1, h2 { text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
-        @media (max-width: 768px) {
-            h1 { font-size: 2rem; } h2 { font-size: 1.5rem; }
-            .nav-container { flex-direction: column; padding: var(--spacing-sm); }
-            .nav-links { gap: var(--spacing-sm); flex-wrap: wrap; justify-content: center; }
-            .container { padding: var(--spacing-md) var(--spacing-sm); }
-            .cards-grid { grid-template-columns: 1fr; }
-            :root { --thumb-height: 220px; }
-        }
+        @media (max-width: 768px) { h1 { font-size: 2rem; } h2 { font-size: 1.5rem; } .nav-container { flex-direction: column; padding: var(--spacing-sm); } .nav-links { gap: var(--spacing-sm); flex-wrap: wrap; justify-content: center; } .container { padding: var(--spacing-md) var(--spacing-sm); } .cards-grid { grid-template-columns: 1fr; } :root { --thumb-height: 220px; } }
         @media print { body { background: #fff; color: #000; } nav, footer, .btn, #back-to-top, .signup-box { display: none; } .card { border: 1px solid #ccc; box-shadow: none; break-inside: avoid; } }
     </style>
 </head>
@@ -119,14 +113,14 @@
             <form id="signup-form" action="https://docs.google.com/forms/d/e/1FAIpQLSdmK_2KaKlAJtWN1_JuHt02ATZFkbFvA8kkvv7tQqPnNpc0cA/formResponse" method="POST" target="hidden_iframe" onsubmit="return handleSubmit()">
                 <input type="email" name="entry.1104949410" placeholder="Your email" required style="width:100%; padding:0.6rem; background:rgba(253,252,249,0.05); border:1px solid rgba(253,252,249,0.15); border-radius:4px; color:var(--text-primary); font-family:'Inter',sans-serif; margin-bottom:var(--spacing-sm);">
                 <button type="submit" class="btn btn-primary" style="border:none; cursor:pointer; width:100%;">Subscribe</button>
-                <p id="signup-msg" style="color:#4BA66C; font-weight:600; margin-top:1rem; display:none;">You're on the list!</p>
+                <p id="signup-msg" style="color:#4BA66C; font-weight:600; margin-top:1rem; display:none;"></p>
             </form>
             <iframe name="hidden_iframe" style="display:none;"></iframe>
         </div>
         <div class="footer-bottom"><p>&copy; 2026 The Lazily Efficient IB English Teacher &middot; lazilyefficientibenglish.com</p></div>
     </footer>
     <button id="back-to-top" title="Back to top">↑</button>
-    <div class="lightbox" id="lightbox"><img src="" alt="Preview" id="lightbox-img"></div>
+    <div class="lightbox" id="lightbox"><img src="" alt="" id="lightbox-img"></div>
     <script>
         const allResources = [
           {"title":"Stages of IDEAs for Conceptual Teaching","description":"Plan units around concepts, not texts","link":"#","category":"department","ready":false,"previewImage":"","youtubeId":null},
@@ -140,7 +134,7 @@
         else {
             let html = '<div class="cards-grid">';
             deptResources.forEach(resource => {
-                let imageHtml = resource.previewImage ? `<div class="thumb-zoom" data-src="${resource.previewImage}"><img src="${resource.previewImage}" alt="${resource.title}"></div>` : '';
+                let imageHtml = resource.previewImage ? `<div class="thumb-zoom" data-src="${resource.previewImage}" data-label="${resource.title}"><img src="${resource.previewImage}" alt="${resource.title}"></div>` : '';
                 let buttonHtml = (resource.ready && resource.link !== '#') ? `<a href="${resource.link}" class="btn btn-primary" target="_blank">Download</a>` : `<span class="btn btn-primary" style="opacity:0.5;cursor:default;">Coming Soon</span>`;
                 html += `<article class="card">${imageHtml}<h3 class="card-title">${resource.title}</h3><p class="card-description">${resource.description}</p>${buttonHtml}</article>`;
             });
@@ -158,15 +152,33 @@
         const lightboxImg = document.getElementById('lightbox-img');
         document.addEventListener('click', function(e) {
             const thumb = e.target.closest('.thumb-zoom');
-            if (thumb) { const src = thumb.dataset.src || thumb.querySelector('img').src; lightboxImg.src = src; lightbox.classList.add('show'); }
+            if (thumb) {
+                const src = thumb.dataset.src || thumb.querySelector('img').src;
+                const label = thumb.dataset.label || 'Resource preview';
+                lightboxImg.src = src;
+                lightboxImg.alt = label;
+                lightbox.classList.add('show');
+            }
         });
         lightbox.addEventListener('click', () => { lightbox.classList.remove('show'); });
         document.addEventListener('keydown', e => { if (e.key === 'Escape') lightbox.classList.remove('show'); });
         function handleSubmit() {
+            const form = document.getElementById('signup-form');
+            const iframe = document.querySelector('iframe[name="hidden_iframe"]');
+            const msg = document.getElementById('signup-msg');
+            iframe.onload = function() {
+                msg.style.display = 'block';
+                msg.textContent = "You're on the list! (Check your email)";
+                form.reset();
+                setTimeout(() => { msg.style.display = 'none'; }, 5000);
+            };
             setTimeout(function() {
-                document.getElementById('signup-msg').style.display = 'block';
-                document.getElementById('signup-form').reset();
-            }, 1000);
+                if (msg.style.display !== 'block') {
+                    msg.style.display = 'block';
+                    msg.textContent = "Submitted! (If you don't see a confirmation, try again)";
+                    form.reset();
+                }
+            }, 3000);
             return true;
         }
         const btt = document.getElementById('back-to-top');
