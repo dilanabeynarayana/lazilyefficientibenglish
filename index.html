@@ -113,7 +113,6 @@
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="assessment.html">Assessment</a></li>
-                <li><a href="skills.html">Skills</a></li>
                 <li><a href="exercises.html">Exercises</a></li>
                 <li><a href="department.html">Department</a></li>
                 <li><a href="youtube.html">YouTube</a></li>
@@ -131,8 +130,8 @@
                 <h2 class="section-title">How to Use This Site</h2>
                 <div class="howto-wrapper">
                     <div class="howto-flow">
-                        <div class="howto-step"><div class="step-number">1</div><h3>Assessment</h3><p>Start here if you're a DP teacher. Download the TEEAL scaffold for your next assessment: Paper 1, Paper 2, the IO, or the HL Essay. Every resource you need for each assessment is listed together, with direct downloads.</p><a href="assessment.html">Browse Assessments →</a></div>
-                        <div class="howto-step"><div class="step-number">2</div><h3>Skills</h3><p>The skill building tools: annotation rubrics, elaboration guides, deconstruction frames. These are the engine under every assessment. Use them to teach the core analytical moves, then reinforce with assessments.</p><a href="skills.html">Explore Skills →</a></div>
+                        <div class="howto-step"><div class="step-number">1</div><h3>Assessment</h3><p>Start here if you're a DP teacher. Download the TEEAL scaffold for your next assessment: Paper 1, Paper 2, the IO, or the HL Essay. Every resource you need for each assessment is listed together, with direct downloads and video walkthroughs.</p><a href="assessment.html">Browse Assessments →</a></div>
+                        <div class="howto-step"><div class="step-number">2</div><h3>Core Skills</h3><p>All the analytical tools – annotation rubrics, deconstruction frames, thesis builders – are embedded inside each assessment section. No separate page needed. Just open any assessment and scroll to the skill you need.</p><a href="assessment.html">See Skills in Action →</a></div>
                         <div class="howto-step"><div class="step-number">3</div><h3>Exercises</h3><p>Walkthroughs and practice tasks are coming soon. For now, the YouTube Shorts walk you through each resource step by step.</p><a href="exercises.html">Coming Soon →</a></div>
                         <div class="howto-step"><div class="step-number">4</div><h3>YouTube</h3><p>Short, practical videos that show you exactly how to use each part of the Lazy Efficiency system. Subscribe to stay updated when new resources drop.</p><a href="https://youtube.com/@thelazyefficientibenglishtea" target="_blank">Watch on YouTube →</a></div>
                     </div>
@@ -144,9 +143,7 @@
                 <div class="carousel-outer"><div class="carousel-track" id="carousel-track"></div></div>
             </section>
             <section class="content-section">
-                <div class="counter-bar" id="counter-bar">
-                    <!-- Counters will be injected by JavaScript -->
-                </div>
+                <div class="counter-bar" id="counter-bar"></div>
             </section>
             <section class="content-section" style="text-align: center;">
                 <p class="section-description">From curriculum design to deconstruction frames, from essay scaffolds to video walkthroughs: everything connects.</p>
@@ -160,7 +157,7 @@
     </main>
     <footer>
         <div class="footer-grid">
-            <div class="footer-col"><h4>Resources</h4><a href="department.html">Department</a><a href="skills.html">Skills</a><a href="assessment.html">Assessment</a><a href="exercises.html">Exercises</a></div>
+            <div class="footer-col"><h4>Resources</h4><a href="department.html">Department</a><a href="assessment.html">Assessment</a><a href="exercises.html">Exercises</a></div>
             <div class="footer-col"><h4>Connect</h4><a href="https://youtube.com/@thelazyefficientibenglishtea" target="_blank">YouTube</a><a href="https://www.linkedin.com/in/dilan-abeynarayana-84aa10a1/" target="_blank">LinkedIn</a><a href="https://www.facebook.com/lazilyefficientibenglish/" target="_blank">Facebook</a></div>
         </div>
         <div class="signup-box">
@@ -181,13 +178,6 @@
         <a href="#" target="_blank" id="lightbox-download" class="btn btn-primary">Download Resource</a>
     </div>
     <script>
-        // ========================
-        // SINGLE SOURCE OF TRUTH
-        // Update these arrays when you add/remove resources or videos.
-        // The counters will update automatically.
-        // ========================
-
-        // List of all downloadable resources (each object must have a 'link' that is not '#')
         const allDownloads = [
             { name: "8 Gates of Curriculum Design", link: "https://drive.google.com/file/d/1leJKSaZ795QeWX_zz8QxB_QLDY0OKPaF/view" },
             { name: "L&L MYP to DP Analytical Continuum", link: "https://drive.google.com/file/d/1ibWY2tsGKXeN6qSqCjUOf8EF7BmFrBXc/view" },
@@ -201,29 +191,23 @@
             { name: "Paper 1: TEEAL Essay Structure", link: "https://drive.google.com/file/d/15ybuv5v58JJBfzCY77OMpITBPw178nYp/view" },
             { name: "Paper 2: Comparative TEEAL Writing Guide", link: "https://drive.google.com/file/d/1wI7RMaepBu8dt7R3AyhTzHSEr0smdFPW/view" },
             { name: "Paper 2: Yin Yang Cards", link: "https://drive.google.com/file/d/1JBUDeD-N8rhLuOW8u-rFHgiheVhJPUJF/view" },
+            { name: "Paper 2: Comparative Plane Method", link: "https://drive.google.com/file/d/16d4qkE5jYmT7d8BEINreWsXJQVy9wZcL/view" },
             { name: "IO: Structure & Islands Method", link: "https://drive.google.com/file/d/1m10ygbmp5AEJzdJwj7r6HRnm77IAJa-x/view" },
             { name: "HL Essay: TEEAL Structure", link: "https://drive.google.com/file/d/1gb_JNas7mluK4rzybENnJ72UtjGx11KC/view" }
         ];
-
-        // List of assessment types (used to count unique assessments)
         const assessmentTypes = ["IO", "Paper 1", "Paper 2", "HL Essay"];
-
-        // List of YouTube Shorts video IDs (or full URLs)
         const youtubeShorts = [
             { id: "x48pgQU7wvk", title: "3 Things All IB L&L Responses MUST Do" },
             { id: "4216-DK0B40", title: "Top 10 Tips from an IB L&L Team Leader Examiner" },
             { id: "tZcJIrVKPu8", title: "3-Step Technique for Effective Analysis" },
             { id: "kZNlpSS9J30", title: "Annotation ≠ Highlighting" },
-            { id: "lVTzQ6ga00o", title: "Why AC Only Essays Suck" }
+            { id: "lVTzQ6ga00o", title: "Why AC Only Essays Suck" },
+            { id: "IJVMn2hrJXU", title: "Why the Paper 2 SEEMS Impossible" }
         ];
-
-        // Compute counts dynamically
         const freeDownloadsCount = allDownloads.length;
         const assessmentsCoveredCount = assessmentTypes.length;
         const youtubeShortsCount = youtubeShorts.length;
-        const connectedSystemCount = 1; // static, but you could compute if needed
-
-        // Build the counter bar HTML
+        const connectedSystemCount = 1;
         const counterBar = document.getElementById('counter-bar');
         counterBar.innerHTML = `
             <a href="resources.html" class="counter-item">
@@ -243,10 +227,6 @@
                 <div class="counter-label">Connected System</div>
             </div>
         `;
-
-        // ========================
-        // Existing carousel and lightbox code (unchanged)
-        // ========================
         const teealResources = [
             { label: 'Individual Oral', image: 'images/IO.png', link: 'assessment.html#assessment-io', download: 'https://drive.google.com/file/d/1m10ygbmp5AEJzdJwj7r6HRnm77IAJa-x/view?usp=drive_link' },
             { label: 'Paper 1', image: 'images/paper1teeal.png', link: 'assessment.html#assessment-paper1', download: 'https://drive.google.com/file/d/15ybuv5v58JJBfzCY77OMpITBPw178nYp/view?usp=drive_link' },
